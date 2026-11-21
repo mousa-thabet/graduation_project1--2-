@@ -1,0 +1,153 @@
+{
+  "title": "دوراتي",
+  "tabs": {
+    "label": "تبويبات الدورات",
+    "all": "الدورات",
+    "enrolled": "المسجّلة",
+    "mine": "دوراتي"
+  },
+  "panelTitle": "استوديو دوراتك",
+  "searchPlaceholder": "ابحث في الدورات التي أنشأتها",
+  "subtitle": "هنا الدورات التي تنشئها وتنشرها (لا الدورات المسجّل فيها): عدّلها، أكمل مسوداتك، أو ابدأ دورة جديدة.",
+  "newCourse": "دورة جديدة",
+  "manage": "إدارة دوراتي",
+  "openStudio": "افتح الاستوديو",
+  "studioCardTitle": "دوراتي",
+  "studioCardText": "أنشئ دورة جديدة، أو أكمل مسوداتك وعدّل دوراتك المنشورة.",
+  "stats": {
+    "courses": "الدورات",
+    "students": "الطلاب",
+    "lessons": "الدروس",
+    "content": "مدة المحتوى",
+    "drafts_zero": "لا مسودات",
+    "drafts_one": "مسودة واحدة",
+    "drafts_two": "مسودتان",
+    "drafts_few": "{{count}} مسودات",
+    "drafts_many": "{{count}} مسودة",
+    "drafts_other": "{{count}} مسودة",
+    "published": "{{count}} منشورة"
+  },
+  "filters": {
+    "label": "حالة الدورة",
+    "all": "الكل",
+    "published": "منشورة",
+    "draft": "مسودات"
+  },
+  "status": {
+    "published": "منشورة",
+    "draft": "مسودة"
+  },
+  "updated": "آخر تعديل {{time}}",
+  "actions": {
+    "edit": "تعديل",
+    "view": "عرض",
+    "publish": "انشر",
+    "unpublish": "أعدها مسودة",
+    "delete": "حذف",
+    "confirmDelete": "هل أنت متأكد؟ اضغط مرة أخرى",
+    "more": "خيارات أكثر"
+  },
+  "toasts": {
+    "published": "نُشرت الدورة 🎉",
+    "unpublished": "أُعيدت الدورة مسودة",
+    "deleted": "حُذفت الدورة"
+  },
+  "empty": {
+    "title": "لم تنشئ أي دورة بعد",
+    "text": "ابدأ دورتك الأولى: عنوان، ودروس بالفيديو أو بالشرح المكتوب، ثم انشرها لطلاب مجتمعاتك.",
+    "filtered": "لا توجد دورات بهذه الحالة",
+    "noMatch": "لا توجد دورة من دوراتك تطابق \"{{query}}\""
+  },
+  "emptyEnrolled": {
+    "title": "لم تسجّل في أي دورة",
+    "text": "اختر دورة من تبويب \"الدورات\" وسجّل فيها، وستجدها هنا مع تقدّمك."
+  },
+  "editor": {
+    "newTitle": "دورة جديدة",
+    "untitled": "دورة دون عنوان",
+    "back": "دوراتي",
+    "preview": "معاينة",
+    "saveDraft": "احفظ كمسودة",
+    "publish": "انشر الدورة",
+    "saveChanges": "احفظ التعديلات",
+    "saving": "جارٍ الحفظ…",
+    "unsaved": "توجد تعديلات غير محفوظة",
+    "saved": "كل شيء محفوظ",
+    "savedToast": "حُفظت المسودة",
+    "leaveConfirm": "توجد تعديلات غير محفوظة. هل تريد الخروج دون حفظها؟",
+    "steps": {
+      "label": "أقسام المحرّر",
+      "info": "معلومات الدورة",
+      "curriculum": "المنهاج"
+    },
+    "info": {
+      "title": "معلومات الدورة",
+      "text": "أول ما يراه الطالب: اجعل العنوان واضحًا والوصف يشرح ما سيتعلمه.",
+      "titleLabel": "عنوان الدورة",
+      "titlePlaceholder": "مثلًا: أساسيات SQL خطوة بخطوة",
+      "descriptionLabel": "وصف الدورة",
+      "descriptionPlaceholder": "ماذا سيتعلم الطالب؟ ولمن هذه الدورة؟",
+      "placeTitle": "أين تُعرض الدورة؟",
+      "placeText": "تظهر الدورة لأعضاء المجتمع الذي تختاره.",
+      "level": "المستوى",
+      "next": "التالي: المنهاج"
+    },
+    "curriculum": {
+      "title": "المنهاج",
+      "text": "رتّب الدروس بالسحب أو بالأسهم، واضغط على أي درس لتعديله.",
+      "summary": "{{lessons}} · {{minutes}} · {{videos}}",
+      "videos_zero": "دون فيديو",
+      "videos_one": "فيديو واحد",
+      "videos_two": "فيديوهان",
+      "videos_few": "{{count}} فيديوهات",
+      "videos_many": "{{count}} فيديو",
+      "videos_other": "{{count}} فيديو",
+      "addLesson": "أضف درسًا",
+      "limit": "وصلت إلى الحد الأقصى للدروس ({{count}})",
+      "lesson": "الدرس {{number}}",
+      "untitledLesson": "درس دون عنوان",
+      "typeVideo": "فيديو",
+      "typeText": "مكتوب",
+      "typeEmpty": "فارغ",
+      "incomplete": "ينقصه محتوى",
+      "drag": "اسحب لإعادة الترتيب",
+      "moveUp": "انقل الدرس {{number}} إلى الأعلى",
+      "moveDown": "انقل الدرس {{number}} إلى الأسفل",
+      "remove": "احذف الدرس {{number}}",
+      "toggle": "افتح الدرس {{number}} أو أغلقه",
+      "lessonTitle": "عنوان الدرس",
+      "lessonTitlePlaceholder": "مثلًا: أول استعلام SELECT",
+      "video": "فيديو الدرس",
+      "videoDrop": "اسحب فيديو الدرس إلى هنا، أو اضغط لاختياره",
+      "videoHint": "MP4 أو WebM، حتى 300MB · تُحسب المدة تلقائيًا",
+      "savedVideo": "الفيديو المحفوظ",
+      "replaceVideo": "استبدل الفيديو",
+      "removeVideo": "أزل الفيديو",
+      "notes": "شرح الدرس",
+      "notesPlaceholder": "ملخص، خطوات، كود، أو روابط مفيدة",
+      "duration": "المدة",
+      "minutes": "دقيقة",
+      "empty": "لا توجد دروس بعد. أضف أول درس للبدء."
+    },
+    "checklist": {
+      "title": "جاهزية الدورة",
+      "titleItem": "عنوان واضح",
+      "description": "وصف للدورة",
+      "lessons": "درس واحد على الأقل",
+      "lessonTitles": "لكل الدروس عناوين",
+      "lessonContent": "كل درس يحتوي على فيديو أو شرح",
+      "ready": "الدورة جاهزة للنشر",
+      "notReady": "أكمل النواقص لتتمكن من النشر",
+      "optional": "اختياري"
+    },
+    "previewTitle": "هكذا تظهر للطلاب",
+    "draftNote": "المسودة تظهر لك وحدك. عندما تنتهي، انشرها.",
+    "publishedNote": "الدورة منشورة: أي تعديل يصل إلى الطلاب فور الحفظ.",
+    "errors": {
+      "titleRequired": "اكتب عنوان الدورة قبل الحفظ.",
+      "notReady": "الدورة ليست جاهزة للنشر بعد: {{item}}."
+    }
+  },
+  "draftBanner": "هذه الدورة مسودة: تظهر لك وحدك.",
+  "draftBannerAction": "انشرها الآن"
+}

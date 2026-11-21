@@ -1,0 +1,33 @@
+/* =========================================
+   رابط الرجوع
+   ========================================= */
+.back-link {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.back-link svg {
+  transition: transform 0.3s var(--ease-out);
+}
+
+/* السهم يشير للخلف حسب اتجاه اللغة */
+[dir="ltr"] .back-link svg {
+  transform: scaleX(-1);
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}
+
+[dir="rtl"] .back-link:hover svg {
+  transform: translateX(3px);
+}
+
+[dir="ltr"] .back-link:hover svg {
+  transform: scaleX(-1) translateX(3px);
+}

@@ -1,0 +1,287 @@
+/* =========================================
+   صندوق الكتابة في التواصل
+   ========================================= */
+.community-composer {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* صندوق ادرس معي تحته: بدون خط فاصل مكرر */
+.community-composer .composer {
+  border-bottom: none;
+}
+
+.community-composer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px 0;
+}
+
+/* ----- منشور أو سؤال ----- */
+.composer-type {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+}
+
+.composer-type__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.composer-type__option:hover {
+  color: var(--color-text);
+}
+
+.composer-type__option[aria-pressed="true"] {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* السؤال بلون التنبيه */
+.community-composer--question .composer-type__option[aria-pressed="true"] {
+  background-color: var(--color-warning);
+  color: var(--color-bg);
+}
+
+/* ----- المجتمع والفرع ----- */
+.composer-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 12px 4px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+}
+
+.composer-place:focus-within {
+  border-color: var(--track);
+}
+
+.composer-place__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--track);
+}
+
+.composer-place select {
+  min-height: 32px;
+  max-width: 170px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.composer-place select option {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* ----- وسوم الأدوات ----- */
+.composer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px 0;
+}
+
+.composer-tags__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding-block: 3px;
+  padding-inline: 10px 6px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-soft);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.composer-tags__chip button {
+  display: flex;
+  padding: 3px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+}
+
+.composer-tags__chip button:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
+.composer-tags__input {
+  flex: 1;
+  min-width: 140px;
+  min-height: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.composer-tags__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.composer-tags__suggestion {
+  padding: 3px 10px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.composer-tags__suggestion:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+/* نصيحة كتابة السؤال */
+.community-composer__hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 20px 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--color-warning) 12%, transparent);
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.community-composer__hint svg {
+  flex-shrink: 0;
+  color: var(--color-warning);
+}
+
+/* البث بالأحمر */
+.community-composer--live .composer-type__option[aria-pressed="true"] {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+/* ----- منشور الفيديو: زر رفع كبير قبل اختيار الملف ----- */
+.composer__drop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+  padding: 22px 16px;
+  border: 2px dashed var(--color-border);
+  border-radius: 16px;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.composer__drop:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+/* ----- بدء بث مباشر ----- */
+.live-starter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+/* صورتي جنب عنوان البث: نفس دائرة صندوق الكتابة */
+.live-starter .composer__avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #e4e6eb;
+  color: #414950;
+  font-size: 15px;
+}
+
+body[data-study-theme="dark"] .live-starter .composer__avatar {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.live-starter input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  font: inherit;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.live-starter input:focus {
+  border-color: #ef4444;
+  outline: none;
+}
+
+.live-starter__start {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: #ef4444;
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.live-starter__start:disabled {
+  opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+  .live-starter {
+    flex-wrap: wrap;
+  }
+
+  .live-starter .composer__avatar {
+    display: none;
+  }
+
+  .live-starter__start {
+    width: 100%;
+    justify-content: center;
+  }
+}

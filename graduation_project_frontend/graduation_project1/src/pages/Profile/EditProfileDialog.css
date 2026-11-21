@@ -1,0 +1,243 @@
+/* =========================================
+   نافذة تعديل الحساب
+   ========================================= */
+.edit-profile {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  overflow-y: auto;
+  background-color: rgba(20, 12, 8, 0.55);
+  animation: edit-profile-fade 0.2s ease;
+}
+
+@keyframes edit-profile-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.edit-profile__box {
+  width: min(560px, 100%);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  animation: edit-profile-in 0.3s var(--ease-out);
+}
+
+@keyframes edit-profile-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+/* ----- الرأس: إغلاق، العنوان، حفظ ----- */
+.edit-profile__head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background-color: var(--color-surface);
+}
+
+.edit-profile__head h2 {
+  flex: 1;
+  font-size: 19px;
+}
+
+.edit-profile__close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.edit-profile__close:hover {
+  background-color: var(--color-surface-2);
+}
+
+.edit-profile__save {
+  padding: 8px 20px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text);
+  font-weight: 700;
+  color: var(--color-surface);
+  transition: opacity 0.2s ease;
+}
+
+.edit-profile__save:hover {
+  opacity: 0.85;
+}
+
+.edit-profile__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+/* ----- الغلاف ----- */
+.edit-profile__cover {
+  position: relative;
+  aspect-ratio: 3 / 1;
+}
+
+.edit-profile__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* أزرار الكاميرا والحذف فوق الصورة */
+.edit-profile__image-tools {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.edit-profile__image-button {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #FFFFFF;
+  transition: background-color 0.2s ease;
+}
+
+.edit-profile__image-button:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* ----- الصورة الشخصية: فوق الغلاف قليلًا ----- */
+.edit-profile__avatar-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: -56px;
+  padding-inline: 16px;
+}
+
+.edit-profile__avatar {
+  position: relative;
+  z-index: 1;
+  width: 104px;
+  height: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 4px solid var(--color-surface);
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.edit-profile__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-profile__avatar .edit-profile__image-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+.edit-profile__remove {
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 13px;
+  color: var(--color-danger);
+}
+
+/* ----- الحقول ----- */
+.edit-profile__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-inline: 16px;
+}
+
+.edit-profile__label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.edit-profile__count {
+  font-weight: 400;
+}
+
+.edit-profile__field input,
+.edit-profile__field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  font-size: 15px;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.edit-profile__field input:focus,
+.edit-profile__field textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.edit-profile__field [aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.edit-profile__error {
+  margin-inline: 16px;
+  font-size: 13px;
+  color: var(--color-danger);
+}
+
+.edit-profile__field .edit-profile__error {
+  margin-inline: 0;
+}
+
+@media (max-width: 640px) {
+  .edit-profile {
+    padding: 0;
+  }
+
+  .edit-profile__box {
+    min-height: 100%;
+    border-radius: 0;
+  }
+}

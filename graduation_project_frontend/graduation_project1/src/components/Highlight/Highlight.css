@@ -1,0 +1,8 @@
+/* الكلمات المطابقة للبحث */
+.highlight {
+  padding: 0 1px;
+  border-radius: 3px;
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary-light);
+  font-weight: 700;
+}

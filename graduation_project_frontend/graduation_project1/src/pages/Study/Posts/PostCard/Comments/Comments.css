@@ -1,0 +1,259 @@
+/* =========================================
+   التعليقات والردود
+   ========================================= */
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+  animation: comments-in 0.25s var(--ease-out);
+}
+
+@keyframes comments-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.comments__thread {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ----- تعليق واحد ----- */
+.comment {
+  display: flex;
+  gap: 10px;
+  animation: comments-in 0.25s var(--ease-out);
+}
+
+/* الرد يُزاح للداخل مع خط يربطه بالتعليق الأصلي */
+.comment.is-reply,
+.comment-hidden.is-reply {
+  margin-inline-start: 42px;
+  padding-inline-start: 12px;
+  border-inline-start: 2px solid var(--color-border);
+}
+
+.comment__avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-surface-2);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.comment.is-reply .comment__avatar {
+  width: 26px;
+  height: 26px;
+  font-size: 12px;
+}
+
+.comment__main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.comment__body {
+  padding: 8px 12px;
+  border-radius: 14px;
+  background-color: var(--color-surface-2);
+}
+
+.comment__head {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.comment__head strong {
+  color: var(--color-text);
+}
+
+.comment__body p {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+
+.comment__reply-to {
+  display: block;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.comment__mention {
+  font-weight: 600;
+  color: var(--color-primary-light);
+}
+
+/* ----- أزرار التعليق ----- */
+.comment__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-inline-start: 8px;
+}
+
+.comment__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 0;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.comment__action:hover:not(:disabled) {
+  color: var(--color-text);
+}
+
+.comment__action:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.comment__action.is-danger:hover {
+  color: var(--color-danger);
+}
+
+.comment__action--like:hover,
+.comment__action--like.is-liked {
+  color: var(--color-danger);
+}
+
+.comment__action--like.is-liked svg {
+  fill: currentColor;
+  animation: comment-like-pop 0.35s var(--ease-out);
+}
+
+@keyframes comment-like-pop {
+  50% {
+    transform: scale(1.35);
+  }
+}
+
+/* ----- التعليق المخفي ----- */
+.comment-hidden {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.comment-hidden button {
+  padding: 0;
+  border: none;
+  background: none;
+  font-weight: 600;
+  color: var(--color-primary-light);
+}
+
+/* ----- شريط "ترد على" ----- */
+.comments__replying {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px 6px 14px;
+  border-radius: 12px;
+  background-color: var(--color-primary-soft);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+[dir="rtl"] .comments__replying {
+  padding: 6px 14px 6px 8px;
+}
+
+.comments__replying bdi {
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.comments__replying button {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.comments__replying button:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* ----- نموذج الكتابة ----- */
+.comments__form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 4px 4px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  transition: border-color 0.2s ease;
+}
+
+[dir="rtl"] .comments__form {
+  padding: 4px 14px 4px 4px;
+}
+
+.comments__form:focus-within {
+  border-color: var(--color-primary);
+}
+
+.comments__form input {
+  flex: 1;
+  min-width: 0;
+  min-height: 38px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+}
+
+.comments__form button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+[dir="rtl"] .comments__form button svg {
+  transform: scaleX(-1);
+}
+
+.comments__form button:disabled {
+  opacity: 0.4;
+}

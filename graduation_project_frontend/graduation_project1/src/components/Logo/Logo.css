@@ -1,0 +1,11 @@
+/* =========================================
+   الشعار: اسم المنصة
+   ========================================= */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: var(--color-primary);
+}

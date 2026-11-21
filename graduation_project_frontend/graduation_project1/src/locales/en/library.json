@@ -1,0 +1,30 @@
+{
+  "tab": "My library",
+  "save": "Add to my library",
+  "saved": "In my library",
+  "saveLabel": "Add {{name}} to my library",
+  "unsaveLabel": "Remove {{name}} from my library",
+  "mine": {
+    "hint": "The sounds and backgrounds you picked. Move what you want to your session — your session only shows what you moved.",
+    "count": "{{moved}} of {{total}} in your session",
+    "moveAll": "Move all to my session",
+    "allMoved": "All in my session",
+    "sounds": "Sounds ({{count}})",
+    "scenes": "Backgrounds ({{count}})",
+    "toSession": "Move to my session",
+    "toSessionLabel": "Move {{name}} to my session",
+    "inSession": "In my session",
+    "removeFromSession": "Remove {{name}} from my session",
+    "removeLabel": "Remove {{name}} from my library",
+    "emptySounds": "You haven't picked any sounds yet.",
+    "browseSounds": "Browse sounds",
+    "emptyScenes": "You haven't picked any backgrounds yet.",
+    "browseScenes": "Browse backgrounds"
+  },
+  "session": {
+    "manage": "My library",
+    "noSounds": "No sounds in your session.",
+    "noScenes": "You haven't moved any backgrounds to your session, so this is the default one.",
+    "open": "Move some from my library"
+  }
+}

@@ -1,0 +1,80 @@
+/* =========================================
+   تبويب "دوراتي" بصفحة الدورات
+   بعرض العمود العادي (مش صفحة عريضة)، فالسطور والأرقام بتترتب
+   حسب عرض التبويب نفسه (container queries) مش حسب عرض الشاشة.
+   ========================================= */
+.studio-panel {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 4px 16px 32px;
+}
+
+.studio-panel .studio-hero {
+  padding: 18px 20px;
+  border-radius: 18px;
+}
+
+.studio-panel .studio-hero__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+}
+
+.studio-panel .studio-hero__title {
+  font-size: 20px;
+}
+
+.studio-panel .studio-hero__subtitle {
+  font-size: 13px;
+}
+
+.studio-panel .studio-stat {
+  padding: 14px;
+}
+
+.studio-panel .studio-stat strong {
+  font-size: 22px;
+}
+
+/* تبويب متوسط العرض: الأرقام 2×2، وأزرار الدورة بسطر تحتها */
+@container (max-width: 760px) {
+  .studio-panel .studio-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .studio-panel .studio-row {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+
+  .studio-panel .studio-row__actions {
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+/* تبويب ضيق (موبايل) */
+@container (max-width: 480px) {
+  .studio-panel .studio-hero .studio-button--big {
+    width: 100%;
+  }
+
+  .studio-panel .studio-row {
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .studio-panel .studio-row__cover {
+    height: 72px;
+  }
+
+  .studio-panel .studio-row__title {
+    white-space: normal;
+  }
+
+  .studio-panel .studio-row__actions .studio-button {
+    flex: 1;
+  }
+}

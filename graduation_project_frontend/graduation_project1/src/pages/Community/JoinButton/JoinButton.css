@@ -1,0 +1,67 @@
+/* زر الانضمام والمغادرة */
+.join-button {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-on-primary);
+  white-space: nowrap;
+  transition: filter 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.join-button:hover {
+  filter: brightness(1.08);
+}
+
+.join-button--small {
+  min-height: 30px;
+  padding: 4px 12px;
+  font-size: 13px;
+}
+
+/* منضم: زر هادئ */
+.join-button.is-joined {
+  border-color: var(--color-border);
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+/* النصان فوق بعض في نفس المكان حتى لا يتغير عرض الزر */
+.join-button__joined,
+.join-button__leave {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.join-button__leave {
+  visibility: hidden;
+}
+
+/* عند المرور: يظهر أنه سيغادر */
+.join-button.is-joined:hover,
+.join-button.is-joined:focus-visible {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  filter: none;
+}
+
+.join-button.is-joined:hover .join-button__joined,
+.join-button.is-joined:focus-visible .join-button__joined {
+  visibility: hidden;
+}
+
+.join-button.is-joined:hover .join-button__leave,
+.join-button.is-joined:focus-visible .join-button__leave {
+  visibility: visible;
+}

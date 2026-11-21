@@ -1,0 +1,210 @@
+/* =========================================
+   بطاقة البث (مباشر أو مسجّل)
+   ========================================= */
+.stream-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background-color: var(--color-surface);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.stream-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* بثي: إطار باللون المميز */
+.stream-card.is-mine {
+  border-color: var(--color-primary);
+}
+
+/* ----- صورة الواجهة ----- */
+.stream-card__cover .stream-thumb__media {
+  transition: transform 0.4s var(--ease-out);
+}
+
+.stream-card:hover .stream-card__cover .stream-thumb__media {
+  transform: scale(1.04);
+}
+
+/* ----- الشارات فوق الغلاف ----- */
+.stream-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* "مباشر": أحمر مع نقطة تنبض */
+.stream-badge--live {
+  background-color: #d93a3a;
+}
+
+.stream-badge--live::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  animation: stream-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes stream-pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.stream-card__cover .stream-badge--live {
+  position: absolute;
+  top: 10px;
+  inset-inline-start: 10px;
+}
+
+.stream-card__viewers,
+.stream-card__timer,
+.stream-card__duration,
+.stream-card__mine {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.55);
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.stream-card__viewers {
+  top: 10px;
+  inset-inline-end: 10px;
+}
+
+.stream-card__timer {
+  bottom: 10px;
+  inset-inline-start: 10px;
+}
+
+.stream-card__timer.is-break {
+  background-color: rgba(47, 107, 79, 0.85);
+}
+
+.stream-card__duration {
+  bottom: 10px;
+  inset-inline-end: 10px;
+}
+
+.stream-card__mine {
+  top: 10px;
+  inset-inline-end: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* بثي المباشر: المشاهدون فوق، فشارة "بثك" تنزل لتحت */
+.stream-card__mine.is-live {
+  top: auto;
+  bottom: 10px;
+}
+
+/* زر التشغيل على التسجيل */
+.stream-card__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #FFFFFF;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s var(--ease-out);
+}
+
+.stream-card__play svg {
+  fill: currentColor;
+}
+
+/* زر التشغيل يظهر عند المرور على البطاقة (مثل يوتيوب) */
+.stream-card:hover .stream-card__play,
+.stream-card:focus-visible .stream-card__play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ----- المعلومات ----- */
+.stream-card__body {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+}
+
+.stream-card__avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.stream-card__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stream-card__title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.stream-card__meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* ----- شبكة البطاقات (المكان الذي يعرضها يضع .stream-grid) ----- */
+.stream-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 16px 20px 24px;
+}
+
+@media (max-width: 640px) {
+  .stream-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stream-badge--live::before {
+    animation: none;
+  }
+}

@@ -1,0 +1,436 @@
+/* =========================================
+   اختيار الفروع: القائمة، النافذة، وزر "منضم · 3 فروع"
+   --track: لون المسار
+   ========================================= */
+
+/* ----- قائمة الفروع ----- */
+.branch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+
+.branch-list__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.branch-list__search:focus-within {
+  border-color: var(--track);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--track) 18%, transparent);
+}
+
+.branch-list__search input {
+  flex: 1;
+  min-width: 0;
+  min-height: 42px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-text);
+  outline: none;
+}
+
+.branch-list__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.branch-list__all {
+  padding: 4px 10px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--track);
+}
+
+.branch-list__all:hover {
+  background-color: color-mix(in srgb, var(--track) 12%, transparent);
+}
+
+/* الشبكة بتترتب لحالها: عمود على الموبايل، وعمودين أو أكثر على الشاشات الأكبر */
+.branch-list__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+/* القائمة بتنزل جوّا مكانها لما الفروع تكثر (بدل ما تطوّل الصفحة) */
+.branch-list--scroll .branch-list__items {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 2px;
+}
+
+.branch-list__empty {
+  padding: 20px;
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.branch-option {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.branch-option:hover {
+  border-color: color-mix(in srgb, var(--track) 50%, var(--color-border));
+}
+
+.branch-option.is-selected {
+  border-color: var(--track);
+  background-color: color-mix(in srgb, var(--track) 10%, var(--color-surface));
+}
+
+/* الفرع المفتوح هلأ (بصفحة المجتمع) */
+.branch-option.is-active {
+  box-shadow: 0 0 0 2px var(--track);
+}
+
+.branch-option.is-active .branch-option__open {
+  background-color: var(--track);
+  color: #ffffff;
+}
+
+.branch-option__label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.branch-option__label input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.branch-option__check {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  color: transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.branch-option.is-selected .branch-option__check {
+  border-color: var(--track);
+  background-color: var(--track);
+  color: #ffffff;
+}
+
+.branch-option__label input:focus-visible + .branch-option__check {
+  outline: 2px solid var(--track);
+  outline-offset: 2px;
+}
+
+.branch-option__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.branch-option__text strong {
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* "جديد": فرع فتحته الإدارة بعد طلب */
+.branch-option__new {
+  margin-inline-start: 6px;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  background-color: color-mix(in srgb, var(--track) 16%, transparent);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--track);
+  vertical-align: middle;
+}
+
+.branch-option__text small {
+  overflow: hidden;
+  font-size: 12px;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+}
+
+/* "افتح الفرع" */
+.branch-option__open {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  align-self: stretch;
+  width: 36px;
+  border-inline-start: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.branch-option__open:hover {
+  background-color: color-mix(in srgb, var(--track) 10%, transparent);
+  color: var(--track);
+}
+
+[dir="rtl"] .branch-option__open svg {
+  transform: scaleX(-1);
+}
+
+/* ----- النافذة ----- */
+.branch-picker {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(10 20 18 / 0.55);
+  animation: branch-picker-fade 0.2s ease;
+}
+
+@keyframes branch-picker-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.branch-picker__box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(680px, 100%);
+  max-height: min(720px, calc(100vh - 40px));
+  padding: 22px;
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--track);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.25);
+  animation: branch-picker-in 0.3s var(--ease-out);
+}
+
+@keyframes branch-picker-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+.branch-picker__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.branch-picker__head > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.branch-picker__head h2 {
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.branch-picker__head p {
+  margin-top: 2px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.branch-picker__icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background-color: color-mix(in srgb, var(--track) 18%, transparent);
+  color: var(--track);
+}
+
+.branch-picker__close {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.branch-picker__close:hover {
+  background-color: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+/* القائمة بتنزل جوّا النافذة لما الفروع تكثر */
+.branch-picker__body {
+  overflow-y: auto;
+  min-height: 0;
+  margin-inline: -4px;
+  padding: 2px 4px;
+}
+
+.branch-picker__hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.branch-picker__hint svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.branch-picker__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border);
+}
+
+.branch-picker__button,
+.branch-picker__leave {
+  min-height: 42px;
+  padding: 8px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.branch-picker__button:hover {
+  background-color: var(--color-surface-2);
+}
+
+.branch-picker__button--primary {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.branch-picker__button--primary:hover {
+  background-color: var(--color-primary);
+  filter: brightness(1.1);
+}
+
+/* "غادر المجتمع" على طرف لحاله */
+.branch-picker__leave {
+  margin-inline-end: auto;
+  border-color: transparent;
+  color: var(--color-danger);
+}
+
+.branch-picker__leave:hover,
+.branch-picker__leave.is-confirming {
+  border-color: var(--color-danger);
+  background-color: color-mix(in srgb, var(--color-danger) 10%, transparent);
+}
+
+/* ----- زر "منضم · 3 فروع" ----- */
+.join-manage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.join-manage:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.join-manage--small {
+  min-height: 30px;
+  padding: 4px 12px;
+  font-size: 13px;
+}
+
+/* ----- الموبايل: النافذة بتطلع من تحت ----- */
+@media (max-width: 640px) {
+  .branch-picker {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .branch-picker__box {
+    width: 100%;
+    max-height: 88vh;
+    padding: 18px 16px calc(16px + env(safe-area-inset-bottom));
+    border-radius: 22px 22px 0 0;
+    animation-name: branch-picker-up;
+  }
+
+  @keyframes branch-picker-up {
+    from {
+      transform: translateY(40px);
+    }
+  }
+
+  .branch-picker__footer .branch-picker__button--primary {
+    flex: 1;
+  }
+
+  .branch-list__items {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

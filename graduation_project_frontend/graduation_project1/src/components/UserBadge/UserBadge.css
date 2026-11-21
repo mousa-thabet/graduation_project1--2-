@@ -1,0 +1,45 @@
+/* شارات الأشخاص: درع أزرق (خبرة) ودرع أخضر (قيمة علمية) */
+.user-badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  vertical-align: middle;
+}
+
+.user-badge {
+  display: inline-flex;
+  flex-shrink: 0;
+  cursor: help;
+}
+
+.user-badge--expert {
+  --badge-color: #3b82f6;
+}
+
+.user-badge--scholar {
+  --badge-color: #22c55e;
+}
+
+/* الدرع كرابط لصفحة الخبرات: بيكبر شوي ويضوي لما تمرق عليه */
+.user-badge--link {
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-out), filter 0.2s ease;
+}
+
+.user-badge--link:hover {
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 6px var(--badge-color));
+}
+
+.user-badge__shield {
+  fill: var(--badge-color);
+}
+
+.user-badge__check {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

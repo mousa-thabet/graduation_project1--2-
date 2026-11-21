@@ -1,0 +1,54 @@
+{
+  "scenes": {
+    "mine": "My backgrounds",
+    "uploadTitle": "Upload your background",
+    "uploadText": "An image or video for your session background, any size. Once the admins approve it, it joins your session backgrounds.",
+    "choose": "Choose an image or video",
+    "formats": "Image (JPG, PNG, WebP…) or video (MP4, WebM…), no size limit",
+    "name": "Background name",
+    "namePlaceholder": "e.g. A quiet library at night",
+    "note": "The admins review the background before it shows in your session.",
+    "sent": "Your background reached the admins; you'll be notified of their decision",
+    "delete": "Delete background",
+    "empty": "You haven't uploaded any background yet.",
+    "approvedHint": "It's now in your session backgrounds — pick it above.",
+    "image": "Image",
+    "video": "Video",
+    "errors": {
+      "file": "Choose an image or video first",
+      "type": "The file must be an image or a video",
+      "name": "Give the background a name",
+      "save": "We couldn't save the file; the browser may be out of space. Try a smaller file."
+    }
+  },
+  "reasons": {
+    "unsuitable": "Not suitable for studying and focus.",
+    "quality": "Poor quality or distracting noise.",
+    "rights": "Permission to use it is unclear.",
+    "inappropriate": "Contains inappropriate content."
+  },
+  "notifications": {
+    "sceneApproved": "The admins <b>approved</b> your background <t>{{title}}</t>. It's now in your session backgrounds 🖼️",
+    "sceneRejected": "The admins <b>rejected</b> your background <t>{{title}}</t>"
+  },
+  "admin": {
+    "nav": "Upload requests",
+    "title": "Upload requests",
+    "text": "Sounds and backgrounds uploaded by students. Look or listen, then approve or reject with a reason. The student is notified of the decision.",
+    "kindLabel": "Type",
+    "kinds": {
+      "all": "All",
+      "sound": "Sounds",
+      "scene": "Backgrounds"
+    },
+    "kind": {
+      "sound": "Sound",
+      "scene": "Background"
+    },
+    "empty": "No requests here.",
+    "missing": "The file isn't available in this browser.",
+    "unknown": "Student",
+    "card": "Upload requests waiting",
+    "open": "Open the full file"
+  }
+}

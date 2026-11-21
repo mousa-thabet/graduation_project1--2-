@@ -1,0 +1,171 @@
+{
+  "tag": "Admin",
+  "navLabel": "Admin sections",
+  "nav": {
+    "overview": "Overview",
+    "badges": "Badge requests",
+    "branches": "Branch requests",
+    "reports": "Reports",
+    "communities": "Communities",
+    "library": "Study library"
+  },
+  "pendingCount": "{{count}} waiting for a decision",
+  "openPlatform": "Open the platform",
+  "logout": "Log out",
+  "filterLabel": "Filter by status",
+  "status": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "removed": "Content removed",
+    "dismissed": "No violation",
+    "all": "All"
+  },
+  "empty": {
+    "pending": "Nothing is waiting for a decision 🎉",
+    "approved": "No approved requests",
+    "rejected": "No rejected requests",
+    "removed": "No content was removed",
+    "dismissed": "No dismissed reports",
+    "all": "Nothing here yet"
+  },
+  "approve": "Approve",
+  "reject": "Reject",
+  "chooseReason": "Why are you rejecting? (the reason is sent to the applicant)",
+  "confirmReject": "Confirm rejection",
+  "cancel": "Cancel",
+  "overview": {
+    "title": "Welcome, admin 👋",
+    "waiting_one": "{{count}} item is waiting for your decision.",
+    "waiting_other": "{{count}} items are waiting for your decision.",
+    "allDone": "All caught up — nothing is waiting ✨",
+    "cards": {
+      "badges": "Badge requests waiting",
+      "branches": "Branch requests waiting",
+      "reports": "Reports waiting",
+      "removed": "Removed content"
+    },
+    "recent": "Recent decisions",
+    "noRecent": "You haven't made any decisions yet.",
+    "kinds": {
+      "badge": "Badge",
+      "branch": "Branch",
+      "report": "Report"
+    },
+    "tip": "Try it: open the platform in another tab and send a request or report — it shows up here instantly. When you decide, the student gets notified right away."
+  },
+  "badges": {
+    "text": "Review the applicant's description and proof. If you approve, they get the shield and their experience appears on their experience page.",
+    "empty": "When someone applies for a badge, their request shows up here.",
+    "about": "About their experience",
+    "proof": "Proof file",
+    "openProof": "Open proof",
+    "proofLoading": "Loading file…",
+    "proofMissing": "The file isn't on this device:",
+    "aboutLength": "Description: {{count}} characters",
+    "hasProof": "Proof attached",
+    "noProof": "No proof attached"
+  },
+  "branches": {
+    "text": "If you approve, the branch appears in its community immediately and the applicant joins it automatically.",
+    "empty": "When a badge holder suggests a branch, the request shows up here.",
+    "description": "What it's about",
+    "reason": "Why it should open",
+    "duplicate": "A branch with this name already exists here",
+    "unique": "The name is unique",
+    "reasonLength": "Reason: {{count}} characters",
+    "open": "View the branch"
+  },
+  "reports": {
+    "text": "Open the content and check it yourself. If it breaks the rules, remove it (it disappears from the whole platform) — you can restore it later.",
+    "empty": "When someone reports an exam, course or live, it shows up here.",
+    "types": {
+      "exam": "Exam",
+      "course": "Course",
+      "live": "Live"
+    },
+    "count_one": "{{count}} report",
+    "count_other": "{{count}} reports on this content",
+    "open": "Open the content",
+    "remove": "Remove content",
+    "dismiss": "No violation",
+    "restore": "Restore content"
+  },
+  "communities": {
+    "text": "Add a new main track or a branch in any track directly, without anyone sending a request. What you add appears to students right away on the Communities page.",
+    "modeLabel": "What do you want to add?",
+    "modes": {
+      "community": "Main track",
+      "branch": "Branch"
+    },
+    "optional": "optional",
+    "nameAr": "Track name in Arabic",
+    "nameEn": "Track name in English",
+    "descriptionAr": "Description in Arabic",
+    "descriptionEn": "Description in English",
+    "color": "Track color",
+    "firstBranch": "First branch in the track",
+    "community": "Which track?",
+    "branchAr": "Branch name in Arabic",
+    "branchEn": "Branch name in English",
+    "tags": "Branch tools (separate with commas)",
+    "addCommunity": "Add track",
+    "addBranch": "Add branch",
+    "added": "{{name}} added",
+    "open": "View it on the platform",
+    "all": "All tracks ({{count}})",
+    "branchesCount_one": "{{count}} branch",
+    "branchesCount_other": "{{count}} branches",
+    "errors": {
+      "required": "Fill in the Arabic track name and description, and the first branch name.",
+      "communityExists": "A track with this name already exists.",
+      "branchRequired": "Write the branch name in Arabic.",
+      "branchExists": "A branch with this name already exists in this track."
+    }
+  },
+  "library": {
+    "text": "Upload official sounds and video backgrounds on behalf of the platform. Students see them right away in Library and My Session, under \"From the platform\".",
+    "modeLabel": "What do you want to upload?",
+    "modes": {
+      "sound": "Sound",
+      "scene": "Video background"
+    },
+    "choose": {
+      "sound": "Choose a sound file",
+      "scene": "Choose a background video"
+    },
+    "formats": {
+      "sound": "MP3, WAV or OGG, under 15 MB",
+      "scene": "MP4 or WebM, under 60 MB. A calm, looping video without sound works best."
+    },
+    "nameAr": "Name in Arabic",
+    "nameEn": "Name in English",
+    "add": {
+      "sound": "Upload sound",
+      "scene": "Upload background"
+    },
+    "saving": "Uploading…",
+    "added": "\"{{name}}\" added to the library",
+    "open": "View it in Library",
+    "uploaded": "Uploaded by the admin team ({{count}})",
+    "empty": "Nothing uploaded yet. What you upload shows up here.",
+    "kinds": {
+      "sound": "Sound",
+      "scene": "Background"
+    },
+    "try": "Try",
+    "stop": "Stop",
+    "delete": "Delete",
+    "confirmDelete": "Sure?",
+    "errors": {
+      "file": "Choose a file first.",
+      "type": {
+        "sound": "The file must be audio.",
+        "scene": "The file must be a video."
+      },
+      "size": "The file is larger than allowed.",
+      "broken": "We couldn't read this file. Try another one.",
+      "name": "Write the name in Arabic."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/* =========================================
+   المدة (رقم + وحدة)
+   ========================================= */
+.duration {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.duration__part {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.duration small {
+  font-size: 0.8em;
+  font-weight: 500;
+  opacity: 0.75;
+}

@@ -1,0 +1,17 @@
+/* =========================================
+   زر تبديل اللغة
+   ========================================= */
+.language-toggle {
+  min-width: 44px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-toggle:hover {
+  background-color: var(--color-surface-2);
+}

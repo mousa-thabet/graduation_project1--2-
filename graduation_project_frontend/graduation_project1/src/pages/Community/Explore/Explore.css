@@ -1,0 +1,194 @@
+/* =========================================
+   صفحة المجتمعات
+   ========================================= */
+.explore__intro {
+  padding: 14px 20px 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.explore {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.explore-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-inline-start: 4px solid var(--track);
+  border-radius: 18px;
+  background-color: var(--color-surface);
+  transition: box-shadow 0.25s ease;
+}
+
+.explore-card:hover {
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--track) 16%, transparent);
+}
+
+.explore-card__main {
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+}
+
+.explore-card__icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: color-mix(in srgb, var(--track) 18%, transparent);
+  color: var(--track);
+}
+
+.explore-card__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.explore-card__name {
+  font-size: 17px;
+}
+
+.explore-card__main:hover .explore-card__name {
+  color: var(--track);
+}
+
+.explore-card__description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.explore-card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--track);
+}
+
+/* ----- الفروع: سطر واحد ما بيكبر مهما زادت الفروع ----- */
+.explore-card__branches {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-border);
+}
+
+.explore-card__branches-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-inline-end: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.explore-chip {
+  max-width: 180px;
+  overflow: hidden;
+  padding: 4px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a.explore-chip:hover {
+  border-color: var(--track);
+  color: var(--track);
+}
+
+/* فرع منضم له */
+.explore-chip.is-joined {
+  border-color: color-mix(in srgb, var(--track) 70%, transparent);
+  background-color: color-mix(in srgb, var(--track) 14%, transparent);
+  color: var(--color-text);
+}
+
+.explore-chip--more {
+  border-style: dashed;
+}
+
+/* "تصفّح الفروع" / "عدّل فروعك" */
+.explore-card__browse {
+  margin-inline-start: auto;
+  padding: 5px 12px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--track);
+}
+
+.explore-card__browse:hover {
+  background-color: color-mix(in srgb, var(--track) 12%, transparent);
+}
+
+/* ----- بطاقة الشارات ----- */
+.explore-badges {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 16px 24px;
+  padding: 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: 18px;
+  transition: border-color 0.2s ease;
+}
+
+.explore-badges:hover {
+  border-color: var(--color-primary);
+}
+
+.explore-badges__icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #3b82f6, #22c55e);
+  color: #ffffff;
+}
+
+.explore-badges > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.explore-badges strong {
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .explore-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

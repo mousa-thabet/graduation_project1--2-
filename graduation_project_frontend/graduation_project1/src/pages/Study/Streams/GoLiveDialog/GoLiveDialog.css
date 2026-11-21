@@ -1,0 +1,390 @@
+/* =========================================
+   نافذة "ابدأ بث"
+   ========================================= */
+.go-live {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 20px;
+  overflow-y: auto;
+  background-color: rgba(20, 12, 8, 0.55);
+  animation: go-live-fade 0.2s ease;
+}
+
+@keyframes go-live-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.go-live__box {
+  width: min(520px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  animation: go-live-in 0.3s var(--ease-out);
+}
+
+@keyframes go-live-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+/* ----- الرأس ----- */
+.go-live__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.go-live__head h2 {
+  flex: 1;
+  font-size: 19px;
+}
+
+.go-live__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #d93a3a;
+  color: #FFFFFF;
+}
+
+.go-live__close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.go-live__close:hover {
+  background-color: var(--color-surface-2);
+}
+
+/* ----- معاينة الكاميرا ----- */
+.go-live__preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 14px;
+  background-color: #1b1411;
+}
+
+.go-live__preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* مثل المرآة: يمينك على يمين الشاشة */
+  transform: scaleX(-1);
+}
+
+.go-live__no-cam {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.go-live__devices {
+  position: absolute;
+  bottom: 12px;
+  inset-inline: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.go-live__device {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-pill);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  transition: background-color 0.2s ease;
+}
+
+.go-live__device:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.go-live__device.is-on {
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1b1411;
+}
+
+.go-live__private {
+  position: absolute;
+  top: 10px;
+  inset-inline-start: 10px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.55);
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+/* ----- الحقول ----- */
+.go-live__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+}
+
+.go-live__label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.go-live__count {
+  font-weight: 400;
+}
+
+.go-live__field input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  font-size: 15px;
+}
+
+.go-live__field input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.go-live__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.go-live__chip {
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.go-live__chip:hover {
+  background-color: var(--color-surface-2);
+}
+
+.go-live__chip[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+/* ----- صورة الواجهة ----- */
+.go-live__thumb-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.go-live__thumb {
+  flex-shrink: 0;
+  width: 192px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+}
+
+.go-live__thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.go-live__thumb-empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.go-live__thumb-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.go-live__thumb-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.go-live__thumb-button:hover {
+  background-color: var(--color-surface-2);
+}
+
+.go-live__thumb-button.is-danger {
+  color: var(--color-danger);
+}
+
+.go-live__hint {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* ----- مفتاح التسجيل ----- */
+.go-live__switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background-color: var(--color-surface-2);
+  cursor: pointer;
+}
+
+.go-live__switch input {
+  flex-shrink: 0;
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-border);
+  appearance: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.go-live__switch input::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  inset-inline-start: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  transition: inset-inline-start 0.2s var(--ease-out);
+}
+
+.go-live__switch input:checked {
+  background-color: var(--color-primary);
+}
+
+.go-live__switch input:checked::after {
+  inset-inline-start: 23px;
+}
+
+.go-live__error {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--color-danger) 12%, transparent);
+  font-size: 14px;
+  color: var(--color-danger);
+}
+
+/* ----- الأزرار ----- */
+.go-live__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.go-live__cancel,
+.go-live__start {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+}
+
+.go-live__cancel {
+  border: 1px solid var(--color-border);
+  background: transparent;
+}
+
+.go-live__start {
+  border: none;
+  background-color: #d93a3a;
+  color: #FFFFFF;
+  transition: filter 0.2s ease;
+}
+
+.go-live__start:hover {
+  filter: brightness(1.08);
+}
+
+.go-live__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+@media (max-width: 640px) {
+  .go-live {
+    padding: 0;
+  }
+
+  .go-live__box {
+    min-height: 100%;
+    border-radius: 0;
+  }
+
+  .go-live__thumb {
+    width: 150px;
+  }
+}

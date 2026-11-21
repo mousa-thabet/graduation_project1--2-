@@ -1,0 +1,615 @@
+{
+  "nav": {
+    "home": "Home",
+    "explore": "Communities",
+    "search": "Search",
+    "saved": "Saved",
+    "badges": "Badges",
+    "exams": "Exams",
+    "courses": "Courses",
+    "createExam": "Create exam"
+  },
+  "types": {
+    "post": "Post",
+    "question": "Question",
+    "video": "Video",
+    "live": "Live"
+  },
+  "tabs": {
+    "all": "All",
+    "posts": "Posts",
+    "questions": "Questions",
+    "done": "Taken",
+    "mine": "Published",
+    "videos": "Videos",
+    "live": "Live",
+    "enrolled": "My courses"
+  },
+  "membersCount": "{{value}} members",
+  "postsCount": "{{value}} posts",
+  "disclaimer": "Answers are their authors' opinions. A badge means the team verified the person's experience — it doesn't guarantee everything they write is correct.",
+  "join": {
+    "join": "Join",
+    "joined": "Joined",
+    "leave": "Leave",
+    "joinNamed": "Join {{name}}",
+    "leaveNamed": "Leave {{name}}"
+  },
+  "welcome": {
+    "steps": "Setup steps",
+    "title": "What are you into? 👋",
+    "text": "Pick the tracks you care about and their posts and questions will show up on your home. Pick at least one track.",
+    "generalNote": "Includes every track",
+    "pickOne": "Pick at least one track",
+    "selected_one": "{{count}} track selected",
+    "selected_other": "{{count}} tracks selected",
+    "next": "Next",
+    "back": "Back",
+    "branchesTitle": "Pick branches",
+    "branchesText": "Every track has smaller communities. Keep \"All\" to get everything, or pick only the branches you care about.",
+    "all": "All",
+    "pickBranch": "Pick at least one branch, or \"All\".",
+    "finish": "Let's go",
+    "later": "You can change your picks anytime from the Communities page."
+  },
+  "feed": {
+    "emptyTitle": "Nothing here yet",
+    "emptyText": "Join more communities, or be the first to post."
+  },
+  "composer": {
+    "placeholder": {
+      "post": "What do you want to share?",
+      "question": "What's your question?",
+      "video": "Describe your video (optional)"
+    },
+    "type": "Post type",
+    "community": "Community",
+    "branch": "Branch",
+    "noBranch": "No branch",
+    "tags": "Tool tags",
+    "tagsPlaceholder": "Add a tool (like React) and press Enter",
+    "removeTag": "Remove tag {{tag}}",
+    "questionHint": "Ask clearly, say what you already tried, and add the tool you're using as a tag.",
+    "videoPrompt": "Choose a video from your device"
+  },
+  "explore": {
+    "intro": "Join the tracks and branches you care about. Their posts reach your home, and you can leave anytime.",
+    "badgesTitle": "Have experience? Apply for a badge",
+    "badgesText": "A blue shield for track experience, a green shield for academic value."
+  },
+  "page": {
+    "branches": "Branches",
+    "emptyTitle": "Nothing here yet",
+    "emptyText": "Be the first to post or ask here.",
+    "notFound": "Community not found",
+    "notFoundText": "The link may be wrong, or the community was removed.",
+    "joinToPost": "Join {{name}} to post here."
+  },
+  "saved": {
+    "emptyTitle": "Nothing saved yet",
+    "emptyText": "Tap 🔖 on any post or question to find it here."
+  },
+  "search": {
+    "placeholder": "Search questions, tools, people or communities",
+    "recent": "Recent searches",
+    "clearRecent": "Clear all",
+    "removeRecent": "Remove \"{{query}}\" from recent searches",
+    "seeAll": "All results for \"{{query}}\"",
+    "showAll": "Show all ({{value}})",
+    "community": "Community",
+    "postsAndQuestions": "Posts & questions",
+    "noResults": "No results for \"{{query}}\"",
+    "noResultsText": "Try another word, or type the tool's English name.",
+    "tip": "Results appear as you type, closest first. Search ignores Arabic letter variants (أ/ا, ة/ه) and tolerates small typos.",
+    "filters": {
+      "all": "All",
+      "questions": "Questions",
+      "posts": "Posts",
+      "people": "People",
+      "communities": "Communities"
+    },
+    "clear": "Clear search"
+  },
+  "aside": {
+    "label": "Sidebar",
+    "myCommunities": "My communities",
+    "manage": "Manage communities",
+    "trending": "Trending tools",
+    "experts": "Badge holders",
+    "aboutBadges": "What does the shield mean?"
+  },
+  "badges": {
+    "intro": "Badges help students know who has real experience. You apply with proof, and the team reviews it.",
+    "tooltip": "experience verified by the team; answers are their authors' opinions",
+    "expert": {
+      "title": "Expert badge",
+      "in": "Expert in {{field}}",
+      "text": "A blue shield for someone with practical or academic experience in a specific track.",
+      "perks": [
+        "A blue shield next to your name everywhere",
+        "Anyone who taps your shield sees the experience the team verified",
+        "Your name appears among badge holders"
+      ]
+    },
+    "scholar": {
+      "title": "Academic badge",
+      "text": "A green shield for doctors, researchers, trainers and certificate holders.",
+      "perks": [
+        "A green shield next to your name everywhere",
+        "Publish courses and exams",
+        "Educational live streams",
+        "An experience page that shows your credentials when someone taps your shield"
+      ]
+    },
+    "mine": "My badges",
+    "requests": "My requests",
+    "remove": "Delete request",
+    "status": {
+      "pending": "Under review",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "reasons": {
+      "notEnough": "The description or proof wasn't enough",
+      "proofUnclear": "The proof is unclear or doesn't prove the experience"
+    },
+    "form": {
+      "title": "Apply for a badge",
+      "type": "Badge type",
+      "field": "Track",
+      "about": "Tell us about your experience",
+      "aboutPlaceholder": {
+        "expert": "e.g. I've worked in Front-End for two years at..., with projects on GitHub",
+        "scholar": "e.g. I'm a doctor in the CS department and have taught databases for 5 years"
+      },
+      "proof": "Attach proof",
+      "proofHint": {
+        "expert": "A certificate, a company letter, or a picture of your work (image or PDF up to 5MB)",
+        "scholar": "A certificate or academic work ID (image or PDF up to 5MB)"
+      },
+      "submit": "Send request",
+      "sent": "Request sent! You'll get a notification with the team's decision.",
+      "taken": "You already have this badge or a request for it is under review.",
+      "errors": {
+        "about": "Write at least {{min}} characters about your experience.",
+        "proof": "Attach a proof file.",
+        "type": "The proof must be an image or a PDF.",
+        "size": "The file is larger than 5MB."
+      }
+    }
+  },
+  "notifications": {
+    "expertApproved": "Approved! You now have a 🛡️ expert badge in <b>{{title}}</b>",
+    "expertRejected": "Your expert badge request in <b>{{title}}</b> was rejected — you can apply again with clearer proof",
+    "scholarApproved": "Approved! You now have the 🛡️ academic badge",
+    "scholarRejected": "Your academic badge request was rejected — you can apply again with clearer proof",
+    "branchApproved": "The team approved your request! <b>{{title}}</b> is now open and you joined it",
+    "branchRejected": "Your request to open <b>{{title}}</b> was rejected",
+    "liveStarted": "🔴 <b>{{name}}</b> is live now: <t>{{title}}</t>",
+    "newExam": "New exam from <b>{{name}}</b>: <t>{{title}}</t>",
+    "newCourse": "New course from <b>{{name}}</b>: <t>{{title}}</t>",
+    "reportRemoved": "Thank you! The team reviewed your report and removed <b>{{title}}</b>",
+    "reportKept": "The team reviewed your report on <b>{{title}}</b> and found no violation"
+  },
+  "menu": {
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "profile": {
+    "joined": "Joined Community {{date}}",
+    "postsLabel": "posts & questions",
+    "answersLabel": "answers",
+    "answerOn": "Answer to {{name}}'s question",
+    "private": "Only you can see this",
+    "tabs": {
+      "posts": "Posts",
+      "questions": "Questions",
+      "answers": "Answers",
+      "communities": "Communities",
+      "badges": "Badges",
+      "likes": "Likes",
+      "drafts": "Drafts",
+      "videos": "Videos",
+      "lives": "Lives",
+      "exams": "Exams",
+      "courses": "Courses"
+    },
+    "empty": {
+      "posts": "No posts yet",
+      "questions": "No questions yet",
+      "answers": "No answers yet",
+      "communities": "Not in any community",
+      "badges": "No badges",
+      "likes": "No likes yet",
+      "drafts": "No drafts",
+      "videos": "No videos yet",
+      "lives": "No lives yet",
+      "exams": "No exams yet",
+      "courses": "No courses yet"
+    },
+    "emptyText": {
+      "posts": "Share your first post from Home.",
+      "questions": "Got a question? Ask it from Home.",
+      "answers": "Help others by answering their questions — your answers show up here.",
+      "communities": "Join the tracks you care about from the Communities page.",
+      "badges": "Have experience? Apply for a badge.",
+      "likes": "Posts you like will collect here.",
+      "drafts": "Save a post as a draft from the composer and finish it later.",
+      "videos": "Pick \"Video\" in the composer on Home and upload your first video.",
+      "lives": "Pick \"Live\" in the composer on Home and start your first live.",
+      "exams": "Publish your first exam for your communities' students.",
+      "courses": "Build your first course with videos and notes."
+    },
+    "form": {
+      "headline": "Headline",
+      "bioPlaceholder": "Introduce yourself: what you study and what you can help with",
+      "university": "University"
+    }
+  },
+  "branchRequests": {
+    "title": "Suggest a new branch",
+    "suggest": "Suggest a branch",
+    "new": "New",
+    "exploreText": "Have a badge? Fill a short survey, and if the team approves, the branch opens.",
+    "intro": "Fill the survey and the request goes to the team. If approved, the new branch appears in the community, you join it automatically, and you get a notification.",
+    "lockedTitle": "Opening branches is for badge holders",
+    "lockedText": "Apply for an expert or academic badge, then you can suggest new branches.",
+    "noCommunities": "Join a community first to suggest a branch in it.",
+    "form": {
+      "title": "New branch survey",
+      "community": "Which community?",
+      "name": "Branch name",
+      "namePlaceholder": "e.g. Next.js",
+      "description": "What is it about?",
+      "descriptionPlaceholder": "e.g. Everything Next.js: routing, SSR, and deployment",
+      "tags": "Branch tools (separate with commas)",
+      "tagsPlaceholder": "Next.js, SSR, Vercel",
+      "reason": "Why should this branch open?",
+      "reasonPlaceholder": "e.g. There are many Next.js questions with no clear place in the Frontend branches",
+      "submit": "Send to the team",
+      "sent": "Request sent! You'll get a notification with the team's decision."
+    },
+    "errors": {
+      "name": "Write the branch name.",
+      "exists": "A branch with this name exists, or a request for it is under review.",
+      "reason": "Write at least {{min}} characters on why the branch should open."
+    },
+    "reasons": {
+      "notEnough": "The reason wasn't enough",
+      "exists": "A branch with the same name exists"
+    }
+  },
+  "exams": {
+    "create": "Create an exam",
+    "createText": "Add questions and options, then circle the correct answer.",
+    "onlyScholars": "Publishing exams is for academic badge holders only.",
+    "lockedTitle": "You can't publish exams",
+    "questionsCount_one": "{{count}} question",
+    "questionsCount_other": "{{count}} questions",
+    "minutes_one": "{{count}} minute",
+    "minutes_other": "{{count}} minutes",
+    "questionNumber": "Question {{number}}",
+    "score": "Your score: {{score}} / {{total}}",
+    "start": "Start exam",
+    "delete": "Delete exam",
+    "timeLeft": "Time left",
+    "answered": "Answered {{count}} of {{total}}",
+    "submit": "Submit exam",
+    "submitAnyway": "Submit anyway",
+    "confirm_one": "{{count}} question has no answer. Submit anyway?",
+    "confirm_other": "{{count}} questions have no answer. Submit anyway?",
+    "unanswered": "You didn't answer this question",
+    "retake": "Retake exam",
+    "review": "Review",
+    "notFound": "Exam not found",
+    "notFoundText": "It may have been deleted, or the link is wrong.",
+    "rules": {
+      "choose": "Pick one answer per question and it gets circled.",
+      "time_one": "You have {{count}} minute; the exam submits itself when time runs out.",
+      "time_other": "You have {{count}} minutes; the exam submits itself when time runs out.",
+      "review": "After submitting you'll see your score and the correct answers."
+    },
+    "result": {
+      "excellent": "Excellent! 🎉",
+      "good": "Good job, keep going 👏",
+      "retry": "Review the material and try again 💪"
+    },
+    "empty": {
+      "title": "No exams in your communities yet",
+      "text": "Join more communities, or check back later."
+    },
+    "emptyDone": {
+      "title": "You haven't taken any exam",
+      "text": "Pick an exam from \"All\" and start."
+    },
+    "emptyMine": {
+      "title": "You haven't published exams yet",
+      "text": "Open \"Create exam\" from the menu and build your first exam."
+    },
+    "form": {
+      "title": "Exam title",
+      "titlePlaceholder": "e.g. SQL review before the midterm",
+      "description": "Short description (optional)",
+      "descriptionPlaceholder": "What does the exam cover?",
+      "duration": "Duration",
+      "hint": "Write each question and its options, then tap the circle next to the correct answer to turn it green.",
+      "questionPlaceholder": "Write the question",
+      "optionPlaceholder": "Option {{letter}}",
+      "correct": "Correct answer",
+      "markCorrect": "The correct answer is {{letter}}",
+      "addOption": "Add option",
+      "removeOption": "Remove option",
+      "addQuestion": "Add question",
+      "removeQuestion": "Remove question {{number}}",
+      "cancel": "Cancel",
+      "publish": "Publish exam",
+      "save": "Save changes",
+      "editNote": "When you save, your old result in this exam is cleared because the questions may have changed."
+    },
+    "errors": {
+      "title": "Write the exam title.",
+      "question": "Write the text of question {{number}}.",
+      "options": "Fill every option of question {{number}}.",
+      "answer": "Circle the correct answer in question {{number}}."
+    },
+    "searchPlaceholder": "Search exams, subjects, authors or questions",
+    "edit": "Edit exam",
+    "stats": {
+      "title": "Your exam's stats",
+      "takers": "took it",
+      "average": "average score",
+      "passRate": "pass rate",
+      "distribution": "Score distribution",
+      "perQuestion": "Each question: how many got it right",
+      "hardest": "Hardest question",
+      "correctRate": "{{value}}% got it right",
+      "commonWrong": "Most common wrong answer: {{letter}})",
+      "students_one": "{{count}} student",
+      "students_other": "{{count}} students"
+    },
+    "explanation": "Answer explanation",
+    "media": {
+      "zoom": "Enlarge image",
+      "imageAlt": "Question image"
+    },
+    "builder": {
+      "intro": "Build your exam question by question: add images, tables and code, mark the correct answer, and preview it before publishing.",
+      "viewLabel": "View",
+      "views": {
+        "edit": "Edit",
+        "preview": "Preview"
+      },
+      "untitled": "Untitled exam",
+      "settings": "Exam settings",
+      "questionsPanel": "Questions",
+      "readyCount": "{{ready}} of {{total}} ready",
+      "jumpTo": "Go to question {{number}}",
+      "status": {
+        "ready": "Ready",
+        "incomplete": "Incomplete"
+      },
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "duplicate": "Duplicate question",
+      "attach": "Add to question:",
+      "attachments": {
+        "image": "Image",
+        "table": "Table",
+        "code": "Code",
+        "explanation": "Explanation"
+      },
+      "image": {
+        "replace": "Replace image",
+        "remove": "Remove image",
+        "uploading": "Uploading image…",
+        "tooBig": "The image is larger than 5 MB; pick a smaller one.",
+        "notImage": "Choose an image file (PNG or JPG).",
+        "failed": "Couldn't upload the image; try again."
+      },
+      "table": {
+        "title": "Table",
+        "addRow": "Row",
+        "removeRow": "Remove row",
+        "addCol": "Column",
+        "removeCol": "Remove column",
+        "header": "First row is a header",
+        "remove": "Remove table",
+        "cell": "Row {{row}}, column {{col}}"
+      },
+      "code": {
+        "title": "Code",
+        "placeholder": "Type or paste code here",
+        "remove": "Remove code"
+      },
+      "explanationPlaceholder": "Why is this the right answer? (shown to students after they submit)",
+      "explanationRemove": "Remove explanation",
+      "options": "Options",
+      "optionsHint": "Tap the circle next to the correct answer to turn it green.",
+      "issues": {
+        "text": "Write the question text.",
+        "options": "Fill every option, or remove the empty ones.",
+        "answer": "Mark the correct answer."
+      },
+      "preview": {
+        "banner": "This is how students will see your exam. Try answering; nothing is saved.",
+        "showAnswers": "Show answers",
+        "hideAnswers": "Hide answers"
+      },
+      "draftSaved": "Draft saved on this device automatically",
+      "discard": "Discard draft and start over",
+      "discardConfirm": "Sure? Click again to discard",
+      "limit": "You reached the limit ({{count}} questions)."
+    }
+  },
+  "live": {
+    "badge": "LIVE",
+    "recorded": "Recorded live",
+    "join": "Join the live now",
+    "backToLive": "Back to your live",
+    "start": "Go live",
+    "titlePlaceholder": "Live title: what will you explain?",
+    "onlyScholars": "Educational live streams are for academic badge holders only.",
+    "endedTitle": "Live ended",
+    "endedAfter": "Live ended · {{duration}} long",
+    "noRecording": "No recording",
+    "openPost": "Open the post",
+    "notFound": "Live not found",
+    "notFoundText": "It may have been deleted, or the link is wrong.",
+    "chat": "Chat",
+    "chatEmpty": "No messages yet, say hi 👋",
+    "chatPlaceholder": "Write a message…",
+    "cameraLoading": "Opening your camera… allow the browser to use it.",
+    "cameraDenied": "We couldn't open the camera. The live continues without video; you can allow the camera in browser settings.",
+    "cameraOff": "Camera is off",
+    "viewerNote": "You're watching the live. Ask your questions in the chat 👇",
+    "viewers_one": "{{count}} viewer",
+    "viewers_other": "{{count}} viewers",
+    "micOff": "Mute mic",
+    "micOn": "Unmute mic",
+    "camOff": "Turn camera off",
+    "camOn": "Turn camera on",
+    "end": "End live",
+    "ending": "Ending live…",
+    "hostNote": "The live is being recorded; when you end it, the recording becomes the post's video."
+  },
+  "courses": {
+    "create": "Create a course",
+    "createText": "Organize your lessons with videos and notes, and students track their progress.",
+    "onlyScholars": "Publishing courses is for academic badge holders only.",
+    "lockedTitle": "You can't publish courses",
+    "searchPlaceholder": "Search courses, subjects, authors or lessons",
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "lessonsCount_one": "{{count}} lesson",
+    "lessonsCount_other": "{{count}} lessons",
+    "students": "{{value}} students",
+    "percent": "{{value}}% done",
+    "lessonNumber": "Lesson {{number}}",
+    "lessons": "Lessons",
+    "enroll": "Enroll (free)",
+    "leave": "Unenroll",
+    "delete": "Delete course",
+    "enrollToWatch": "Enroll to watch the lessons and save your progress.",
+    "finishLesson": "Mark as done",
+    "lessonDone": "Done ✓ (undo)",
+    "nextLesson": "Next lesson",
+    "finished": "Congrats! You finished the whole course",
+    "textLesson": "Text lesson: read the notes below",
+    "videoLoading": "Loading video…",
+    "videoMissing": "The video isn't on this device",
+    "notFound": "Course not found",
+    "notFoundText": "It may have been deleted, or the link is wrong.",
+    "empty": {
+      "all": {
+        "title": "No courses in your communities yet",
+        "text": "Join more communities, or check back later."
+      },
+      "enrolled": {
+        "title": "You haven't enrolled in any course",
+        "text": "Pick a course from \"All\" and enroll."
+      },
+      "mine": {
+        "title": "You haven't published courses yet",
+        "text": "Tap \"Create a course\" and add your first lessons."
+      }
+    },
+    "form": {
+      "title": "Course title",
+      "titlePlaceholder": "e.g. SQL basics step by step",
+      "description": "Short description (optional)",
+      "descriptionPlaceholder": "What will students learn?",
+      "level": "Level",
+      "hint": "Each lesson has a title, plus a video or written notes (or both). Video length is detected automatically.",
+      "lessonTitle": "Lesson title",
+      "lessonTitlePlaceholder": "e.g. Your first SELECT query",
+      "duration": "Duration (min)",
+      "video": "Upload the lesson video (up to 300MB)",
+      "removeVideo": "Remove video",
+      "notes": "Lesson notes",
+      "notesPlaceholder": "Summary, steps, or useful links",
+      "addLesson": "Add lesson",
+      "removeLesson": "Remove lesson {{number}}",
+      "publish": "Publish course",
+      "savedVideo": "Saved video"
+    },
+    "errors": {
+      "title": "Write the course title.",
+      "lessonTitle": "Write the title of lesson {{number}}.",
+      "lessonContent": "Lesson {{number}} needs a video or written notes.",
+      "videoType": "The file must be a video.",
+      "videoSize": "The video is larger than 300MB."
+    },
+    "edit": "Edit course"
+  },
+  "catalog": {
+    "allCommunities": "All my communities",
+    "sortBy": "Sort",
+    "sorts": {
+      "relevance": "Best match",
+      "newest": "Newest",
+      "oldest": "Oldest",
+      "shortest": "Shortest"
+    },
+    "results_one": "{{count}} result",
+    "results_other": "{{count}} results",
+    "showMore_one": "Show more ({{count}} left)",
+    "showMore_other": "Show more ({{count}} left)",
+    "shortcut": "Press / to search",
+    "noneHere": "Nothing in this community",
+    "allBranches": "All branches",
+    "clearFilters": "Clear filters",
+    "filters": "Filters"
+  },
+  "reports": {
+    "button": "Report",
+    "reported": "Reported",
+    "title": "Why are you reporting this?",
+    "reasons": {
+      "wrong": "Wrong information or answers",
+      "inappropriate": "Inappropriate content",
+      "spam": "Spam or advertising",
+      "copyright": "Copied from someone else",
+      "other": "Something else"
+    },
+    "note": "Details (optional)",
+    "notePlaceholder": "e.g. Question 3's answer is wrong, the right one is...",
+    "send": "Send report",
+    "sent": "Report sent to the team, thanks for helping 🙏"
+  },
+  "experience": {
+    "title": "Experience",
+    "open": "see experience",
+    "intro": "The Areatk team verified this experience before granting the badge. The proof itself is private; only its type is shown.",
+    "introMine": "This is your experience as verified by the team — it's what people see when they tap your shield.",
+    "verifiedAt": "Verified by the team {{time}}",
+    "proof": "Proof: {{type}}",
+    "proofTypes": {
+      "certificate": "Certificate",
+      "companyLetter": "Letter from employer",
+      "academicId": "Academic work ID",
+      "portfolio": "Published work",
+      "document": "PDF document",
+      "image": "Image"
+    },
+    "allows": "What the badge allows",
+    "allowsList": {
+      "scholar": [
+        "Publishing courses and exams",
+        "Educational live streams",
+        "Suggesting new community branches"
+      ],
+      "expert": [
+        "A blue shield next to their name on posts and answers",
+        "Suggesting new community branches"
+      ]
+    },
+    "empty": "No badges",
+    "emptyText": "When the team verifies someone's experience, it shows up here.",
+    "emptyMine": "You don't have badges yet",
+    "emptyMineText": "Apply for a badge with proof; once the team approves, your experience shows up here.",
+    "apply": "Apply for a badge"
+  }
+}

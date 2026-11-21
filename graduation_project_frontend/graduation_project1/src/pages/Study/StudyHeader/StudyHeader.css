@@ -1,0 +1,87 @@
+/* =========================================
+   رأس صفحات ادرس معي
+   ========================================= */
+.study-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background-color: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.study-header__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.study-header__title {
+  font-size: 20px;
+}
+
+/* زر الرجوع: السهم يشير للخلف حسب اتجاه اللغة */
+.study-header__back {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.study-header__back:hover {
+  background-color: var(--color-surface-2);
+}
+
+[dir="ltr"] .study-header__back svg {
+  transform: scaleX(-1);
+}
+
+/* ----- التبويبات أسفل العنوان ----- */
+/* عدد الأعمدة يساوي عدد التبويبات تلقائيًا */
+.study-tabs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  margin: 8px -20px -16px;
+}
+
+.study-tabs__tab {
+  position: relative;
+  padding: 14px 0;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  color: var(--color-text-muted);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.study-tabs__tab:hover {
+  background-color: color-mix(in srgb, var(--color-surface-2) 60%, transparent);
+}
+
+.study-tabs__tab[aria-selected="true"] {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* خط عسلي تحت التبويب المختار */
+.study-tabs__tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 56px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.study-tabs__tab[aria-selected="true"]::after {
+  transform: translateX(-50%) scaleX(1);
+}

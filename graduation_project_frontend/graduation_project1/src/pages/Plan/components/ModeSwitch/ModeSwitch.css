@@ -1,0 +1,63 @@
+/* =========================================
+   التبديل بين يومية وأسبوعية
+   ========================================= */
+.mode-switch {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background-color: var(--color-surface);
+}
+
+.mode-switch__indicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  inset-inline-start: 4px;
+  width: calc(50% - 4px);
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  transition: inset-inline-start 0.4s var(--ease-out);
+}
+
+.mode-switch--weekly .mode-switch__indicator {
+  inset-inline-start: 50%;
+}
+
+.mode-switch__button {
+  position: relative;
+  z-index: 1;
+  min-width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
+}
+
+.mode-switch__button:hover {
+  color: var(--color-text);
+}
+
+.mode-switch__button[aria-pressed="true"] {
+  color: var(--color-on-primary);
+}
+
+@media (max-width: 560px) {
+  .mode-switch {
+    width: 100%;
+  }
+
+  .mode-switch__button {
+    min-width: 0;
+  }
+}

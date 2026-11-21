@@ -1,0 +1,171 @@
+/* =========================================
+   الشريط العلوي: أخضر غامق بعرض الصفحة (نفس لون القائمة الجانبية)
+   ========================================= */
+.navbar {
+  /* ألوان فاتحة فوق الأخضر (للروابط وزر اللغة والأزرار) */
+  --color-text: #FFFFFF;
+  --color-text-muted: rgba(255, 255, 255, 0.75);
+  --color-surface: transparent;
+  --color-surface-2: rgba(255, 255, 255, 0.12);
+  --color-border: rgba(255, 255, 255, 0.3);
+  --color-primary: #FFFFFF;
+  --color-on-primary: #063B36;
+  --color-primary-soft: rgba(255, 255, 255, 0.12);
+
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 100;
+  background-color: var(--color-sidebar);
+  color: var(--color-text);
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  height: 68px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-inline: 24px;
+}
+
+/* ----- الروابط ----- */
+.navbar__links {
+  display: flex;
+  gap: 8px;
+}
+
+.navbar__link {
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--color-text);
+}
+
+/* الصفحة المفتوحة حاليًا */
+.navbar__link.is-active {
+  background-color: var(--color-surface-2);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ----- الأزرار ----- */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ----- زر قائمة الموبايل ----- */
+.navbar__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+}
+
+.navbar__toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--color-text);
+  transition: transform 0.35s var(--ease-out), opacity 0.2s ease;
+}
+
+/* تحويل الخطوط الثلاثة إلى علامة X */
+.navbar__toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ----- قائمة الموبايل ----- */
+.mobile-menu {
+  position: fixed;
+  top: 76px;
+  inset-inline: 12px;
+  z-index: 99;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.3s var(--ease-out), visibility 0.25s;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.mobile-menu__link {
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-menu__link:hover {
+  background-color: var(--color-surface-2);
+}
+
+.mobile-menu__link.is-active {
+  background-color: var(--color-primary-soft);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.mobile-menu__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ----- الشاشات الصغيرة ----- */
+@media (max-width: 900px) {
+  .navbar__inner {
+    padding-inline: 16px;
+  }
+
+  .navbar__links,
+  .navbar__actions .btn {
+    display: none;
+  }
+
+  .navbar__actions {
+    gap: 4px;
+  }
+
+  .navbar__toggle,
+  .mobile-menu {
+    display: flex;
+  }
+}

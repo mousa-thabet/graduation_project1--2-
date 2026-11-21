@@ -1,0 +1,369 @@
+{
+  "meta": {
+    "title": "Areatk | The Educational Social Platform"
+  },
+  "nav": {
+    "social": "Community",
+    "study": "Study With Me",
+    "plan": "Study Plan",
+    "mainLabel": "Main navigation",
+    "mobileLabel": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLanguage": "العربية"
+  },
+  "actions": {
+    "login": "Log in",
+    "start": "Start Free",
+    "logout": "Log out",
+    "openApp": "Open Areatk",
+    "nextSection": "Next section",
+    "backToTop": "Back to top"
+  },
+  "home": {
+    "social": {
+      "badge": "Community",
+      "title": "Ask, share,",
+      "highlight": "and learn together",
+      "text": "Specialized IT communities with posts, courses, exams and live streams, where your questions reach experts directly.",
+      "cta": "Enter Community",
+      "features": {
+        "fields": "6 specialized fields",
+        "badges": "Verified expert badges",
+        "answers": "Q&A and saved posts"
+      }
+    },
+    "study": {
+      "badge": "Study With Me",
+      "title": "Study with focus,",
+      "highlight": "alone or together",
+      "text": "Live group study streams, a library of sounds and videos, and a study and break timer, in a calm space with easy-on-the-eyes colors.",
+      "cta": "Start a study session",
+      "features": {
+        "streams": "Live study streams",
+        "library": "Sounds & video library",
+        "timer": "Study & break timer"
+      }
+    },
+    "plan": {
+      "badge": "Study Plan",
+      "title": "Organize your time,",
+      "highlight": "and track your progress",
+      "text": "Create a daily or weekly plan that fits your schedule, mark each task as done or missed, and see a summary of your progress and commitment rate.",
+      "cta": "Build your plan now",
+      "features": {
+        "plans": "Daily & weekly plans",
+        "tracking": "Color-coded task tracking",
+        "summary": "Progress & commitment summary"
+      }
+    }
+  },
+  "footer": {
+    "about": "An education-focused social platform that brings experts, students, studying and time management together in one place.",
+    "sections": "Sections",
+    "platform": "Platform",
+    "aboutLink": "About",
+    "privacy": "Terms & Privacy",
+    "support": "Support",
+    "supportText": "Have a problem or a question? Contact us directly.",
+    "whatsapp": "Contact on WhatsApp",
+    "rights": "All rights reserved.",
+    "project": "Graduation project"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found",
+    "text": "The link may be wrong, or the page may have moved somewhere else.",
+    "back": "Back to home"
+  },
+  "auth": {
+    "backHome": "Home",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "panel": {
+      "login": {
+        "title": "One space for everything that helps you learn",
+        "text": "Ask, share knowledge, and study with your community."
+      },
+      "register": {
+        "title": "Start your learning journey with AreaTk",
+        "text": "Create your account, follow your field's communities, and share knowledge with others."
+      }
+    }
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Log in to pick up where you left off.",
+    "required": "Log in first to open this section — we'll take you right back to it.",
+    "account": "Username or email",
+    "password": "Password",
+    "forgot": "Forgot password?",
+    "submit": "Log in",
+    "loading": "Checking...",
+    "newUser": "New here?",
+    "createAccount": "Create an account"
+  },
+  "errors": {
+    "accountRequired": "Enter your username or email.",
+    "accountShort": "Enter at least 3 characters.",
+    "emailInvalid": "This email address isn't valid.",
+    "passwordRequired": "Enter your password.",
+    "usernameRequired": "Enter a username.",
+    "usernameInvalid": "Only English letters, numbers, _ and . are allowed.",
+    "emailRequired": "Enter your email.",
+    "passwordWeak": "Use at least 8 characters, with a number and a capital letter.",
+    "confirmRequired": "Re-enter your password.",
+    "confirmMismatch": "The passwords don't match.",
+    "termsRequired": "You need to agree to the Terms & Privacy.",
+    "codeRequired": "Enter the verification code.",
+    "codeIncomplete": "The code has 6 digits.",
+    "codeWrong": "That code isn't right. Try again.",
+    "taskTitle": "Enter a task name.",
+    "taskMinutes": "Enter a duration between 5 and 480 minutes.",
+    "roomTitle": "Enter a stream title."
+  },
+  "register": {
+    "badge": "Join for free",
+    "heading": "One platform",
+    "highlight": "for community, study and planning",
+    "text": "Create your account in a minute and start learning in a free, education-focused space without distractions.",
+    "benefits": {
+      "social": "Ask experts and join communities in your field.",
+      "study": "Study alone or with others in live streams.",
+      "plan": "Organize your tasks and track your progress daily."
+    },
+    "note": "Certificate holders can request a verified badge after signing up.",
+    "title": "Create your account",
+    "subtitle": "Fill in the details below to get started.",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "strengthHint": "At least 8 characters, with a number and a capital letter",
+    "strength1": "Password: weak",
+    "strength2": "Password: fair",
+    "strength3": "Password: good",
+    "strength4": "Password: strong",
+    "termsAgree": "I agree to the",
+    "submit": "Create account",
+    "loading": "Creating account...",
+    "haveAccount": "Already have an account?"
+  },
+  "forgot": {
+    "stepOf": "Step {{current}} of {{total}}",
+    "title": "Forgot your password?",
+    "subtitle": "Enter your username or email and we'll send a verification code to the email linked to it.",
+    "sendCode": "Send code",
+    "sending": "Sending...",
+    "codeTitle": "Enter the verification code",
+    "codeText": "We sent a {{length}}-digit code to the email linked to:",
+    "codeLabel": "Verification code",
+    "digitLabel": "Digit {{index}}",
+    "verify": "Verify code",
+    "verifying": "Verifying...",
+    "resendIn": "Resend in {{seconds}}s",
+    "resend": "Resend code",
+    "resent": "We sent a new code. Check your email.",
+    "changeAccount": "Use a different account",
+    "passwordTitle": "Set a new password",
+    "passwordText": "Choose a strong password you haven't used before.",
+    "newPassword": "New password",
+    "save": "Save password",
+    "saving": "Saving...",
+    "doneTitle": "Password changed",
+    "doneText": "You can now log in with your new password.",
+    "goToLogin": "Log in",
+    "backToLogin": "Back to log in"
+  },
+  "plan": {
+    "heading": "Plan your time, track your progress",
+    "intro": "Arrange your tasks around your time, then mark each study task as done or missed to see how well you kept to it.",
+    "modeLabel": "Plan type",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "commitment": "Commitment",
+    "commitmentNote": "Study tasks only",
+    "studyDone": "Study time done",
+    "of": "of",
+    "tasksDone": "Tasks done",
+    "missedCount": "missed",
+    "endsAt": "Plan ends at",
+    "startsAt": "Starts",
+    "bestDay": "Best day",
+    "bestDayEmpty": "Mark your tasks to see it",
+    "taskTitle": "Task name",
+    "titlePlaceholder": "e.g. Review chapter 3",
+    "restPlaceholder": "Optional for breaks",
+    "minutes": "Minutes",
+    "day": "Day",
+    "kind": "Type",
+    "study": "Study",
+    "rest": "Break",
+    "add": "Add",
+    "dayTitle": "Today's schedule",
+    "weekTitle": "This week",
+    "dayStart": "Your day starts at",
+    "clear": "Clear plan",
+    "clearConfirm": "Click again to confirm",
+    "dayDone": "Today's plan is complete",
+    "weekDone": "This week's plan is complete",
+    "emptyTitle": "No tasks yet",
+    "emptyText": "Add your first task above, and its start and end times will be worked out for you.",
+    "now": "Now",
+    "restNote": "Breaks don't count toward progress",
+    "markDone": "Done",
+    "markMissed": "Missed",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "deleteTask": "Delete task",
+    "planEnd": "End of plan",
+    "today": "Today",
+    "addToDay": "Add a task to {{day}}",
+    "doneCount": "done",
+    "emptyDay": "No tasks for this day",
+    "resultGreat": "Great work, you stuck to most of your plan. Keep going!",
+    "resultGood": "Good job, you can push your commitment further next time.",
+    "resultLow": "That's okay, try a lighter plan that fits your time better.",
+    "chartTitle": "Study time this week",
+    "chartPlanned": "Planned",
+    "chartDone": "Done",
+    "days": {
+      "0": "Saturday",
+      "1": "Sunday",
+      "2": "Monday",
+      "3": "Tuesday",
+      "4": "Wednesday",
+      "5": "Thursday",
+      "6": "Friday"
+    },
+    "daysShort": {
+      "0": "Sat",
+      "1": "Sun",
+      "2": "Mon",
+      "3": "Tue",
+      "4": "Wed",
+      "5": "Thu",
+      "6": "Fri"
+    }
+  },
+  "units": {
+    "hourShort": "h",
+    "minShort": "m"
+  },
+  "study": {
+    "calmBadge": "Calm study mode",
+    "heading": "Study With Me",
+    "intro": "Study on your own with sounds and scenes that help you focus, or join a live stream and study with others. Every tool is optional.",
+    "modeLabel": "How you study",
+    "solo": "Solo",
+    "group": "With others",
+    "optional": "Optional",
+    "stage": {
+      "noVideo": "Default scene",
+      "fullscreen": "Full-screen focus mode"
+    },
+    "timer": {
+      "ready": "Ready",
+      "study": "Study",
+      "break": "Break",
+      "finished": "Well done! Session complete",
+      "sessions": "Sessions done: {{count}}",
+      "start": "Start",
+      "pause": "Pause",
+      "resume": "Resume",
+      "reset": "Reset timer",
+      "skip": "Skip phase",
+      "settings": "Timer settings",
+      "presetHint": "study / break",
+      "studyMinutes": "Study (minutes)",
+      "breakMinutes": "Break (minutes)",
+      "noBreak": "Study without breaks",
+      "lockedNote": "Reset the timer to change settings."
+    },
+    "library": {
+      "title": "Study library",
+      "text": "Pick a sound or scene that helps you focus, or upload your own.",
+      "upload": "Upload",
+      "kindLabel": "Content type",
+      "sounds": "Sounds",
+      "videos": "Videos",
+      "search": "Search the library",
+      "sourceLabel": "Source",
+      "source": {
+        "all": "All",
+        "platform": "Platform",
+        "students": "Students"
+      },
+      "by": "By {{name}}",
+      "pending": "Uploaded by you · visible to others after review",
+      "empty": "No matching results.",
+      "volume": "Volume"
+    },
+    "items": {
+      "rain": "Gentle rain",
+      "waves": "Ocean waves",
+      "wind": "Soft wind",
+      "fire": "Fireplace",
+      "brown": "Brown noise for focus",
+      "white": "White noise",
+      "balcony": "Balcony on a rainy day",
+      "aurora": "Northern lights",
+      "stars": "Starry night"
+    },
+    "fields": {
+      "algorithms": "Algorithms",
+      "backend": "Back End",
+      "frontend": "Front End",
+      "uiux": "UI/UX",
+      "databases": "Databases"
+    },
+    "rooms": {
+      "title": "Live now",
+      "text": "Join students who are studying right now, or open your own stream.",
+      "start": "Go live",
+      "cancel": "Cancel",
+      "roomTitle": "Stream title",
+      "roomTitlePlaceholder": "e.g. Reviewing chapter 4",
+      "field": "Field",
+      "goLive": "Start stream",
+      "search": "Search streams",
+      "host": "Host: {{name}}",
+      "join": "Join",
+      "empty": "No matching streams. Start your own!"
+    },
+    "room": {
+      "live": "Live",
+      "people": "People: {{count}}",
+      "you": "You",
+      "hostBadge": "Host",
+      "micOn": "Mic on",
+      "micOff": "Mic off",
+      "camOn": "Camera on",
+      "camOff": "Camera off",
+      "report": "Report",
+      "leave": "Leave",
+      "end": "End stream",
+      "myTimer": "My timer",
+      "mute": "Mute {{name}}",
+      "kick": "Remove {{name}}",
+      "joined": "{{name}} joined the stream",
+      "mutedNotice": "{{name}} was muted",
+      "kickedNotice": "{{name}} was removed",
+      "cameraFailed": "Couldn't start the camera. Make sure the browser is allowed to use it.",
+      "hostHint": "As the host, hover over anyone to mute or remove them."
+    },
+    "report": {
+      "title": "Report this stream",
+      "text": "Your report goes to the admin team for review.",
+      "cancel": "Cancel",
+      "submit": "Send report",
+      "sent": "Report sent. Thank you.",
+      "reasons": {
+        "inappropriate": "Inappropriate content",
+        "noise": "Noise or disruption",
+        "offTopic": "Not related to studying",
+        "other": "Something else"
+      }
+    }
+  }
+}

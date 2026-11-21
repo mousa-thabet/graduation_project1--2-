@@ -1,0 +1,279 @@
+/* =========================================
+   أول دخول: شو بيهمك؟
+   ========================================= */
+.welcome {
+  width: 100%;
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.welcome__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.welcome__steps {
+  display: flex;
+  gap: 8px;
+}
+
+.welcome__steps li {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.welcome__steps li.is-done {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.welcome__title {
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.2;
+}
+
+.welcome__text {
+  max-width: 620px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* ----- بطاقات المسارات ----- */
+.welcome__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.welcome-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 18px;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  text-align: start;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, transform 0.25s var(--ease-out), box-shadow 0.25s ease;
+}
+
+.welcome-card:hover {
+  border-color: color-mix(in srgb, var(--track) 60%, var(--color-border));
+  transform: translateY(-3px);
+}
+
+.welcome-card.is-selected {
+  border-color: var(--track);
+  background-color: color-mix(in srgb, var(--track) 10%, var(--color-surface));
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--track) 25%, transparent);
+}
+
+/* المجتمع العام: بطاقة عريضة أول القائمة */
+.welcome__grid li:has(.welcome-card--general) {
+  grid-column: 1 / -1;
+}
+
+.welcome-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background-color: color-mix(in srgb, var(--track) 18%, transparent);
+  color: var(--track);
+}
+
+.welcome-card__check {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 14px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  color: transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.3s var(--ease-out);
+}
+
+.welcome-card.is-selected .welcome-card__check {
+  border-color: var(--track);
+  background-color: var(--track);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.welcome-card__name {
+  font-size: 18px;
+}
+
+.welcome-card__description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.welcome-card__meta {
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--track);
+}
+
+/* ----- الفروع ----- */
+.welcome__branches {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.welcome-branches {
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid var(--color-border);
+  border-inline-start: 4px solid var(--track);
+  border-radius: 16px;
+  background-color: var(--color-surface);
+}
+
+.welcome-branches__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.welcome-branches__icon {
+  display: flex;
+  color: var(--track);
+}
+
+.welcome-branches__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.welcome-chip {
+  padding: 7px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.welcome-chip:hover {
+  border-color: var(--track);
+}
+
+.welcome-chip[aria-pressed="true"] {
+  border-color: var(--track);
+  background-color: color-mix(in srgb, var(--track) 20%, transparent);
+  color: var(--color-text);
+}
+
+.welcome-chip--all[aria-pressed="true"] {
+  background-color: var(--track);
+  color: #ffffff;
+}
+
+.welcome-branches__error {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--color-danger);
+}
+
+/* ----- الأزرار ----- */
+.welcome__footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 14px 0;
+  background: linear-gradient(transparent, var(--color-bg) 30%);
+}
+
+.welcome__count {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.welcome__next,
+.welcome__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 26px;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.welcome__next {
+  margin-inline-start: auto;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-primary) 35%, transparent);
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.welcome__next:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.welcome__next:disabled {
+  opacity: 0.4;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* السهم يشير للأمام حسب اتجاه اللغة (لليسار بالعربي) */
+[dir="rtl"] .welcome__arrow {
+  transform: scaleX(-1);
+}
+
+.welcome__back {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.welcome__later {
+  font-size: 13px;
+  text-align: center;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,174 @@
+/* =========================================
+   فورم إضافة مهمة
+   ========================================= */
+.task-form {
+  padding: 18px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+}
+
+.task-form__form {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.task-form__title {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-form__minutes {
+  width: 140px;
+}
+
+.task-form__day {
+  width: 150px;
+}
+
+/* ----- قائمة الأيام ----- */
+.task-form__select {
+  width: 100%;
+  min-height: 50px;
+  padding-inline: 14px 38px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235B6F6B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+  font-size: 15px;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[dir="ltr"] .task-form__select {
+  background-position: right 12px center;
+}
+
+.task-form__select:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+}
+
+.task-form__select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.task-form__select option {
+  background-color: var(--color-surface);
+}
+
+/* ----- دراسة / استراحة ----- */
+.task-form__kinds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: none;
+}
+
+.task-form__kinds legend {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.task-form__kind {
+  position: relative;
+}
+
+.task-form__kind input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.task-form__pill {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  padding-inline: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.task-form__pill:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+}
+
+.task-form__kind input:checked + .task-form__pill {
+  transform: translateY(-1px);
+}
+
+.task-form__kind input:checked + .task-form__pill--study {
+  border-color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  color: var(--color-primary-light);
+}
+
+.task-form__kind input:checked + .task-form__pill--rest {
+  border-color: var(--color-warning);
+  background-color: color-mix(in srgb, var(--color-warning) 12%, transparent);
+  color: var(--color-warning);
+}
+
+.task-form__kind input:focus-visible + .task-form__pill {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.task-form__submit {
+  min-height: 50px;
+  margin-top: 30px;
+  gap: 8px;
+}
+
+/* ----- الشاشات الأصغر ----- */
+@media (max-width: 900px) {
+  .task-form__form {
+    flex-wrap: wrap;
+  }
+
+  .task-form__title {
+    flex-basis: 100%;
+  }
+
+  .task-form__submit {
+    align-self: flex-end;
+    margin-top: 0;
+    margin-inline-start: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .task-form {
+    padding: 16px;
+  }
+
+  .task-form__minutes,
+  .task-form__day {
+    flex: 1;
+    width: auto;
+  }
+
+  .task-form__kinds,
+  .task-form__submit {
+    flex-basis: 100%;
+  }
+
+  .task-form__pill {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .task-form__kind {
+    flex: 1;
+    display: flex;
+  }
+}

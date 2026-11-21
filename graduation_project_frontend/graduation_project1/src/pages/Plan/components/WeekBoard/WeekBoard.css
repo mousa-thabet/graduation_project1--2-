@@ -1,0 +1,296 @@
+/* =========================================
+   الواجهة الأسبوعية: صفوف الأيام
+   ========================================= */
+.week-board {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.day-row {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.day-row + .day-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.day-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* اليوم الحالي: خط ملوّن على جانب البداية */
+.day-row.is-today {
+  background-color: rgba(34, 211, 238, 0.05);
+  box-shadow: inset 3px 0 0 var(--color-primary);
+}
+
+[dir="rtl"] .day-row.is-today {
+  box-shadow: inset -3px 0 0 var(--color-primary);
+}
+
+/* ----- معلومات اليوم ----- */
+.day-row__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-row__name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.day-row__name h3 {
+  font-size: 16px;
+}
+
+.day-row__today {
+  padding: 1px 8px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-bg);
+}
+
+.day-row__progress {
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.day-row__progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--color-success);
+  transition: width 0.6s var(--ease-out);
+  animation: progress-grow 0.9s var(--ease-out);
+}
+
+@keyframes progress-grow {
+  from {
+    width: 0;
+  }
+}
+
+.day-row__stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 12px;
+  color: rgba(230, 241, 255, 0.55);
+}
+
+.day-row__stats strong {
+  color: rgba(230, 241, 255, 0.85);
+}
+
+/* ----- مهام اليوم ----- */
+.day-row__tasks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.day-row__empty {
+  font-size: 14px;
+  color: rgba(230, 241, 255, 0.35);
+}
+
+.day-row__arrow {
+  display: flex;
+  color: rgba(103, 232, 249, 0.5);
+}
+
+/* السهم يتجه مع اتجاه القراءة */
+[dir="rtl"] .day-row__arrow svg {
+  transform: scaleX(-1);
+}
+
+/* ----- بطاقة المهمة ----- */
+.chip {
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-inline-start: 3px solid rgba(34, 211, 238, 0.7);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.3s ease, background-color 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
+  animation: chip-in 0.45s var(--ease-out);
+}
+
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+}
+
+.chip.is-done {
+  border-color: rgba(52, 211, 153, 0.45);
+  border-inline-start-color: var(--color-success);
+  background-color: rgba(52, 211, 153, 0.1);
+}
+
+.chip.is-missed {
+  border-color: rgba(248, 113, 113, 0.45);
+  border-inline-start-color: var(--color-danger);
+  background-color: rgba(248, 113, 113, 0.1);
+}
+
+.chip--rest {
+  border-style: dashed;
+  border-color: rgba(251, 191, 36, 0.35);
+  border-inline-start: 3px solid var(--color-warning);
+  background-color: rgba(251, 191, 36, 0.05);
+}
+
+.chip.is-leaving {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.chip__title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+
+.chip__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip__duration {
+  font-size: 12px;
+  color: rgba(230, 241, 255, 0.55);
+}
+
+.chip--rest .chip__duration {
+  color: rgba(252, 211, 77, 0.8);
+}
+
+.chip__actions {
+  display: flex;
+  gap: 4px;
+}
+
+.chip__button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(230, 241, 255, 0.5);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip__button--done:hover,
+.chip__button--done[aria-pressed="true"] {
+  border-color: var(--color-success);
+  background-color: rgba(52, 211, 153, 0.18);
+  color: #6EE7B7;
+}
+
+.chip__button--missed:hover,
+.chip__button--missed[aria-pressed="true"] {
+  border-color: var(--color-danger);
+  background-color: rgba(248, 113, 113, 0.18);
+  color: #FCA5A5;
+}
+
+.chip__button--delete {
+  border-color: transparent;
+}
+
+.chip__button--delete:hover {
+  background-color: rgba(248, 113, 113, 0.12);
+  color: #FCA5A5;
+}
+
+/* ----- زر الإضافة لكل يوم ----- */
+.day-row__add {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(230, 241, 255, 0.55);
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.3s var(--ease-out);
+}
+
+.day-row__add:hover {
+  border-style: solid;
+  border-color: var(--color-primary);
+  background-color: rgba(34, 211, 238, 0.1);
+  color: var(--color-primary-light);
+  transform: rotate(90deg);
+}
+
+/* ----- الشاشات الصغيرة ----- */
+@media (max-width: 760px) {
+  .day-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .day-row__tasks,
+  .day-row__empty {
+    grid-column: 1 / -1;
+  }
+
+  .day-row__add {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .day-row__tasks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chip {
+    width: 100%;
+  }
+
+  .day-row__arrow {
+    justify-content: center;
+  }
+
+  .day-row__arrow svg,
+  [dir="rtl"] .day-row__arrow svg {
+    transform: rotate(90deg);
+  }
+}

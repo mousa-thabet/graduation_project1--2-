@@ -1,0 +1,112 @@
+/* =========================================
+   شريط المنشور المحجوب (للأدمن ولصاحب المنشور)
+   ========================================= */
+.blocked-notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 6px 0 4px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--color-danger) 35%, transparent);
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--color-danger) 8%, transparent);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.blocked-notice > svg {
+  flex-shrink: 0;
+  color: var(--color-danger);
+}
+
+.blocked-notice > span {
+  flex: 1;
+  min-width: 160px;
+}
+
+/* الأدمن: لون هادي (هو اللي حجب) */
+.blocked-notice.is-admin {
+  border-color: var(--color-border);
+  background-color: var(--color-surface-2);
+}
+
+.blocked-notice.is-admin > svg {
+  color: var(--color-text-muted);
+}
+
+.blocked-notice__link {
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.blocked-notice__button {
+  padding: 5px 14px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-on-primary);
+}
+
+.blocked-notice__cancel {
+  padding: 5px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.blocked-notice__status {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--color-warning);
+}
+
+.blocked-notice__status.is-rejected {
+  color: var(--color-danger);
+}
+
+/* رسالة للإدارة */
+.blocked-notice__form {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.blocked-notice__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.blocked-notice__form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-surface);
+  font: inherit;
+  font-weight: 400;
+  resize: vertical;
+  color: var(--color-text);
+}
+
+.blocked-notice__form textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.blocked-notice__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

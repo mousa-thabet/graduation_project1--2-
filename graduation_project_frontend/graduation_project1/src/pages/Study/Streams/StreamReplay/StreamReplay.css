@@ -1,0 +1,142 @@
+/* =========================================
+   مشاهدة بث مسجّل
+   ========================================= */
+
+.replay-player {
+  aspect-ratio: 16 / 9;
+  margin: 16px 20px 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.replay-player__video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #000000;
+}
+
+/* يُحفظ، أو لا يوجد فيديو */
+.replay-player__state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.replay-player__spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: replay-spin 0.8s linear infinite;
+}
+
+@keyframes replay-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----- المعلومات ----- */
+.replay-info {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.replay-info__title {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.replay-info__meta {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.replay-info__bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.replay-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.replay-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.replay-action:hover {
+  background-color: var(--color-surface-2);
+}
+
+.replay-action.is-liked {
+  border-color: #e0245e;
+  color: #e0245e;
+}
+
+.replay-action.is-liked svg {
+  fill: currentColor;
+}
+
+.replay-action.is-danger {
+  color: #d93a3a;
+}
+
+.replay-action.is-danger:hover {
+  border-color: #d93a3a;
+  background-color: rgba(217, 58, 58, 0.08);
+}
+
+/* ----- تسجيلات أخرى ----- */
+.replay-more {
+  padding: 16px 0 24px;
+}
+
+.replay-more__title {
+  padding: 0 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  .replay-player {
+    margin: 12px 12px 0;
+    border-radius: 16px;
+  }
+
+  .replay-info {
+    padding-inline: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .replay-player__spinner {
+    animation-duration: 2s;
+  }
+}

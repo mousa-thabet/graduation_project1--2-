@@ -1,0 +1,63 @@
+/* =========================================
+   العمود الجانبي للتواصل
+   ========================================= */
+
+/* مجتمعاتي: أيقونة بلون المسار */
+.aside-community {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+}
+
+.aside-community:hover {
+  background-color: var(--color-surface-2);
+}
+
+.aside-community__icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: color-mix(in srgb, var(--track) 18%, transparent);
+  color: var(--track);
+}
+
+/* الأدوات الرائجة */
+.aside-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 2px 16px 12px;
+}
+
+.aside-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary-light);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.aside-tool:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.aside-tool span {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* صورة الشخص (قد تكون صورة مرفوعة) */
+.community-aside .aside-person__avatar {
+  overflow: hidden;
+}

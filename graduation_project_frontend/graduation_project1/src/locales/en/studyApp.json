@@ -1,0 +1,560 @@
+{
+  "sections": {
+    "label": "Sections",
+    "social": "Community",
+    "study": "Study With Me",
+    "plan": "My Plan"
+  },
+  "nav": {
+    "label": "Study With Me menu",
+    "posts": "Posts",
+    "notifications": "Notifications",
+    "streams": "Streams",
+    "session": "My Session",
+    "history": "History",
+    "library": "Library",
+    "profile": "Profile",
+    "unread": "{{count}} unread"
+  },
+  "theme": {
+    "toDark": "Dark mode",
+    "toLight": "Light mode",
+    "current": "{{name}} theme",
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "change": "Change theme"
+  },
+  "aside": {
+    "label": "Sidebar",
+    "search": "Search Study With Me",
+    "live": "Live now",
+    "viewers": "Watching: {{count}}",
+    "seeAll": "Show all",
+    "suggest": "Who to follow",
+    "follow": "Follow",
+    "following": "Following",
+    "about": "About",
+    "privacy": "Privacy",
+    "support": "Support",
+    "trending": "Trending tags",
+    "trendRank": "{{rank}} · Trending",
+    "postsCount_one": "{{count}} post",
+    "postsCount_other": "{{count}} posts"
+  },
+  "composer": {
+    "placeholder": "What are you studying today?",
+    "post": "Post",
+    "addMedia": "Add a photo, video or sound",
+    "removeMedia": "Remove file",
+    "addPoll": "Add a poll",
+    "pollPlaceholder": "Ask a question...",
+    "mentionLabel": "People suggestions"
+  },
+  "feed": {
+    "forYou": "For you",
+    "following": "Following",
+    "filteredBy": "Posts tagged:",
+    "emptyTitle": "No posts yet",
+    "emptyText": "Be the first to post with this tag.",
+    "emptyFollowing": "Nothing from people you follow yet",
+    "emptyFollowingText": "Follow people from \"Who to follow\" to see their posts here."
+  },
+  "post": {
+    "options": "Post options",
+    "delete": "Delete post",
+    "report": "Report post",
+    "reported": "You reported this post",
+    "underReview": "This post is hidden and under admin review because of reports.",
+    "showAnyway": "Show anyway",
+    "studied": "Studied {{hours}}h {{minutes}}m",
+    "comments": "Comments",
+    "like": "Like",
+    "commentPlaceholder": "Write a comment...",
+    "send": "Send",
+    "edit": "Edit post",
+    "edited": "Edited",
+    "cancel": "Cancel",
+    "save": "Save post",
+    "share": "Copy link to post",
+    "linkCopied": "Link copied",
+    "copyFailed": "Couldn't copy the link",
+    "zoom": "Enlarge image",
+    "imageView": "Image view",
+    "close": "Close",
+    "saved": "Saved to History",
+    "unsaved": "Removed from saved"
+  },
+  "comments": {
+    "reply": "Reply",
+    "replyTo": "Replying to",
+    "replyingTo": "Replying to",
+    "replyPlaceholder": "Write your reply...",
+    "cancelReply": "Cancel reply",
+    "report": "Report",
+    "reported": "Reported",
+    "delete": "Delete",
+    "hidden": "Comment hidden because of reports."
+  },
+  "poll": {
+    "option": "Choice {{number}}",
+    "addOption": "Add a choice",
+    "removeOption": "Remove choice",
+    "remove": "Remove poll",
+    "votes_one": "{{count}} vote",
+    "votes_other": "{{count}} votes",
+    "voted": "You voted"
+  },
+  "audio": {
+    "play": "Play",
+    "pause": "Pause",
+    "seek": "Playback position",
+    "error": "Couldn't play this sound"
+  },
+  "history": {
+    "saved": "Saved",
+    "liked": "Likes",
+    "comments": "My comments",
+    "streams": "Streams",
+    "commentOn": "On {{name}}'s post",
+    "empty": {
+      "saved": "No saved posts",
+      "liked": "You haven't liked any posts yet",
+      "comments": "You haven't commented yet",
+      "streams": "You haven't liked any streams yet"
+    },
+    "emptyText": {
+      "saved": "Tap the save button on any post to find it here later.",
+      "liked": "Posts you like show up here.",
+      "comments": "Your comments and replies show up here.",
+      "streams": "Recorded streams you like show up here."
+    }
+  },
+  "notifications": {
+    "tabs": {
+      "all": "All",
+      "study": "Study With Me",
+      "plan": "My Plan"
+    },
+    "markAll": "Mark all as read",
+    "empty": "No notifications yet",
+    "emptyText": "When someone interacts with you or a task is due, you'll see it here.",
+    "types": {
+      "like": "<b>{{name}}</b> liked your post",
+      "follow": "<b>{{name}}</b> followed you",
+      "mention": "<b>{{name}}</b> mentioned you in a post",
+      "live": "<b>{{name}}</b> is live: <t>{{title}}</t>",
+      "plan": "Reminder from My Plan: <b>{{task}}</b> starts in an hour",
+      "soundApproved": "The admins <b>approved</b> your sound <t>{{title}}</t>. It is now in your session mixer 🎵",
+      "soundRejected": "The admins <b>rejected</b> your sound <t>{{title}}</t>"
+    }
+  },
+  "session": {
+    "phases": {
+      "study": "Focus time",
+      "break": "Break"
+    },
+    "start": "Start",
+    "resume": "Resume",
+    "pause": "Pause",
+    "reset": "Start over",
+    "skip": "Skip phase",
+    "fullscreen": "Focus mode",
+    "exitFullscreen": "Exit focus mode",
+    "expand": "Expand timer",
+    "collapse": "Shrink timer",
+    "segmentOf": "Part {{current}} of {{total}}",
+    "next": "Next:",
+    "muted": "🔇 Muted",
+    "keys": {
+      "playPause": "Play/pause",
+      "fullscreen": "Focus mode",
+      "mute": "Mute",
+      "next": "Next",
+      "reset": "Start over"
+    },
+    "minutes_one": "{{count}} min",
+    "minutes_other": "{{count}} min",
+    "breakTitle": "Break time 🌿",
+    "breakTips": [
+      "Get up and stretch your back for a bit.",
+      "Drink a glass of water.",
+      "Look away from the screen at something far away.",
+      "Take five slow, deep breaths."
+    ],
+    "goal": {
+      "title": "Session goal",
+      "placeholder": "What do you want to finish this session?",
+      "fromPlan": "Or pick a task from today’s plan:",
+      "noTasks": "No study tasks in your plan today.",
+      "openPlan": "Open My Plan"
+    },
+    "planner": {
+      "title": "Session plan",
+      "hint": "Arrange your session parts and pick sounds for each one. A part with no sounds stays quiet.",
+      "locked": "Stop the timer (start over) to edit the plan.",
+      "total": "Total",
+      "less": "5 minutes less",
+      "more": "5 minutes more",
+      "remove": "Remove part",
+      "sounds": "Sounds for this part",
+      "silent": "No sounds",
+      "repeat": "Repeat the plan"
+    },
+    "sounds": {
+      "title": "Sound mixer",
+      "hint": "Play several sounds together and set each one’s volume.",
+      "stopAll": "Stop all",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "volume": "{{name}} volume",
+      "items": {
+        "rain": "Rain",
+        "waves": "Waves",
+        "wind": "Wind",
+        "fire": "Fireplace",
+        "stream": "Stream",
+        "brown": "Brown noise",
+        "white": "White noise"
+      }
+    },
+    "scenes": {
+      "title": "Background",
+      "items": {
+        "espresso": "Espresso",
+        "aurora": "Aurora",
+        "stars": "Starry night",
+        "rain": "Rain",
+        "balcony": "Rainy balcony"
+      }
+    },
+    "stats": {
+      "title": "Your stats",
+      "today": "minutes today",
+      "rounds": "rounds today",
+      "streak": "day streak",
+      "week": "Last 7 days"
+    },
+    "done": {
+      "title": "Well done! 👏",
+      "text_one": "You studied {{count}} minute this session.",
+      "text_other": "You studied {{count}} minutes this session.",
+      "share": "Share your progress",
+      "view": "Posted, see your post",
+      "markDone": "Mark task as done",
+      "close": "Close",
+      "shareText": "Finished a study session on Areatk 💪 #إنجاز",
+      "defaultTask": "Study session"
+    },
+    "widget": {
+      "open": "Session running, open My Session"
+    }
+  },
+  "streams": {
+    "tabs": {
+      "live": "Live now",
+      "recorded": "Recorded"
+    },
+    "live": "Live",
+    "yours": "Yours",
+    "phases": {
+      "focus": "Focus",
+      "break": "Break"
+    },
+    "plan": "{{focus}}m focus · {{break}}m break",
+    "round_one": "Round {{count}}",
+    "round_other": "Round {{count}}",
+    "views_one": "{{count}} view",
+    "views_other": "{{count}} views",
+    "empty": {
+      "live": "No live streams right now",
+      "liveText": "Start your own stream and let people study with you.",
+      "recorded": "No recorded streams",
+      "recordedText": "Recorded streams show up here after they end."
+    },
+    "hero": {
+      "title": "Study live with others",
+      "text": "Open a stream with a shared timer. Chat opens during breaks only.",
+      "button": "Go live",
+      "liveTitle": "You're live",
+      "back": "Back to your stream"
+    },
+    "goLive": {
+      "title": "Start a new stream",
+      "name": "Stream title",
+      "namePlaceholder": "e.g. Data structures review",
+      "thumbnail": "Thumbnail",
+      "noThumbnail": "No image",
+      "upload": "Upload image",
+      "snapshot": "Snap from camera",
+      "removeThumbnail": "Remove image",
+      "thumbnailHint": "Like YouTube, it's the first thing people see. If you skip it and your camera is on, we'll snap one when the stream starts.",
+      "plan": "Shared timer",
+      "planOption": "{{focus}}/{{break}}",
+      "planHint": "Focus minutes / break minutes. Chat is locked during focus.",
+      "record": "Record stream",
+      "recordHint": "The stream is saved when it ends so people can watch it later.",
+      "noCamera": "Camera is off",
+      "cameraOn": "Turn camera on",
+      "cameraOff": "Turn camera off",
+      "micOn": "Turn mic on",
+      "micOff": "Turn mic off",
+      "preview": "Preview, only you can see this",
+      "start": "Go live",
+      "cancel": "Cancel",
+      "errors": {
+        "title": "Couldn't start the device",
+        "denied": "Camera or mic permission was denied. Allow it in your browser settings.",
+        "notFound": "No camera or mic was found on your device.",
+        "other": "Something went wrong with the camera or mic. Try again.",
+        "image": "Pick an image (smaller than 5 MB)."
+      }
+    },
+    "room": {
+      "joined": "{{name}} joined the stream",
+      "host": "Host",
+      "you": "You",
+      "camOff": "Camera is off",
+      "cam": "Camera",
+      "mic": "Mic",
+      "chat": "Chat",
+      "people_one": "People ({{count}})",
+      "people_other": "People ({{count}})",
+      "chatLocked": "Chat is locked during focus",
+      "chatOpensIn": "Opens in",
+      "chatPlaceholder": "Write a message…",
+      "chatEmpty": "No messages yet. Say hi during the break 👋",
+      "send": "Send",
+      "leave": "Leave",
+      "end": "End stream",
+      "confirmEnd": "Sure?",
+      "report": "Report stream",
+      "react": "React",
+      "fullscreen": "Full screen",
+      "exitFullscreen": "Exit full screen",
+      "recording": "Recording",
+      "ended": "This stream has ended",
+      "endedText": "The host ended it, or the link is wrong.",
+      "backToStreams": "Back to streams",
+      "breakStarted": "☕ Break time, chat is open",
+      "focusStarted": "🎯 Back to focus, chat is locked"
+    },
+    "replay": {
+      "like": "Like",
+      "copy": "Copy link",
+      "copied": "Link copied",
+      "copyFailed": "Couldn't copy the link",
+      "delete": "Delete",
+      "confirmDelete": "Sure?",
+      "more": "More recordings",
+      "processing": "Saving the recording…",
+      "noVideo": "This stream has no video",
+      "notFound": "Recording not found",
+      "notFoundText": "The host may have deleted it, or the link is wrong."
+    },
+    "widget": {
+      "open": "Back to the stream"
+    }
+  },
+  "library": {
+    "tabs": {
+      "themes": "Themes",
+      "sounds": "Sounds",
+      "scenes": "Backgrounds"
+    },
+    "themesHint": "Pick how Study With Me looks. Light and dark switch from the mode button, and every theme has both.",
+    "apply": "Apply theme",
+    "applied": "Current theme",
+    "by": "By {{name}}",
+    "contrastOk": "✓ Easy to read",
+    "contrastLow": "⚠ Low contrast",
+    "modes": {
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "checks": {
+      "text": "Text",
+      "muted": "Secondary text",
+      "accent": "Links and tags",
+      "button": "Button text",
+      "danger": "Delete color"
+    },
+    "soundsHint": "Sounds that help you focus. Try them here; they are all in the My Session mixer and session plan.",
+    "platformSound": "From the platform",
+    "uploadedBy": "Uploaded by",
+    "try": "Try",
+    "stop": "Stop",
+    "groups": {
+      "platform": "From the platform",
+      "community": "From students",
+      "mine": "My sounds"
+    },
+    "uploadTitle": "Upload your sound",
+    "uploadText": "Share a sound that helps you study. Once the admins approve it, it joins your session mixer.",
+    "mineEmpty": "You haven't uploaded any sounds yet.",
+    "upload": {
+      "choose": "Choose a sound file",
+      "formats": "MP3, WAV or OGG, under 15 MB",
+      "name": "Sound name",
+      "namePlaceholder": "e.g. Light rain on the window",
+      "note": "Admins review every sound before others can hear it.",
+      "send": "Send for review",
+      "cancel": "Cancel",
+      "sent": "Your sound was sent to the admins. You'll get a notification with their decision",
+      "delete": "Delete sound",
+      "confirmDelete": "Sure?",
+      "errors": {
+        "file": "Choose a sound file first",
+        "type": "The file must be a sound",
+        "size": "The file is larger than 15 MB",
+        "broken": "We couldn't read this file, try another one",
+        "name": "Give the sound a name"
+      }
+    },
+    "status": {
+      "pending": "Under review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "approvedHint": "Now in the My Session mixer and session plan.",
+      "reasons": {
+        "short": "Too short (under 10 seconds) to study with."
+      }
+    },
+    "scenesHint": "Videos and animated scenes for your session background. Pick one and it plays behind the timer.",
+    "video": "Video",
+    "animated": "Animated",
+    "useScene": "Use in my session",
+    "sceneActive": "Your session background",
+    "openSession": "Open My Session"
+  },
+  "kitsune": {
+    "banner": {
+      "title": "Find your quiet.",
+      "text": "Make room for what matters.",
+      "cta": "Start a focus session"
+    }
+  },
+  "profile": {
+    "edit": "Edit profile",
+    "follow": "Follow",
+    "following": "Following",
+    "unfollow": "Unfollow",
+    "followsYou": "Follows you",
+    "you": "You",
+    "verified": "Verified account",
+    "more": "Profile options",
+    "joined": "Joined {{date}}",
+    "followingLabel": "Following",
+    "followersLabel": "Followers",
+    "streak_one": "{{count}}-day streak",
+    "streak_other": "{{count}}-day streak",
+    "studied": "{{time}} studied",
+    "hours_one": "{{count}} hour",
+    "hours_other": "{{count}} hours",
+    "pinned": "Pinned",
+    "pin": "Pin to your profile",
+    "unpin": "Unpin from profile",
+    "pinnedToast": "Post pinned to your profile",
+    "unpinned": "Post unpinned",
+    "copyLink": "Copy link to profile",
+    "linkCopied": "Profile link copied",
+    "report": "Report account",
+    "reported": "Thanks, your report was sent to the admins",
+    "notFound": "This account doesn't exist",
+    "notFoundText": "The username may be wrong, or the account was deleted.",
+    "privateLikes": "Your likes are visible only to you.",
+    "replyOn": "Replying to {{name}}'s post",
+    "tabs": {
+      "posts": "Posts",
+      "replies": "Replies",
+      "media": "Media",
+      "likes": "Likes",
+      "drafts": "Drafts",
+      "streams": "Streams"
+    },
+    "empty": {
+      "posts": "No posts yet",
+      "replies": "No replies yet",
+      "media": "No photos or videos yet",
+      "likes": "You haven't liked any posts yet",
+      "drafts": "No drafts",
+      "streams": "No streams yet"
+    },
+    "emptyText": {
+      "posts": "Write your first post from the Posts page.",
+      "replies": "Your replies to other people's posts show up here.",
+      "media": "Photos, videos and sounds you post are collected here.",
+      "likes": "Posts you like show up here.",
+      "drafts": "Write a post and tap the draft button in the composer to finish it later.",
+      "streams": "Go live from the Streams page. Your recorded streams show up here."
+    },
+    "drafts": {
+      "save": "Save draft",
+      "saved": "Saved to drafts (in your profile)",
+      "continue": "Keep writing",
+      "delete": "Delete",
+      "withPoll": "Has a poll",
+      "updated": "Edited {{time}}"
+    },
+    "connections": {
+      "followers": "Followers",
+      "following": "Following",
+      "empty": {
+        "followers": "No followers yet",
+        "following": "Not following anyone yet"
+      },
+      "emptyText": "Follow people from \"Who to follow\" and they'll show up here."
+    },
+    "form": {
+      "title": "Edit profile",
+      "name": "Name",
+      "bio": "Bio",
+      "bioPlaceholder": "Introduce yourself: what you study, what you love...",
+      "university": "University or major",
+      "location": "Location",
+      "website": "Website",
+      "avatar": "profile photo",
+      "cover": "cover photo",
+      "change": "Change",
+      "remove": "Remove",
+      "save": "Save",
+      "close": "Close",
+      "errors": {
+        "name": "Enter your name",
+        "website": "That link doesn't look right, try github.com/yourname",
+        "image": "Pick an image smaller than 5 MB"
+      }
+    }
+  },
+  "report": {
+    "title": "Report content",
+    "text": "After several reports, the content is hidden and sent to the admins for review.",
+    "cancel": "Cancel",
+    "submit": "Send report",
+    "reasons": {
+      "annoying": "Annoying content",
+      "inappropriate": "Inappropriate content",
+      "spam": "Ads or spam",
+      "offTopic": "Not related to studying"
+    }
+  },
+  "back": "Back",
+  "detail": {
+    "title": "Post",
+    "notFound": "This post doesn't exist",
+    "notFoundText": "It may have been deleted, or the link is wrong."
+  },
+  "search": {
+    "title": "Search",
+    "posts": "Posts",
+    "people": "People",
+    "promptTitle": "Search Study With Me",
+    "promptText": "Find posts or people, or try one of these tags:",
+    "noResults": "No results for \"{{query}}\"",
+    "noResultsText": "Try another word, or search a tag like #focus.",
+    "clear": "Clear search"
+  },
+  "soon": {
+    "badge": "Coming soon",
+    "text": "We'll build this page in the next steps. Here's what it will have:"
+  }
+}

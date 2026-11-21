@@ -1,0 +1,287 @@
+/* =========================================
+   صفحة الشارات
+   ========================================= */
+.badges-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.badges-page .community-disclaimer {
+  margin: 0;
+}
+
+.badges-page__intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.badges-page h2 {
+  font-size: 17px;
+}
+
+/* ----- شرح الشارتين ----- */
+.badges-explain {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.badge-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--badge) 18%, transparent), transparent 55%),
+    var(--color-surface);
+}
+
+.badge-card--expert {
+  --badge: #3b82f6;
+}
+
+.badge-card--scholar {
+  --badge: #22c55e;
+}
+
+.badge-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.badge-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.badge-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.badge-card li svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--badge);
+}
+
+/* ----- شاراتي ----- */
+.badges-mine__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.badges-mine__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* شارتي رابط لصفحة خبراتي */
+.badges-mine__item:hover {
+  border-color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+
+/* ----- النموذج ----- */
+.badge-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background-color: var(--color-surface);
+}
+
+.badge-form__types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.badge-type {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.badge-type input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.badge-type:has(input:focus-visible) {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+.badge-type--expert {
+  --badge: #3b82f6;
+}
+
+.badge-type--scholar {
+  --badge: #22c55e;
+}
+
+.badge-type.is-selected {
+  border-color: var(--badge);
+  background-color: color-mix(in srgb, var(--badge) 12%, transparent);
+}
+
+.badge-form__select,
+.badge-form__about {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  font: inherit;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.badge-form__about {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.badge-form__select:focus,
+.badge-form__about:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.upload-form__count.is-enough {
+  color: var(--color-success);
+}
+
+.badge-form__taken {
+  font-size: 13px;
+  color: var(--color-warning);
+}
+
+.badge-form__sent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-success);
+}
+
+.badge-form__submit {
+  align-self: flex-start;
+  min-height: 42px;
+  padding: 8px 26px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-on-primary);
+}
+
+.badge-form__submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ----- طلباتي ----- */
+.badges-requests ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.badge-request {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background-color: var(--color-surface);
+}
+
+.badge-request__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.badge-request__text strong {
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.badge-request__status {
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-request.is-pending .badge-request__status {
+  background-color: color-mix(in srgb, var(--color-warning) 16%, transparent);
+  color: var(--color-warning);
+}
+
+.badge-request.is-approved .badge-request__status {
+  background-color: color-mix(in srgb, var(--color-success) 16%, transparent);
+  color: var(--color-success);
+}
+
+.badge-request.is-rejected .badge-request__status {
+  background-color: color-mix(in srgb, var(--color-danger) 16%, transparent);
+  color: var(--color-danger);
+}
+
+.badge-request__remove {
+  display: flex;
+  padding: 6px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.badge-request__remove:hover {
+  color: var(--color-danger);
+}
+
+@media (max-width: 480px) {
+  .badge-form__types {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,62 @@
+/* =========================================
+   زر الواتساب العائم (الدعم الفني)
+   ========================================= */
+.whatsapp-button {
+  position: fixed;
+  inset-inline-end: 24px;
+  bottom: 24px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 58px;
+  padding-inline: 16px;
+  border-radius: var(--radius-pill);
+  background-color: #25d366;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+  color: #ffffff;
+  animation: whatsapp-in 0.6s var(--ease-out) 1s backwards;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.5);
+}
+
+/* النص بيطلع بس لما تمرق عليه (على الكمبيوتر) */
+.whatsapp-button__label {
+  max-width: 0;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: max-width 0.4s var(--ease-out);
+}
+
+.whatsapp-button:hover .whatsapp-button__label,
+.whatsapp-button:focus-visible .whatsapp-button__label {
+  max-width: 200px;
+}
+
+@keyframes whatsapp-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 640px) {
+  .whatsapp-button {
+    inset-inline-end: 16px;
+    bottom: 16px;
+    height: 52px;
+    padding-inline: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-button {
+    animation: none;
+  }
+}

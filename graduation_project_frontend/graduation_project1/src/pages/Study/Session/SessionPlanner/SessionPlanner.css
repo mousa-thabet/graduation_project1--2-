@@ -1,0 +1,277 @@
+/* =========================================
+   تقسيم الجلسة (جدول المراحل)
+   ========================================= */
+.planner-total {
+  flex-shrink: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.planner-total strong {
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+/* ----- الشريط الزمني ----- */
+.planner-timeline {
+  display: flex;
+  gap: 3px;
+  height: 30px;
+}
+
+.planner-timeline__part {
+  min-width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: flex-grow 0.4s var(--ease-out), box-shadow 0.2s ease;
+}
+
+.planner-timeline__part--study {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.planner-timeline__part--break {
+  background-color: color-mix(in srgb, var(--color-success) 35%, var(--color-surface));
+  color: var(--color-text);
+}
+
+/* المرحلة الحالية تنبض */
+.planner-timeline__part.is-current {
+  box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-text);
+  animation: planner-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes planner-pulse {
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ----- الجداول الجاهزة ----- */
+.planner-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.planner-preset {
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.planner-preset:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+/* ----- المراحل ----- */
+.planner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.planner-segment {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-inline-start: 4px solid var(--color-primary);
+  border-radius: 14px;
+  background-color: var(--color-bg);
+  animation: planner-in 0.3s var(--ease-out);
+}
+
+@keyframes planner-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.planner-segment--break {
+  border-inline-start-color: var(--color-success);
+}
+
+.planner-segment.is-current {
+  border-color: var(--color-primary);
+  border-inline-start-width: 4px;
+  background-color: var(--color-primary-soft);
+}
+
+.planner-segment--break.is-current {
+  border-color: var(--color-success);
+  background-color: color-mix(in srgb, var(--color-success) 14%, transparent);
+}
+
+.planner-segment__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.planner-segment__number {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-surface-2);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.planner-segment__kind {
+  padding: 4px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.planner-segment--break .planner-segment__kind {
+  color: var(--color-success);
+}
+
+.planner-segment__remove {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline-start: auto;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.planner-segment__remove:hover:not(:disabled) {
+  background-color: var(--color-surface-2);
+  color: var(--color-danger);
+}
+
+/* ----- زيادة ونقصان المدة ----- */
+.planner-stepper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+}
+
+.planner-stepper button {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-surface-2);
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.planner-stepper output {
+  min-width: 68px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ----- أصوات المرحلة ----- */
+.planner-sounds {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.planner-sound {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.planner-sound:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.planner-sound[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.planner-sounds__none {
+  margin-inline-start: 4px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* ----- الأسفل ----- */
+.planner-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.planner-add {
+  display: flex;
+  gap: 6px;
+}
+
+.planner-add button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary-light);
+}
+
+.planner-add button:hover:not(:disabled) {
+  border-style: solid;
+  border-color: var(--color-primary);
+}
+
+.session-card button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .planner-timeline__part.is-current {
+    animation: none;
+  }
+}

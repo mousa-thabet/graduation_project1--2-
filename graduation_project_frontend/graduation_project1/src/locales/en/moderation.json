@@ -1,0 +1,49 @@
+{
+  "adminName": "Areatk Admin",
+  "bar": {
+    "title": "Admin mode",
+    "text": "You're browsing communities as an admin: instead of reporting you can block, and blocked content is only visible to its owner.",
+    "back": "Back to admin panel"
+  },
+  "block": "Block post",
+  "unblock": "Unblock",
+  "blockContent": "Block",
+  "unblockContent": "Unblock",
+  "blockedToast": "Post blocked",
+  "unblockedToast": "Post is visible again",
+  "contentBlocked": "Blocked: people can't see it.",
+  "notice": {
+    "admin": "Blocked: only its owner can see it.",
+    "adminAppeal": "The owner asked for a review.",
+    "openAppeals": "Open review requests",
+    "mine": "The admins blocked your post, so people can't see it.",
+    "request": "Request a review",
+    "note": "Why should your post come back?",
+    "notePlaceholder": "Write to the admins (optional)",
+    "send": "Send request",
+    "cancel": "Cancel",
+    "pending": "You asked for a review. The admins will decide soon.",
+    "rejected": "The admins reviewed your request and kept it blocked."
+  },
+  "notifications": {
+    "blocked": "The admins blocked your post <b>{{title}}</b>. You can request a review",
+    "appealApproved": "The admins reviewed your request and your post <b>{{title}}</b> is visible again",
+    "appealRejected": "The admins reviewed your request and your post <b>{{title}}</b> stays blocked"
+  },
+  "admin": {
+    "navBrowse": "Browse communities",
+    "navAppeals": "Review requests",
+    "title": "Review requests",
+    "text": "Owners of blocked posts ask for a review. Open the post and check it: if it breaks no rule bring it back, otherwise keep it blocked.",
+    "empty": "When someone's post is blocked and they ask for a review, it shows up here.",
+    "note": "Owner's message",
+    "noNote": "No reason given",
+    "open": "Open post",
+    "restore": "Bring post back",
+    "keep": "Keep blocked",
+    "noText": "(post without text)",
+    "types": {
+      "post": "Post"
+    }
+  }
+}

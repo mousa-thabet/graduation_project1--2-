@@ -1,0 +1,189 @@
+/* =========================================
+   قالب لوحة الأدمن
+   ========================================= */
+.admin {
+  /* نفس ألوان المنصة (index.css): فاتح أو داكن حسب اختيار المستخدم */
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background-color: var(--color-bg);
+}
+
+/* ----- القائمة الجانبية: خضرا غامقة بنص أبيض (مثل قائمة التواصل وادرس معي) ----- */
+.admin-sidebar {
+  /* الألوان جوا القائمة بس: كل عناصرها بتاخذ ألوان فاتحة فوق الأخضر */
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.72);
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --color-surface-2: rgba(255, 255, 255, 0.12);
+  --color-border: rgba(255, 255, 255, 0.16);
+  --color-primary-light: #ffffff;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 16px;
+  background-color: var(--color-sidebar);
+  color: var(--color-text);
+}
+
+.admin-sidebar .logo {
+  color: #ffffff;
+}
+
+.admin-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-inline: 8px;
+}
+
+.admin-sidebar__tag {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background-color: #6ee7b7;
+  font-size: 12px;
+  font-weight: 800;
+  color: #063b36;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-nav__link:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* القسم المفتوح: خلفية فاتحة وخط عريض */
+.admin-nav__link.active {
+  background-color: var(--color-surface-2);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* عدد اللي بيستنى قرار */
+.admin-nav__count {
+  min-width: 22px;
+  margin-inline-start: auto;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-danger);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+}
+
+.admin-sidebar__tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.admin-sidebar__tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  background: none;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-sidebar__tool:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* ----- المحتوى ----- */
+.admin-main {
+  min-width: 0;
+  padding: 32px clamp(16px, 4vw, 48px) 64px;
+}
+
+/* ----- الموبايل: القائمة بتصير شريط فوق ----- */
+@media (max-width: 900px) {
+  .admin {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: sticky;
+    z-index: 10;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .admin-sidebar__brand .logo__text {
+    display: none;
+  }
+
+  .admin-nav {
+    order: 3;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .admin-nav__link {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .admin-sidebar__tools {
+    flex-wrap: nowrap;
+    margin-top: 0;
+    margin-inline-start: auto;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .admin-sidebar__tool {
+    width: auto;
+  }
+
+  /* على الشاشات الصغيرة الأيقونات بس (النص بيضل لقارئ الشاشة) */
+  .admin-sidebar__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .admin-main {
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,113 @@
+/* =========================================
+   حقل الإدخال
+   ========================================= */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field__label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.field__label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.field__control {
+  position: relative;
+}
+
+.field__input {
+  width: 100%;
+  min-height: 50px;
+  padding-inline: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  font-size: 16px;
+  unicode-bidi: plaintext;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.field__input:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+/* لون الحقل عند التعبئة التلقائية من المتصفح */
+.field__input:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-text);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-surface-2) inset;
+  transition: background-color 9999s ease;
+}
+
+/* ----- حالة الخطأ ----- */
+.field.has-error .field__input {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-danger) 14%, transparent);
+}
+
+.field__error {
+  font-size: 13px;
+  color: var(--color-danger);
+}
+
+/* ----- زر العين ----- */
+.field__control:has(.field__toggle) .field__input {
+  padding-inline-end: 52px;
+}
+
+.field__toggle {
+  position: absolute;
+  top: 50%;
+  inset-inline-end: 6px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  transform: translateY(-50%);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.field__toggle:hover {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+}
+
+/* العين المفتوحة والمغلقة فوق بعض مع حركة تبديل */
+.field__eye {
+  position: absolute;
+  transition: opacity 0.25s ease, transform 0.35s var(--ease-out);
+}
+
+.field__eye--open {
+  opacity: 0;
+  transform: scale(0.6) rotate(-20deg);
+}
+
+.field__toggle.is-visible .field__eye--open {
+  opacity: 1;
+  transform: none;
+}
+
+.field__toggle.is-visible .field__eye--closed {
+  opacity: 0;
+  transform: scale(0.6) rotate(20deg);
+}

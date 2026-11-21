@@ -1,0 +1,535 @@
+/* ألوان الخطة محصورة داخل هذه الصفحة. */
+
+.plan {
+  --color-bg: #edf6f0;
+  --color-surface: #f7fcf9;
+  --color-surface-2: #e1f0e7;
+  --color-border: #b8d5c5;
+  --color-text: #173c30;
+  --color-text-muted: #496a5c;
+  --color-primary: #08664f;
+  --color-primary-light: #075b46;
+  --color-primary-soft: #cfe9da;
+  --color-on-primary: #fff;
+  --color-success: #187443;
+  --color-danger: #b42332;
+  --color-warning: #875506;
+
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  color-scheme: light;
+}
+
+/* الوضع الداكن */
+
+body[data-study-theme="dark"] .plan {
+  --color-bg: #0b1b16;
+  --color-surface: #12291f;
+  --color-surface-2: #1a382b;
+  --color-border: #315442;
+  --color-text: #e6f5ec;
+  --color-text-muted: #afcbbd;
+  --color-primary: #56cf9e;
+  --color-primary-light: #86e4ba;
+  --color-primary-soft: #204a37;
+  --color-on-primary: #092317;
+  --color-success: #65d6a0;
+  --color-danger: #ff9e9e;
+  --color-warning: #f5ce7b;
+
+  color-scheme: dark;
+}
+
+/* التخطيط */
+
+.plan__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-bg);
+}
+
+.plan__container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 124px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.plan__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.plan__intro {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plan__title {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.35;
+  color: var(--color-primary-light);
+}
+
+.plan__text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.plan__head-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+/* زر الوضع الداكن */
+
+.plan__theme-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.plan__theme-button:hover {
+  border-color: var(--color-primary);
+}
+
+.plan :focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* البطاقات والإدخالات */
+
+.plan .plan-stats,
+.plan .task-form,
+.plan .plan-view,
+.plan .week-chart {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  box-shadow: 0 5px 18px rgb(6 60 37 / 4%);
+}
+
+.plan .plan-stats__value,
+.plan .plan-stats__ring strong {
+  color: var(--color-primary-light);
+}
+
+.plan .field__input,
+.plan .task-form__select {
+  background-color: var(--color-surface-2);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.plan .field__input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+.plan .task-form__pill {
+  background: var(--color-surface-2);
+}
+
+.plan .task-form__select {
+  background-image: none;
+  appearance: auto;
+  padding-inline: 12px;
+}
+
+.plan__start {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.plan__start input {
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.plan .plan-view__tools {
+  flex-wrap: wrap;
+}
+
+/* الخطة اليومية */
+
+.plan .slot::before {
+  background-color: var(--color-border);
+}
+
+.plan .slot.is-done::before {
+  background-color: var(--color-success);
+}
+
+.plan .slot.is-missed::before {
+  background-color: var(--color-danger);
+}
+
+.plan .slot--rest::before {
+  background: repeating-linear-gradient(
+    180deg,
+    var(--color-warning) 0 4px,
+    transparent 4px 8px
+  );
+}
+
+.plan .slot__time,
+.plan .slot__meta,
+.plan .timeline__end-label,
+.plan .plan-empty p {
+  color: var(--color-text-muted);
+}
+
+.plan .slot__node {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.plan .slot.is-done .slot__node {
+  border-color: var(--color-success);
+  background: var(--color-success);
+  color: var(--color-surface);
+}
+
+.plan .slot.is-missed .slot__node {
+  border-color: var(--color-danger);
+  background: var(--color-danger);
+  color: var(--color-surface);
+}
+
+.plan .slot--rest .slot__node {
+  border-color: var(--color-warning);
+}
+
+.plan .slot.is-now .slot__node {
+  animation: plan-current 2s ease-out infinite;
+}
+
+@keyframes plan-current {
+  from {
+    box-shadow: 0 0 0 0
+      color-mix(
+        in srgb,
+        var(--color-primary) 35%,
+        transparent
+      );
+  }
+
+  to {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+.plan .slot__body {
+  border-color: var(--color-border);
+  background: var(--color-surface-2);
+}
+
+.plan .slot__body:hover {
+  border-color: var(--color-primary);
+}
+
+.plan .slot.is-now .slot__body {
+  border-color: var(--color-primary);
+  box-shadow: none;
+}
+
+.plan .slot__kind {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+.plan .slot__now {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.plan .slot__tags {
+  flex-wrap: wrap;
+}
+
+.plan .slot__note {
+  color: var(--color-warning);
+}
+
+.plan .slot__status {
+  flex-wrap: wrap;
+}
+
+.plan .slot__tools {
+  border-color: var(--color-border);
+  gap: 6px;
+}
+
+.plan .timeline__end-node {
+  background: var(--color-primary);
+}
+
+.plan .plan-empty {
+  border-color: var(--color-border);
+  background: var(--color-surface-2);
+}
+
+.plan .plan-empty__icon {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+/* الخطة الأسبوعية */
+
+.plan .week-board {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+}
+
+.plan .day-row + .day-row {
+  border-color: var(--color-border);
+}
+
+.plan .day-row:hover {
+  background: var(--color-surface-2);
+}
+
+.plan .day-row.is-today {
+  background: var(--color-primary-soft);
+}
+
+.plan .day-row__today {
+  color: var(--color-on-primary);
+}
+
+.plan .day-row__progress {
+  background: var(--color-border);
+}
+
+.plan .day-row__stats,
+.plan .day-row__empty,
+.plan .chip__duration {
+  color: var(--color-text-muted);
+}
+
+.plan .day-row__stats strong {
+  color: var(--color-text);
+}
+
+.plan .day-row__arrow {
+  color: var(--color-primary-light);
+}
+
+.plan .chip {
+  max-width: 100%;
+  border-color: var(--color-border);
+  border-inline-start-color: var(--color-primary);
+  background: var(--color-surface-2);
+}
+
+.plan .chip__foot {
+  flex-wrap: wrap;
+}
+
+.plan .day-row__add {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+.plan .day-row__add:hover {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* حالات الإنجاز والاستراحة */
+
+.plan .slot--rest .slot__body,
+.plan .chip--rest {
+  border-color: var(--color-warning);
+  background: color-mix(
+    in srgb,
+    var(--color-warning) 9%,
+    var(--color-surface)
+  );
+}
+
+.plan .slot--rest .slot__kind {
+  background: color-mix(
+    in srgb,
+    var(--color-warning) 15%,
+    var(--color-surface)
+  );
+  color: var(--color-warning);
+}
+
+.plan .chip--rest .chip__duration {
+  color: var(--color-warning);
+}
+
+.plan .slot.is-done .slot__body,
+.plan .chip.is-done {
+  border-color: var(--color-success);
+  background: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    var(--color-surface)
+  );
+}
+
+.plan .slot.is-missed .slot__body,
+.plan .chip.is-missed {
+  border-color: var(--color-danger);
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 8%,
+    var(--color-surface)
+  );
+}
+
+/* أزرار الترتيب والإنجاز */
+
+.plan .tool-button,
+.plan .chip__button,
+.plan .status-button {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.plan .tool-button,
+.plan .chip__button {
+  min-width: 34px;
+  min-height: 34px;
+}
+
+.plan .tool-button:hover:not(:disabled) {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+.plan .status-button--done:hover,
+.plan .status-button--done[aria-pressed="true"],
+.plan .chip__button--done:hover,
+.plan .chip__button--done[aria-pressed="true"] {
+  border-color: var(--color-success);
+  background: color-mix(
+    in srgb,
+    var(--color-success) 14%,
+    var(--color-surface)
+  );
+  color: var(--color-success);
+}
+
+.plan .status-button--missed:hover,
+.plan .status-button--missed[aria-pressed="true"],
+.plan .chip__button--missed:hover,
+.plan .chip__button--missed[aria-pressed="true"] {
+  border-color: var(--color-danger);
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 12%,
+    var(--color-surface)
+  );
+  color: var(--color-danger);
+}
+
+/* الحذف واضح دائمًا */
+
+.plan .tool-button--delete,
+.plan .chip__button--delete,
+.plan .plan-view__clear {
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--color-danger) 45%,
+      var(--color-border)
+    );
+
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    var(--color-surface)
+  );
+
+  color: var(--color-danger);
+}
+
+.plan .tool-button--delete:hover:not(:disabled),
+.plan .chip__button--delete:hover,
+.plan .plan-view__clear:hover,
+.plan .plan-view__clear.is-confirming {
+  border-color: var(--color-danger);
+
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 18%,
+    var(--color-surface)
+  );
+
+  color: var(--color-danger);
+}
+
+/* الموبايل */
+
+@media (max-width: 560px) {
+  .plan__container {
+    padding: 100px 12px 40px;
+  }
+
+  .plan__head-actions {
+    width: 100%;
+  }
+
+  .plan__theme-button {
+    width: 100%;
+  }
+
+  .plan .slot__body {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .plan .status-button {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan *,
+  .plan *::before,
+  .plan *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

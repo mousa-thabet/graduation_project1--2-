@@ -1,0 +1,199 @@
+/* =========================================
+   إحصائيات الامتحان (لصاحبه)
+   ========================================= */
+.exam-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 16px 24px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background-color: var(--color-surface);
+}
+
+.exam-stats__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.exam-stats__subtitle {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+/* الأرقام الرئيسية */
+.exam-stats__numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.exam-stats__number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 8px;
+  border-radius: 14px;
+  background-color: var(--color-surface-2);
+  text-align: center;
+}
+
+.exam-stats__number strong {
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary-light);
+}
+
+.exam-stats__number span {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* توزيع العلامات */
+.exam-stats__bands {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exam-stats__band {
+  --band: var(--color-danger);
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.exam-stats__band.is-mid {
+  --band: var(--color-warning);
+}
+
+.exam-stats__band.is-good {
+  --band: var(--color-primary);
+}
+
+.exam-stats__band.is-top {
+  --band: var(--color-success);
+}
+
+.exam-stats__band-label {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+
+.exam-stats__band-track,
+.exam-stats__rate-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+}
+
+.exam-stats__band-track span,
+.exam-stats__rate-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--band, var(--color-primary));
+  transition: width 0.4s ease;
+}
+
+.exam-stats__band-count {
+  min-width: 60px;
+  color: var(--color-text-muted);
+}
+
+/* الأسئلة */
+.exam-stats__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exam-stats__question {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+}
+
+/* أصعب سؤال: إطار أحمر خفيف */
+.exam-stats__question.is-hardest {
+  border-color: color-mix(in srgb, var(--color-danger) 55%, transparent);
+  background-color: color-mix(in srgb, var(--color-danger) 6%, transparent);
+}
+
+.exam-stats__question-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exam-stats__question-number {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.exam-stats__hardest {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border-radius: var(--radius-pill);
+  background-color: color-mix(in srgb, var(--color-danger) 16%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+.exam-stats__question-text {
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.exam-stats__rate {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.exam-stats__rate-track span {
+  background-color: var(--color-success);
+}
+
+.exam-stats__question.is-hardest .exam-stats__rate-track span {
+  background-color: var(--color-danger);
+}
+
+.exam-stats__wrong {
+  font-size: 13px;
+  color: var(--color-warning);
+}
+
+@media (max-width: 480px) {
+  .exam-stats__number strong {
+    font-size: 20px;
+  }
+
+  .exam-stats__band {
+    grid-template-columns: 70px 1fr;
+  }
+
+  .exam-stats__band-count {
+    grid-column: 2;
+  }
+}
+

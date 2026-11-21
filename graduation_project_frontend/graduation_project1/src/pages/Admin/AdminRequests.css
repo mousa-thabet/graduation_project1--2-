@@ -1,0 +1,40 @@
+/* =========================================
+   طلبات الرفع (أصوات وخلفيات الطلاب)
+   ========================================= */
+
+/* شارة النوع جنب العنوان */
+.upload-request__kind {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.upload-request__kind.is-scene {
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  color: var(--color-primary-light);
+}
+
+.upload-request__audio {
+  width: 100%;
+}
+
+/* معاينة الخلفية (صورة أو فيديو): الضغط بيفتحها كاملة */
+.upload-request__media {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background-color: #000;
+}
+
+.upload-request__media img,
+.upload-request__media video {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+}

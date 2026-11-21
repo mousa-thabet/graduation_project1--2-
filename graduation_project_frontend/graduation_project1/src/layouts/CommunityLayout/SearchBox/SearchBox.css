@@ -1,0 +1,118 @@
+/* =========================================
+   البحث الفوري مع الاقتراحات
+   ========================================= */
+.search-box-live {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.search-box-live .study-aside__search {
+  position: static;
+}
+
+.search-box-live__list {
+  position: absolute;
+  inset-inline: 0;
+  top: calc(100% + 6px);
+  max-height: 420px;
+  padding: 6px;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background-color: var(--color-surface);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  animation: search-box-in 0.15s ease;
+}
+
+@keyframes search-box-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.search-box-live__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.search-box-live__head button {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--color-primary-light);
+}
+
+.search-box-live__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.search-box-live__item.is-active {
+  background-color: var(--color-surface-2);
+}
+
+.search-box-live__icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--color-surface-2);
+  color: var(--color-text-muted);
+}
+
+/* أيقونة المجتمع بلون مساره */
+.search-box-live__icon--community {
+  background-color: color-mix(in srgb, var(--track) 18%, transparent);
+  color: var(--track);
+}
+
+.search-box-live__icon--question {
+  color: var(--color-warning);
+}
+
+.search-box-live__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.search-box-live__label {
+  overflow: hidden;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search-box-live__sub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.search-box-live__all button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+  font-size: 14px;
+  color: var(--color-primary-light);
+}

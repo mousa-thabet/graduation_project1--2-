@@ -1,0 +1,706 @@
+/* =========================================
+   غرفة البث المباشر
+   ========================================= */
+
+/* ----- الفيديو ----- */
+.room-stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 16px 20px 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #1b1411;
+  color: #FFFFFF;
+  isolation: isolate;
+}
+
+.room-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* كاميرتي مثل المرآة */
+.room-video.is-mirrored {
+  transform: scaleX(-1);
+}
+
+/* الكاميرا مطفية: صورة صاحب البث */
+.room-stage__off {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.room-stage__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(8px) brightness(0.45);
+  transform: scale(1.1);
+}
+
+.room-stage__avatar {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 34px;
+  font-weight: 700;
+}
+
+/* الشارات فوق الفيديو */
+.room-stage__top {
+  position: absolute;
+  top: 12px;
+  inset-inline: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.room-stage__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.55);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.room-stage__pill--rec::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ff5a5a;
+}
+
+.room-stage__viewers {
+  margin-inline-start: auto;
+}
+
+/* ----- زر التكبير ----- */
+.room-stage__size {
+  position: absolute;
+  bottom: 12px;
+  inset-inline-end: 12px;
+  z-index: 1;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #FFFFFF;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.room-stage__size:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+  transform: scale(1.06);
+}
+
+/* ----- البث مكبّر: الشاشة كلها للفيديو (مثل يوتيوب) ----- */
+.room-stage.is-big {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+  background-color: #000000;
+}
+
+/* الفيديو كامل بدون قص */
+.room-stage.is-big .room-video {
+  object-fit: contain;
+}
+
+/* التكبير البديل (للمتصفحات التي لا تدعم ملء الشاشة) */
+.room-stage.is-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  width: auto;
+  height: auto;
+}
+
+.room-stage.is-big .room-stage__top {
+  top: 20px;
+  inset-inline: 20px;
+}
+
+.room-stage.is-big .room-timer {
+  bottom: 24px;
+  padding: 8px 20px;
+}
+
+.room-stage.is-big .room-timer strong {
+  font-size: 30px;
+}
+
+.room-stage.is-big .room-stage__size {
+  bottom: 24px;
+  inset-inline-end: 20px;
+}
+
+/* ----- المؤقت المشترك ----- */
+.room-timer {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  transform: translateX(-50%);
+}
+
+.room-timer strong {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+}
+
+.room-timer__phase {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background-color: #e9bc74;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1b1411;
+}
+
+.room-timer.is-break .room-timer__phase {
+  background-color: #9fd4a9;
+}
+
+.room-timer__round {
+  font-size: 12px;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ----- التفاعلات الطائرة ----- */
+.room-reactions {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.room-reaction {
+  position: absolute;
+  bottom: 50px;
+  left: var(--x);
+  font-size: 28px;
+  animation: room-float 2.2s ease-out forwards;
+}
+
+@keyframes room-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.6);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-180px) scale(1);
+  }
+}
+
+/* ----- صاحب البث ----- */
+.room-info {
+  padding: 14px 20px 0;
+}
+
+.room-host {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.room-host__avatar {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.room-host__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-host__text span {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.room-host:hover strong {
+  text-decoration: underline;
+}
+
+/* ----- المشاركون (مربعات) ----- */
+.room-tiles {
+  display: flex;
+  gap: 10px;
+  padding: 14px 20px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.room-tiles:empty {
+  display: none;
+}
+
+.room-tile {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+}
+
+/* كاميرا شخص آخر: شكل متحرك يمثلها إلى أن يجهز البث الحقيقي */
+.room-tile.is-cam {
+  background: linear-gradient(135deg, #3b4b8a, #b55a30, #2f8f6f);
+  background-size: 300% 300%;
+  animation: room-cam 8s ease-in-out infinite alternate;
+}
+
+@keyframes room-cam {
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.room-tile__avatar {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.room-tile__name {
+  position: absolute;
+  bottom: 6px;
+  inset-inline-start: 6px;
+  max-width: calc(100% - 12px);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.55);
+  font-size: 11px;
+  white-space: nowrap;
+  color: #FFFFFF;
+}
+
+/* ----- أدوات التحكم ----- */
+.room-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+}
+
+.room-control {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.room-control:hover {
+  background-color: var(--color-surface-2);
+}
+
+/* المايك أو الكاميرا شغالة */
+.room-control.is-on {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+.room-controls__reactions {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+}
+
+.room-react {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 18px;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.room-react:hover {
+  background-color: var(--color-surface-2);
+  transform: scale(1.15);
+}
+
+.room-react:active {
+  transform: scale(0.9);
+}
+
+.room-leave {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-inline-start: auto;
+  padding: 9px 18px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: #d93a3a;
+  font-weight: 700;
+  color: #FFFFFF;
+  transition: filter 0.2s ease;
+}
+
+.room-leave:hover {
+  filter: brightness(1.08);
+}
+
+/* ----- الدردشة والمشاركون ----- */
+.room-panel {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px 24px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background-color: var(--color-surface);
+}
+
+.room-panel__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.room-panel__tab {
+  padding: 12px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.room-panel__tab:hover {
+  background-color: var(--color-surface-2);
+}
+
+.room-panel__tab[aria-selected="true"] {
+  color: var(--color-text);
+  box-shadow: inset 0 -3px 0 var(--color-primary);
+}
+
+.room-chat {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-chat__list {
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+.room-chat__empty {
+  margin: auto;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.room-message {
+  display: flex;
+  gap: 8px;
+  animation: room-message-in 0.3s var(--ease-out);
+}
+
+@keyframes room-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.room-message__avatar {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.room-message__body {
+  min-width: 0;
+  padding: 6px 12px;
+  border-radius: 4px 14px 14px;
+  background-color: var(--color-surface-2);
+}
+
+[dir="rtl"] .room-message__body {
+  border-radius: 14px 4px 14px 14px;
+}
+
+.room-message.is-mine .room-message__body {
+  background-color: var(--color-primary-soft);
+}
+
+.room-message__body strong {
+  font-size: 13px;
+}
+
+.room-message__body p {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+
+/* الدردشة مقفلة وقت التركيز */
+.room-chat__locked {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface-2);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.room-chat__opens {
+  margin-inline-start: auto;
+  font-weight: 400;
+}
+
+.room-chat__form {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--color-border);
+}
+
+.room-chat__form input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  font-size: 14px;
+}
+
+.room-chat__form input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.room-chat__form input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.room-chat__form button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.room-chat__form button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+[dir="rtl"] .room-chat__form button svg {
+  transform: scaleX(-1);
+}
+
+/* قائمة المشاركين */
+.room-people {
+  max-height: 340px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.room-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 15px;
+}
+
+.room-person__avatar {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.room-person__badge {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: var(--color-surface-2);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.room-person__devices {
+  display: flex;
+  gap: 6px;
+  margin-inline-start: auto;
+  color: var(--color-text-muted);
+}
+
+/* ----- رسائل صغيرة ----- */
+.room-toasts {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  z-index: 250;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.room-toast {
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-bg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: room-message-in 0.3s var(--ease-out);
+}
+
+.room-ended__link {
+  margin-top: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  font-weight: 700;
+  color: var(--color-on-primary);
+}
+
+@media (max-width: 640px) {
+  .room-stage {
+    margin: 12px 12px 0;
+    border-radius: 16px;
+  }
+
+  .room-info,
+  .room-tiles,
+  .room-controls {
+    padding-inline: 12px;
+  }
+
+  .room-panel {
+    margin-inline: 12px;
+  }
+
+  .room-timer strong {
+    font-size: 18px;
+  }
+
+  .room-toasts {
+    bottom: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-reaction,
+  .room-tile.is-cam {
+    animation: none;
+  }
+}

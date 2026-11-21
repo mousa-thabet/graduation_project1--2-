@@ -1,0 +1,85 @@
+/* =========================================
+   الاستطلاع
+   ========================================= */
+.poll {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* ----- قبل التصويت ----- */
+.poll__option {
+  padding: 10px 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  transition: background-color 0.2s ease;
+}
+
+.poll__option:hover {
+  background-color: var(--color-primary-soft);
+}
+
+/* ----- بعد التصويت ----- */
+.poll__result {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 40px;
+  padding: 0 14px;
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+/* الشريط الملوّن خلف النص يكبر من الصفر */
+.poll__fill {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  border-radius: 10px;
+  background-color: var(--color-surface-2);
+  animation: poll-fill 0.8s var(--ease-out);
+}
+
+@keyframes poll-fill {
+  from {
+    width: 0;
+  }
+}
+
+.poll__result.is-top .poll__fill {
+  background-color: var(--color-primary-soft);
+}
+
+.poll__text,
+.poll__percent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.poll__text svg {
+  color: var(--color-primary-light);
+}
+
+.poll__result.is-top .poll__text,
+.poll__result.is-top .poll__percent {
+  font-weight: 700;
+}
+
+.poll__percent {
+  font-variant-numeric: tabular-nums;
+}
+
+.poll__meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}

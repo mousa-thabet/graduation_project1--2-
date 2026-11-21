@@ -1,0 +1,26 @@
+/* =========================================
+   صفحة المنشورات
+   ========================================= */
+
+/* ----- التصفية بالوسم ----- */
+.feed-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.feed-filter__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-soft);
+  font-weight: 600;
+  color: var(--color-primary-light);
+}

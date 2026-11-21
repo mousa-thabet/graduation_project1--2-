@@ -1,0 +1,30 @@
+/* =========================================
+   صفحة غير موجودة (404)
+   ========================================= */
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.not-found__code {
+  font-size: clamp(96px, 20vw, 180px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary-soft);
+}
+
+.not-found__title {
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+.not-found__text {
+  max-width: 420px;
+  margin-bottom: 8px;
+  color: var(--color-text-muted);
+}

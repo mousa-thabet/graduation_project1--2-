@@ -1,0 +1,91 @@
+/* =========================================
+   حقل رمز التحقق
+   ========================================= */
+.code-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.code-input__box {
+  width: 52px;
+  height: 60px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  caret-color: var(--color-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.code-input__box:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border));
+}
+
+.code-input__box:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 15%, transparent);
+  transform: translateY(-2px);
+}
+
+/* الخانة التي فيها رقم */
+.code-input__box.is-filled {
+  border-color: var(--color-primary);
+  animation: box-pop 0.25s var(--ease-out);
+}
+
+@keyframes box-pop {
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.code-input__box:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ----- حالة الخطأ: لون أحمر + اهتزاز ----- */
+.code-input.has-error {
+  animation: code-shake 0.4s ease;
+}
+
+.code-input.has-error .code-input__box {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-danger) 14%, transparent);
+}
+
+@keyframes code-shake {
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+.code-input__error {
+  font-size: 13px;
+  color: var(--color-danger);
+  text-align: center;
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 420px) {
+  .code-input {
+    gap: 6px;
+  }
+
+  .code-input__box {
+    width: 44px;
+    height: 54px;
+    font-size: 20px;
+  }
+}

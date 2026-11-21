@@ -1,0 +1,103 @@
+/* =========================================
+   صفحة البثوث
+   ========================================= */
+
+/* عدد البثوث المباشرة جنب التبويب */
+.streams-count {
+  display: inline-block;
+  min-width: 20px;
+  margin-inline-start: 6px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background-color: #d93a3a;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+/* ----- "ابدأ بث" ----- */
+.streams-hero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 16px 20px 0;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--color-primary-soft), var(--color-surface));
+}
+
+.streams-hero.is-live {
+  border-color: #d93a3a;
+}
+
+.streams-hero__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background-color: #d93a3a;
+  color: #FFFFFF;
+}
+
+.streams-hero__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.streams-hero__text strong {
+  font-size: 16px;
+}
+
+.streams-hero__text span {
+  overflow: hidden;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--color-text-muted);
+}
+
+.streams-hero__button {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: #d93a3a;
+  font-weight: 700;
+  color: #FFFFFF;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.streams-hero__button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.streams-hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  animation: stream-pulse 1.4s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .streams-hero {
+    flex-wrap: wrap;
+    margin-inline: 12px;
+  }
+
+  .streams-hero__button {
+    width: 100%;
+    justify-content: center;
+  }
+}

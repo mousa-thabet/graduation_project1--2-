@@ -1,0 +1,533 @@
+/* =========================================
+   مشهد جلستي: الخلفية والمؤقت
+   ========================================= */
+.session-scene {
+  --phase-color: #E9BC74;
+
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 20px;
+  overflow: hidden;
+  border-radius: 24px;
+  color: #FFFFFF;
+  isolation: isolate;
+}
+
+.session-scene--break {
+  --phase-color: #9FD4A9;
+}
+
+/* وضع التركيز: ملء الشاشة */
+.session-scene:fullscreen {
+  margin: 0;
+  border-radius: 0;
+}
+
+.session-scene__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 32px 20px;
+}
+
+/* ----- دائرة المؤقت ----- */
+.session-scene__clock {
+  position: relative;
+  width: 240px;
+  height: 240px;
+}
+
+.session-scene:fullscreen .session-scene__clock {
+  width: 340px;
+  height: 340px;
+}
+
+.session-scene__clock svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.session-scene__track,
+.session-scene__progress {
+  fill: none;
+  stroke-width: 8;
+}
+
+.session-scene__track {
+  stroke: rgba(255, 255, 255, 0.18);
+}
+
+.session-scene__progress {
+  stroke: var(--phase-color);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s linear, stroke 0.4s ease;
+}
+
+.session-scene__time {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.session-scene__phase {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(0, 0, 0, 0.28);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--phase-color);
+}
+
+.session-scene__time strong {
+  font-size: 58px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.session-scene:fullscreen .session-scene__time strong {
+  font-size: 84px;
+}
+
+.session-scene__goal {
+  max-width: 420px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.28);
+  font-size: 15px;
+  text-align: center;
+  unicode-bidi: plaintext;
+}
+
+/* ----- أزرار التحكم ----- */
+.session-scene__controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.session-scene__control,
+.session-scene__fullscreen {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.session-scene__control:hover:not(:disabled),
+.session-scene__fullscreen:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.session-scene__control:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+[dir="rtl"] .session-scene__control svg {
+  transform: scaleX(-1);
+}
+
+.session-scene__main {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--phase-color);
+  color: #1B1411;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.4s ease;
+}
+
+.session-scene__main:hover {
+  transform: scale(1.05);
+}
+
+.session-scene__main svg {
+  fill: currentColor;
+}
+
+/* ----- رقم المرحلة والكتم ----- */
+.session-scene__badges {
+  position: absolute;
+  top: 14px;
+  inset-inline-start: 14px;
+  z-index: 1;
+  display: flex;
+  gap: 6px;
+}
+
+.session-scene__badge {
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.session-scene__badge.is-muted {
+  background-color: rgba(229, 148, 132, 0.85);
+  color: #1B1411;
+}
+
+/* ----- المرحلة التالية ----- */
+.session-scene__next {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.session-scene__next strong {
+  color: #FFFFFF;
+}
+
+/* ----- دليل الاختصارات ----- */
+.session-scene__keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.session-scene__keys kbd {
+  min-width: 22px;
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.25);
+  font-family: inherit;
+  font-size: 11px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.session-scene__fullscreen {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 14px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+/* زر التكبير/التصغير: بجانب زر ملء الشاشة */
+.session-scene__size {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 62px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  transition: background-color 0.2s ease;
+}
+
+.session-scene__size:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================
+   الوضع المصغّر: شريط صغير ثابت أعلى الشاشة أثناء الجلسة
+   ========================================= */
+.session-scene.is-compact {
+  /* sticky: يمشي مع الصفحة، ولما يوصل لأعلى الشاشة يثبت هناك */
+  position: sticky;
+  top: 8px;
+  z-index: 12;
+  min-height: 0;
+  justify-content: flex-start;
+  gap: 8px;
+  margin: 8px 20px;
+  padding: 10px 12px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: scene-compact-in 0.4s var(--ease-out);
+}
+
+@keyframes scene-compact-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+}
+
+/* ما نحتاجه بالشريط: الدائرة والوقت والهدف والأزرار فقط */
+.session-scene.is-compact .session-scene__badges,
+.session-scene.is-compact .session-scene__next,
+.session-scene.is-compact .session-scene__keys {
+  display: none;
+}
+
+.session-scene.is-compact .session-scene__content {
+  flex: 1;
+  min-width: 0;
+  flex-direction: row;
+  gap: 14px;
+  padding: 0;
+}
+
+/* الدائرة صغيرة والوقت بجانبها بدل داخلها */
+.session-scene.is-compact .session-scene__clock {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.session-scene.is-compact .session-scene__clock svg {
+  width: 52px;
+  height: 52px;
+}
+
+.session-scene.is-compact .session-scene__track,
+.session-scene.is-compact .session-scene__progress {
+  stroke-width: 16;
+}
+
+.session-scene.is-compact .session-scene__time {
+  position: static;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.session-scene.is-compact .session-scene__phase {
+  padding: 1px 8px;
+  font-size: 11px;
+}
+
+.session-scene.is-compact .session-scene__time strong {
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+/* الهدف بسطر واحد، والزايد ينقطع بـ ... */
+.session-scene.is-compact .session-scene__goal {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  padding: 6px 10px;
+  overflow: hidden;
+  font-size: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: start;
+}
+
+.session-scene.is-compact .session-scene__controls {
+  gap: 8px;
+  margin-inline-start: auto;
+}
+
+.session-scene.is-compact .session-scene__control {
+  width: 36px;
+  height: 36px;
+}
+
+.session-scene.is-compact .session-scene__main {
+  width: 46px;
+  height: 46px;
+}
+
+.session-scene.is-compact .session-scene__main svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* زرا التكبير وملء الشاشة: آخر الشريط بدل الزاوية */
+.session-scene.is-compact .session-scene__size,
+.session-scene.is-compact .session-scene__fullscreen {
+  position: static;
+  order: 2;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+
+/* =========================================
+   الخلفيات المتحركة (تُستخدم أيضًا في صور الاختيار الصغيرة)
+   ========================================= */
+.scene-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* طبقة داكنة خفيفة حتى يبقى النص واضحًا */
+.scene-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35));
+}
+
+.scene-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----- إسبريسو: ضوء دافئ يتحرك ببطء ----- */
+.scene-bg--espresso {
+  background: radial-gradient(circle at 30% 20%, #6B4A2F, #2B1E16 60%, #1B1411);
+}
+
+.scene-bg--espresso::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle at 60% 60%, rgba(233, 188, 116, 0.35), transparent 40%);
+  animation: scene-drift 14s ease-in-out infinite alternate;
+}
+
+/* ----- شفق قطبي: ألوان تتمايل ----- */
+.scene-bg--aurora {
+  background: linear-gradient(180deg, #071226, #0E2240 60%, #12304A);
+}
+
+.scene-bg--aurora::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(80, 220, 170, 0.55), transparent 45%),
+    radial-gradient(ellipse at 70% 30%, rgba(140, 110, 255, 0.45), transparent 45%);
+  filter: blur(30px);
+  animation: scene-drift 12s ease-in-out infinite alternate;
+}
+
+/* ----- ليل ونجوم: نقاط تلمع ----- */
+.scene-bg--stars {
+  background: radial-gradient(ellipse at bottom, #1F2B4A, #090D1A 70%);
+}
+
+.scene-bg--stars::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20px 30px, #FFFFFF, transparent),
+    radial-gradient(1px 1px at 90px 80px, #FFFFFF, transparent),
+    radial-gradient(1.5px 1.5px at 150px 20px, #FFFFFF, transparent),
+    radial-gradient(1px 1px at 60px 140px, #FFFFFF, transparent),
+    radial-gradient(1px 1px at 180px 120px, #FFFFFF, transparent);
+  background-size: 200px 160px;
+  animation: scene-twinkle 3s ease-in-out infinite alternate;
+}
+
+/* ----- مطر على النافذة: خطوط تنزل ----- */
+.scene-bg--rain {
+  background: linear-gradient(180deg, #2C3A47, #1C252E);
+}
+
+.scene-bg--rain::before {
+  content: "";
+  position: absolute;
+  inset: -100% 0 0;
+  background-image: repeating-linear-gradient(
+    100deg,
+    transparent 0 14px,
+    rgba(255, 255, 255, 0.18) 14px 15px,
+    transparent 15px 34px
+  );
+  animation: scene-rain 0.9s linear infinite;
+}
+
+/* ----- الشرفة: فيديو ----- */
+.scene-bg--balcony {
+  background-color: #2B1E16;
+}
+
+@keyframes scene-drift {
+  to {
+    transform: translate(10%, 8%) rotate(12deg);
+  }
+}
+
+@keyframes scene-twinkle {
+  to {
+    opacity: 0.45;
+  }
+}
+
+@keyframes scene-rain {
+  to {
+    transform: translateY(50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-bg::before,
+  .session-scene.is-compact {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .session-scene__keys {
+    display: none;
+  }
+
+  .session-scene {
+    min-height: 400px;
+    margin: 12px;
+  }
+
+  .session-scene__clock {
+    width: 210px;
+    height: 210px;
+  }
+
+  .session-scene__time strong {
+    font-size: 48px;
+  }
+
+  /* الشريط المصغّر على الموبايل: الدائرة والوقت والتشغيل والتكبير فقط */
+  .session-scene.is-compact {
+    margin: 8px 12px;
+  }
+
+  .session-scene.is-compact .session-scene__goal,
+  .session-scene.is-compact .session-scene__control,
+  .session-scene.is-compact .session-scene__fullscreen {
+    display: none;
+  }
+
+  .session-scene.is-compact .session-scene__time strong {
+    font-size: 24px;
+  }
+}

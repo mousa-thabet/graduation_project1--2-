@@ -1,0 +1,131 @@
+/* =========================================
+   حساب التواصل (فوق ستايل صفحة الحساب Profile.css)
+   ========================================= */
+
+/* الغلاف الافتراضي: تدرّج بلون المسار الأول */
+.community-profile__cover {
+  background:
+    radial-gradient(circle at 15% 120%, color-mix(in srgb, var(--track) 60%, transparent), transparent 60%),
+    linear-gradient(135deg, color-mix(in srgb, var(--track) 30%, var(--color-bg)), var(--color-primary-soft));
+}
+
+/* التخصص */
+.community-profile__headline {
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* المسارات تحت العدّادات */
+.community-profile__tracks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.community-profile__track {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: 1px solid color-mix(in srgb, var(--track) 55%, transparent);
+  border-radius: var(--radius-pill);
+  background-color: color-mix(in srgb, var(--track) 14%, transparent);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--track);
+  transition: background-color 0.2s ease;
+}
+
+.community-profile__track:hover {
+  background-color: color-mix(in srgb, var(--track) 24%, transparent);
+}
+
+/* التبويبات كثيرة: تمرير أفقي */
+.community-profile__tabs {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.community-profile__tabs .study-tabs__tab {
+  flex: 0 0 auto;
+  padding-inline: 16px;
+}
+
+/* إعجابات الإجابة */
+.community-profile__likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* ----- المسارات والشارات ----- */
+.community-profile__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+.community-profile__community,
+.community-profile__badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background-color: var(--color-surface);
+}
+
+.community-profile__community {
+  border-inline-start: 4px solid var(--track);
+  transition: box-shadow 0.2s ease;
+}
+
+.community-profile__community:hover {
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--track) 18%, transparent);
+}
+
+.community-profile__community-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  background-color: color-mix(in srgb, var(--track) 18%, transparent);
+  color: var(--track);
+}
+
+.community-profile__community-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.community-profile__community-text strong {
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+/* مكان المسودة: "سؤال · فرونت إند" */
+.community-profile__draft-place {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--track);
+}
+
+/* تبويبا الامتحانات والدورات: مسافة تحت التبويبات */
+.community-profile__catalog {
+  padding-top: 16px;
+}

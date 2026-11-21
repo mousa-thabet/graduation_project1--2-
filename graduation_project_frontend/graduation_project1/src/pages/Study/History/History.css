@@ -1,0 +1,44 @@
+/* =========================================
+   صفحة السجل
+   ========================================= */
+
+/* ----- تعليقاتي ----- */
+.history-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+.history-comment:hover {
+  background-color: color-mix(in srgb, var(--color-surface-2) 40%, transparent);
+}
+
+.history-comment__meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.history-comment__text {
+  font-size: 16px;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+
+/* المنشور الأصلي باختصار تحت التعليق (سطران فقط) */
+.history-comment__post {
+  display: -webkit-box;
+  padding: 8px 12px;
+  overflow: hidden;
+  border-inline-start: 3px solid var(--color-primary);
+  border-radius: 4px;
+  background-color: var(--color-surface-2);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  unicode-bidi: plaintext;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

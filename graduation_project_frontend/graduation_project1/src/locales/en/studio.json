@@ -1,0 +1,147 @@
+{
+  "title": "My courses",
+  "tabs": {
+    "label": "Course tabs",
+    "all": "Courses",
+    "enrolled": "Enrolled",
+    "mine": "My courses"
+  },
+  "panelTitle": "Your course studio",
+  "searchPlaceholder": "Search the courses you made",
+  "subtitle": "The courses you create and publish (not the ones you're enrolled in): edit them, finish your drafts, or start a new one.",
+  "newCourse": "New course",
+  "manage": "Manage my courses",
+  "openStudio": "Open the studio",
+  "studioCardTitle": "My courses",
+  "studioCardText": "Create a new course, or finish your drafts and edit your published courses.",
+  "stats": {
+    "courses": "Courses",
+    "students": "Students",
+    "lessons": "Lessons",
+    "content": "Content length",
+    "drafts_zero": "No drafts",
+    "drafts_one": "1 draft",
+    "drafts_other": "{{count}} drafts",
+    "published": "{{count}} published"
+  },
+  "filters": {
+    "label": "Course status",
+    "all": "All",
+    "published": "Published",
+    "draft": "Drafts"
+  },
+  "status": {
+    "published": "Published",
+    "draft": "Draft"
+  },
+  "updated": "Edited {{time}}",
+  "actions": {
+    "edit": "Edit",
+    "view": "View",
+    "publish": "Publish",
+    "unpublish": "Move to drafts",
+    "delete": "Delete",
+    "confirmDelete": "Sure? Click again",
+    "more": "More options"
+  },
+  "toasts": {
+    "published": "Course published 🎉",
+    "unpublished": "Course moved to drafts",
+    "deleted": "Course deleted"
+  },
+  "empty": {
+    "title": "You haven't made a course yet",
+    "text": "Start your first course: a title, video or written lessons, then publish it to your communities.",
+    "filtered": "No courses with this status",
+    "noMatch": "None of your courses match \"{{query}}\""
+  },
+  "emptyEnrolled": {
+    "title": "You're not enrolled in any course",
+    "text": "Pick a course from the \"Courses\" tab and enroll; you'll find it here with your progress."
+  },
+  "editor": {
+    "newTitle": "New course",
+    "untitled": "Untitled course",
+    "back": "My courses",
+    "preview": "Preview",
+    "saveDraft": "Save draft",
+    "publish": "Publish course",
+    "saveChanges": "Save changes",
+    "saving": "Saving…",
+    "unsaved": "Unsaved changes",
+    "saved": "All changes saved",
+    "savedToast": "Draft saved",
+    "leaveConfirm": "You have unsaved changes. Leave without saving?",
+    "steps": {
+      "label": "Editor sections",
+      "info": "Course details",
+      "curriculum": "Curriculum"
+    },
+    "info": {
+      "title": "Course details",
+      "text": "The first thing students see: keep the title clear and tell them what they'll learn.",
+      "titleLabel": "Course title",
+      "titlePlaceholder": "e.g. SQL basics, step by step",
+      "descriptionLabel": "Course description",
+      "descriptionPlaceholder": "What will students learn? Who is this course for?",
+      "placeTitle": "Where does the course appear?",
+      "placeText": "The course shows up for members of the community you pick.",
+      "level": "Level",
+      "next": "Next: curriculum"
+    },
+    "curriculum": {
+      "title": "Curriculum",
+      "text": "Drag or use the arrows to reorder lessons, and click any lesson to edit it.",
+      "summary": "{{lessons}} · {{minutes}} · {{videos}}",
+      "videos_zero": "no videos",
+      "videos_one": "1 video",
+      "videos_other": "{{count}} videos",
+      "addLesson": "Add lesson",
+      "limit": "You reached the lesson limit ({{count}})",
+      "lesson": "Lesson {{number}}",
+      "untitledLesson": "Untitled lesson",
+      "typeVideo": "Video",
+      "typeText": "Text",
+      "typeEmpty": "Empty",
+      "incomplete": "Missing content",
+      "drag": "Drag to reorder",
+      "moveUp": "Move lesson {{number}} up",
+      "moveDown": "Move lesson {{number}} down",
+      "remove": "Delete lesson {{number}}",
+      "toggle": "Open or close lesson {{number}}",
+      "lessonTitle": "Lesson title",
+      "lessonTitlePlaceholder": "e.g. Your first SELECT query",
+      "video": "Lesson video",
+      "videoDrop": "Drop the lesson video here, or click to choose it",
+      "videoHint": "MP4 or WebM, up to 300MB · the length is filled in for you",
+      "savedVideo": "Saved video",
+      "replaceVideo": "Replace video",
+      "removeVideo": "Remove video",
+      "notes": "Lesson notes",
+      "notesPlaceholder": "A summary, steps, code, or useful links",
+      "duration": "Length",
+      "minutes": "min",
+      "empty": "No lessons yet. Add the first lesson to get started."
+    },
+    "checklist": {
+      "title": "Course readiness",
+      "titleItem": "A clear title",
+      "description": "A course description",
+      "lessons": "At least one lesson",
+      "lessonTitles": "Every lesson has a title",
+      "lessonContent": "Every lesson has a video or notes",
+      "ready": "Ready to publish",
+      "notReady": "Finish the missing items to publish",
+      "optional": "optional"
+    },
+    "previewTitle": "How students will see it",
+    "draftNote": "Only you can see a draft. Publish it when you're done.",
+    "publishedNote": "This course is live: your edits reach students as soon as you save.",
+    "errors": {
+      "titleRequired": "Add a course title before saving.",
+      "notReady": "The course isn't ready to publish yet: {{item}}."
+    }
+  },
+  "draftBanner": "This course is a draft: only you can see it.",
+  "draftBannerAction": "Publish it now"
+}

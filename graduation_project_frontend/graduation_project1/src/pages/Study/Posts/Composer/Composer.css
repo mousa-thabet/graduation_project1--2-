@@ -1,0 +1,435 @@
+/* التعديل محصور داخل صندوق كتابة المنشور. */
+
+.composer--reference {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 14px;
+  row-gap: 12px;
+  margin: 14px 16px;
+  padding-block: 16px 24px;
+  padding-inline: 28px 22px;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background: var(--color-surface);
+}
+
+.composer--reference .composer__avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #e4e6eb;
+  color: #414950;
+  font-size: 15px;
+}
+
+.composer--reference .composer__body {
+  display: contents;
+}
+
+.composer--reference .composer__body > * {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.composer--reference .composer__field {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.composer--reference .composer__input {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: 7px 16px;
+  border: 1px solid transparent;
+  border-radius: 22px;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  background: #e4e6eb;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.6;
+  unicode-bidi: plaintext;
+}
+
+.composer--reference .composer__input::placeholder {
+  color: #7b8589;
+}
+
+.composer--reference .composer__input:focus {
+  border-color: var(--color-primary);
+}
+
+.composer--reference .composer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #e8eae9;
+}
+
+/* زرين بنفس أماكن التصميم: "فيديو بث مباشر" يمين و"صورة/فيديو" أقرب للنص */
+.composer--reference .composer__tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 8px;
+  padding-inline: 12px 78px;
+}
+
+.composer--reference .composer__tool {
+  min-height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.composer--reference .composer__tool:hover:not(:disabled) {
+  background: var(--color-primary-soft);
+}
+
+.composer--reference .composer__tool--live svg {
+  color: #d85867;
+}
+
+.composer--reference .composer__tool--live:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.composer--reference .composer__tool--media svg {
+  color: #46a181;
+}
+
+.composer--reference .composer__tool--media:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.composer--reference .composer__tool--extra {
+  color: var(--color-primary-light);
+  font-size: 12px;
+}
+
+.composer--reference:not(.has-content) .composer__tool--extra,
+.composer--reference:not(.has-content) .composer__tags {
+  display: none;
+}
+
+.composer--reference .composer__tool--extra:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.composer--reference .composer__send {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-inline-start: auto;
+}
+
+.composer--reference .composer__count {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.composer--reference .composer__count.is-warning {
+  color: var(--color-warning);
+}
+
+.composer--reference .composer__count.is-over {
+  color: var(--color-danger);
+}
+
+.composer--reference .composer__submit {
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.composer--reference .composer__submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* معاينة الملف المختار من الجهاز. */
+
+.composer--reference .composer__preview {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  background: var(--color-surface-2);
+}
+
+.composer--reference .composer__preview img,
+.composer--reference .composer__preview video {
+  display: block;
+  width: 100%;
+  max-height: 330px;
+  object-fit: contain;
+}
+
+.composer--reference .composer__preview .audio-player {
+  margin: 0;
+  border: 0;
+  padding-inline-end: 48px;
+}
+
+.composer--reference .composer__remove {
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 8px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 65%);
+  color: #fff;
+}
+
+.composer--reference .composer__drop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  border: 1px dashed var(--color-border);
+  border-radius: 9px;
+  background: var(--color-surface);
+  color: var(--color-primary-light);
+}
+
+.composer--reference .composer__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.composer--reference .composer__tag {
+  padding: 4px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  background: var(--color-surface);
+  color: var(--color-primary-light);
+  font-size: 12px;
+}
+
+.composer--reference .composer__tag[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+/* أدوات الإشارة والاستطلاع الأصلية. */
+
+.mention-menu {
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 0;
+  z-index: 20;
+  width: min(300px, 100%);
+  padding: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+}
+
+.mention-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.mention-menu__item[aria-selected="true"],
+.mention-menu__item:hover {
+  background: var(--color-surface-2);
+}
+
+.mention-menu__avatar {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+.mention-menu__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mention-menu__name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mention-menu__handle {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  text-align: start;
+}
+
+.poll-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+}
+
+.poll-editor__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.poll-editor__row input {
+  flex: 1;
+  min-width: 0;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.poll-editor__remove-option {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.poll-editor__remove-option:hover {
+  background: var(--color-surface-2);
+  color: var(--color-danger);
+}
+
+.poll-editor__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.poll-editor__add,
+.poll-editor__remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.poll-editor__add {
+  color: var(--color-primary-light);
+}
+
+.poll-editor__remove {
+  margin-inline-start: auto;
+  color: var(--color-danger);
+}
+
+/* خيارات التواصل تظهر عند بدء الكتابة داخل الصندوق. */
+
+.community-composer:has(.composer--reference) {
+  margin: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background: var(--color-surface);
+}
+
+.community-composer .composer--reference {
+  margin: 0;
+  border: 0;
+}
+
+.community-composer:has(.composer--reference):not(:focus-within):not(:has(.has-content)) .community-composer__bar,
+.community-composer:has(.composer--reference):not(:focus-within):not(:has(.has-content)) .composer-tags {
+  display: none;
+}
+
+.community-composer:has(.composer--reference) .composer-type__option:last-child {
+  display: none;
+}
+
+/* الوضع الداكن للصندوق. */
+
+body[data-study-theme="dark"] .composer--reference .composer__input,
+body[data-study-theme="dark"] .composer--reference .composer__avatar {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+body[data-study-theme="dark"] .composer--reference .composer__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+body[data-study-theme="dark"] .composer--reference .composer__bar {
+  border-top-color: var(--color-border);
+}
+
+@media (max-width: 520px) {
+  .composer--reference {
+    margin: 12px;
+    padding: 14px 12px 10px;
+    gap: 10px;
+  }
+
+  .composer--reference .composer__tools {
+    padding-inline: 0;
+  }
+
+  .composer--reference .composer__tool {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .community-composer:has(.composer--reference) {
+    margin: 12px;
+  }
+
+  .community-composer .composer--reference {
+    margin: 0;
+  }
+}

@@ -1,0 +1,123 @@
+/* =========================================
+   مكتبتي: أزرار "أضف لمكتبتي" و"انقل لجلستي"، وتبويب مكتبتي
+   ========================================= */
+
+/* أضف لمكتبتي */
+.library-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.library-save:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+.library-save.is-saved {
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+/* انقل لجلستي */
+.library-move {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 7px 14px;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  background: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-on-primary);
+  white-space: nowrap;
+}
+
+.library-move.is-moved,
+.library-move:disabled {
+  border-color: color-mix(in srgb, var(--color-success) 50%, var(--color-border));
+  background: color-mix(in srgb, var(--color-success) 12%, var(--color-surface));
+  color: var(--color-success);
+}
+
+.library-move:disabled {
+  cursor: default;
+}
+
+[dir="rtl"] .library-move__icon {
+  transform: scaleX(-1);
+}
+
+/* شيل من مكتبتي */
+.library-remove {
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.library-remove:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+/* أزرار الصوت أو الخلفية بالمكتبة جنب بعض */
+.library-sound__actions,
+.my-library__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.library-sound__actions {
+  margin-inline-start: auto;
+}
+
+.my-library__sound .my-library__actions {
+  margin-inline-start: auto;
+}
+
+/* شريط "كم عنصر بجلستي" ونقل الكل */
+.my-library__bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .library-sound__actions,
+  .my-library__sound .my-library__actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

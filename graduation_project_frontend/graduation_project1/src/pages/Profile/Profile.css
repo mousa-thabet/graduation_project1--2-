@@ -1,0 +1,607 @@
+/* =========================================
+   صفحة الحساب
+   ========================================= */
+
+/* ----- الغلاف ----- */
+.profile__cover {
+  position: relative;
+  aspect-ratio: 3 / 1;
+  overflow: hidden;
+  background-color: var(--color-surface-2);
+}
+
+.profile__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* بدون صورة: تدرّج من ألوان القالب المفعّل */
+.profile__cover--default {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-soft),
+    color-mix(in srgb, var(--color-primary) 55%, var(--color-surface))
+  );
+}
+
+/* قالب كيتسوني: الغلاف الافتراضي الجبال والشمس (الصورة تُحمَّل بكيتسوني فقط) */
+body[data-study-theme-id="kitsune"] .profile__cover--default {
+  background: url("/themes/kitsune/banner-bg.webp") center / cover no-repeat;
+}
+
+body[data-study-theme-id="kitsune"][data-study-theme="dark"] .profile__cover--default {
+  filter: brightness(0.45);
+}
+
+/* ----- الصورة الشخصية والأزرار ----- */
+.profile__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  padding-inline: 20px;
+}
+
+/* الصورة فوق حافة الغلاف (مثل X): position + z-index حتى تظهر فوق الغلاف لا تحته */
+.profile__avatar {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -64px;
+  border: 4px solid var(--color-bg);
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.profile__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.profile__button,
+.profile__follow {
+  padding: 8px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-weight: 700;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.profile__button:hover {
+  background-color: var(--color-surface-2);
+}
+
+/* تابع: زر ممتلئ */
+.profile__follow {
+  border-color: var(--color-text);
+  background-color: var(--color-text);
+  color: var(--color-surface);
+}
+
+.profile__follow:hover {
+  opacity: 0.88;
+}
+
+/* تتابعه: إطار فقط، وعند المرور يصير "إلغاء المتابعة" بالأحمر */
+.profile__follow.is-following {
+  border-color: var(--color-border);
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.profile__follow-hover {
+  display: none;
+}
+
+.profile__follow.is-following:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  opacity: 1;
+}
+
+.profile__follow.is-following:hover .profile__follow-text {
+  display: none;
+}
+
+.profile__follow.is-following:hover .profile__follow-hover {
+  display: inline;
+}
+
+.profile__follow--small {
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+.profile__icon-button {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.profile__icon-button:hover {
+  background-color: var(--color-surface-2);
+}
+
+/* ----- قائمة ⋯ ----- */
+.profile__menu {
+  position: relative;
+}
+
+.profile__menu-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  inset-inline-end: 0;
+  z-index: 20;
+  min-width: 200px;
+  padding: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background-color: var(--color-surface);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.profile__menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 15px;
+  text-align: start;
+}
+
+.profile__menu-item:hover {
+  background-color: var(--color-surface-2);
+}
+
+.profile__menu-item.is-danger {
+  color: var(--color-danger);
+}
+
+/* ----- الاسم والمعلومات ----- */
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 20px 16px;
+}
+
+.profile__name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+/* علامة التوثيق الخضرا */
+.profile__verified {
+  display: inline-flex;
+  color: var(--color-success);
+}
+
+.profile__handle-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -8px;
+}
+
+.profile__handle {
+  color: var(--color-text-muted);
+}
+
+.profile__badge {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: var(--color-surface-2);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.profile__bio {
+  font-size: 16px;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+
+.profile__tag {
+  color: var(--color-primary-light);
+}
+
+.profile__tag:hover,
+.profile__link:hover {
+  text-decoration: underline;
+}
+
+.profile__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.profile__meta li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile__link {
+  color: var(--color-primary-light);
+}
+
+.profile__counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+.profile__counts a:hover {
+  text-decoration: underline;
+}
+
+.profile__counts strong {
+  color: var(--color-text);
+}
+
+/* إحصائيات الدراسة */
+.profile__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile__stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-soft);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary-light);
+}
+
+/* ----- التبويبات: نفس مسافات رأس الصفحة حتى يعمل شكل تبويبات القسم والقالب كما هو ----- */
+.profile-tabs {
+  padding: 0 20px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* التبويبات أعرض من المساحة: بتتمرر أفقيًا بدون شريط تمرير،
+   وتدرّج على الطرف اللي فيه تبويبات مخفية (الكلاسات من useScrollTabs) */
+.profile-tabs .study-tabs {
+  --fade-left: 0px;
+  --fade-right: 0px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.profile-tabs .study-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-tabs .study-tabs.has-more-left {
+  --fade-left: 48px;
+}
+
+.profile-tabs .study-tabs.has-more-right {
+  --fade-right: 48px;
+}
+
+.profile-tabs .study-tabs:is(.has-more-left, .has-more-right) {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 var(--fade-left),
+    #000 calc(100% - var(--fade-right)),
+    transparent
+  );
+}
+
+.profile-hint {
+  padding: 10px 20px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* ----- الردود ----- */
+.profile-reply {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+.profile-reply:hover {
+  background-color: color-mix(in srgb, var(--color-surface-2) 40%, transparent);
+}
+
+.profile-reply__meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.profile-reply__text {
+  font-size: 16px;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+
+/* المنشور الأصلي باختصار تحت الرد */
+.profile-reply__post {
+  display: -webkit-box;
+  padding: 8px 12px;
+  overflow: hidden;
+  border-inline-start: 3px solid var(--color-primary);
+  border-radius: 4px;
+  background-color: var(--color-surface-2);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  unicode-bidi: plaintext;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ----- الوسائط: شبكة مربعات ----- */
+.profile-media {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 4px;
+}
+
+.profile-media__item {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: var(--color-surface-2);
+  color: var(--color-primary-light);
+}
+
+.profile-media__item img,
+.profile-media__item video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.profile-media__item:hover img,
+.profile-media__item:hover video {
+  transform: scale(1.04);
+}
+
+.profile-media__item span {
+  max-width: 90%;
+  overflow: hidden;
+  font-size: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--color-text-muted);
+}
+
+/* علامة التشغيل على الفيديو */
+.profile-media__badge {
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #FFFFFF;
+}
+
+.profile-media__badge svg {
+  fill: currentColor;
+}
+
+/* ----- المسودات ----- */
+.profile-drafts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.profile-draft {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: 16px;
+  background-color: var(--color-surface);
+}
+
+.profile-draft__text {
+  font-size: 16px;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+
+.profile-draft__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-draft__meta {
+  flex: 1;
+  min-width: 140px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.profile-draft__delete,
+.profile-draft__continue {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.profile-draft__delete {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-danger);
+}
+
+.profile-draft__delete:hover {
+  background-color: var(--color-surface-2);
+}
+
+.profile-draft__continue {
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.profile-draft__continue:hover {
+  opacity: 0.9;
+}
+
+/* ----- قائمة المتابعين ومن يتابعهم ----- */
+.profile-connections__tab {
+  text-align: center;
+}
+
+.profile-person {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-person__link {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.profile-person__avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.profile-person__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-person__name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+}
+
+.profile-person__link:hover .profile-person__name bdi {
+  text-decoration: underline;
+}
+
+.profile-person__handle-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.profile-person__bio {
+  margin-top: 4px;
+  font-size: 14px;
+  unicode-bidi: plaintext;
+}
+
+@media (max-width: 640px) {
+  .profile__avatar {
+    width: 88px;
+    height: 88px;
+    margin-top: -44px;
+    font-size: 34px;
+  }
+
+  .profile__top,
+  .profile__info {
+    padding-inline: 14px;
+  }
+
+  /* الموبايل: كل تبويب بعرض نصّه (بدل ما ينضغطوا ويلزقوا ببعض)، والزايد بيتمرر */
+  .profile-tabs .study-tabs {
+    display: flex;
+  }
+
+  .profile-tabs .study-tabs__tab {
+    flex: 1 0 auto;
+    padding-inline: 16px;
+    white-space: nowrap;
+  }
+
+  .profile-media {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

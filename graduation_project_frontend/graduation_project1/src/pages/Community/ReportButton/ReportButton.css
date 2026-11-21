@@ -1,0 +1,175 @@
+/* =========================================
+   زر البلاغ ونافذته
+   ========================================= */
+.report-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.report-button:hover:not(:disabled) {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.report-button:disabled {
+  opacity: 0.7;
+}
+
+.report-button__sent {
+  flex-basis: 100%;
+  font-size: 13px;
+  color: var(--color-success);
+}
+
+/* ----- النافذة -----
+   خاصة بنافذة البلاغ هون (report-dialog--catalog)، حتى ما تتداخل مع نافذة البلاغ العامة
+   (components/ReportDialog) اللي إلها نفس أسماء الكلاسات */
+.report-dialog.report-dialog--catalog {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(0 0 0 / 0.55);
+  animation: report-fade 0.2s ease;
+}
+
+@keyframes report-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.report-dialog--catalog .report-dialog__box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(440px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.3);
+  animation: report-catalog-in 0.3s var(--ease-out);
+}
+
+@keyframes report-catalog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+.report-dialog--catalog .report-dialog__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.report-dialog--catalog .report-dialog__title svg {
+  color: var(--color-danger);
+}
+
+.report-dialog--catalog .report-dialog__reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.report-dialog--catalog .report-dialog__reason {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.report-dialog--catalog .report-dialog__reason:hover {
+  border-color: var(--color-danger);
+}
+
+.report-dialog--catalog .report-dialog__reason.is-selected {
+  border-color: var(--color-danger);
+  background-color: color-mix(in srgb, var(--color-danger) 10%, transparent);
+}
+
+.report-dialog--catalog .report-dialog__reason input {
+  accent-color: var(--color-danger);
+}
+
+.report-dialog--catalog .report-dialog__note {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.report-dialog--catalog .report-dialog__note textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  font: inherit;
+  font-size: 15px;
+  color: var(--color-text);
+  resize: vertical;
+}
+
+.report-dialog--catalog .report-dialog__note textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.report-dialog--catalog .report-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.report-dialog--catalog .report-dialog__cancel,
+.report-dialog--catalog .report-dialog__send {
+  min-height: 40px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.report-dialog--catalog .report-dialog__cancel {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.report-dialog--catalog .report-dialog__send {
+  border: none;
+  background-color: var(--color-danger);
+  color: #ffffff;
+}
+
+.report-dialog--catalog .report-dialog__send:disabled {
+  opacity: 0.5;
+}

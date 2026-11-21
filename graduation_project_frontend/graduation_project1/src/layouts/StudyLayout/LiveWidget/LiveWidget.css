@@ -1,0 +1,122 @@
+/* =========================================
+   أنت في بث (بطاقة عائمة)
+   ========================================= */
+.live-widget {
+  position: fixed;
+  bottom: 24px;
+  inset-inline-end: 24px;
+  z-index: 60;
+  width: min(320px, calc(100vw - 24px));
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid #d93a3a;
+  border-radius: 18px;
+  background-color: var(--color-surface);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  animation: widget-in 0.4s var(--ease-out);
+}
+
+/* جلستي شغالة أيضًا: البطاقة فوق مؤقت الجلسة */
+.live-widget.is-stacked {
+  bottom: 92px;
+}
+
+.live-widget__link {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px;
+  border-radius: 14px;
+}
+
+.live-widget__link:hover {
+  background-color: var(--color-surface-2);
+}
+
+/* صورة الواجهة صغيرة */
+.live-widget__thumb {
+  flex-shrink: 0;
+  width: 72px;
+  border-radius: 10px;
+}
+
+.live-widget__thumb .stream-thumb__empty svg {
+  width: 20px;
+  height: 20px;
+}
+
+.live-widget__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.live-widget__text strong {
+  overflow: hidden;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.live-widget__text > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+
+.live-widget__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #d93a3a;
+  animation: stream-pulse 1.6s ease-in-out infinite;
+}
+
+.live-widget__exit {
+  flex-shrink: 0;
+  min-width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: #d93a3a;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #FFFFFF;
+}
+
+.live-widget__exit:hover {
+  filter: brightness(1.08);
+}
+
+/* الموبايل: فوق الشريط السفلي، بعيدًا عن زر النشر */
+@media (max-width: 640px) {
+  .live-widget {
+    bottom: 78px;
+    inset-inline-start: 12px;
+    inset-inline-end: auto;
+    width: min(300px, calc(100vw - 96px));
+  }
+
+  .live-widget.is-stacked {
+    bottom: 138px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-widget__dot {
+    animation: none;
+  }
+}

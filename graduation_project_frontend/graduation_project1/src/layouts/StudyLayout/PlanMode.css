@@ -1,0 +1,44 @@
+/* ----- صفحة خطتي جوّا قالب ادرس معي -----
+   بدون العمود الجانبي، والمحتوى أعرض (الخطة فيها إحصائيات وجدول أسبوع بدهم مساحة) */
+
+.study-app.is-plan {
+  grid-template-columns: 260px 1fr minmax(0, 1040px) 1fr;
+  grid-template-areas: "side . main .";
+}
+
+/* زر "انشر" للمنشورات، ما إله دخل بالخطة */
+.study-app.is-plan .study-post-button {
+  display: none;
+}
+
+/* الخطة كانت تحت شريط علوي ثابت، هون ما في شريط فبتبلّش من فوق */
+.study-app.is-plan .plan {
+  min-height: 100%;
+}
+
+.study-app.is-plan .plan__container {
+  padding: 32px 28px 64px;
+}
+
+@media (min-width: 1241px) {
+  .study-app.is-plan.is-sidebar-hidden {
+    grid-template-columns: 0 1fr minmax(0, 1040px) 1fr;
+  }
+}
+
+@media (max-width: 1240px) {
+  .study-app.is-plan {
+    grid-template-columns: 88px 1fr minmax(0, 1040px) 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .study-app.is-plan {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "main";
+  }
+
+  .study-app.is-plan .plan__container {
+    padding: 20px 12px 40px;
+  }
+}

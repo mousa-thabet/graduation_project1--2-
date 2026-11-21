@@ -1,0 +1,276 @@
+/* =========================================
+   العمود الجانبي
+   ========================================= */
+.study-aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 20px 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+/* ----- البحث ----- */
+.study-aside__search {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  transition: border-color 0.2s ease;
+}
+
+.study-aside__search:focus-within {
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+.study-aside__search input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.study-aside__search input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ----- البطاقات ----- */
+.aside-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 0 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background-color: var(--color-surface);
+}
+
+.aside-card__title {
+  padding: 0 16px 6px;
+  font-size: 18px;
+}
+
+.aside-card__list > li > a,
+.aside-person {
+  transition: background-color 0.2s ease;
+}
+
+.aside-card__more {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--color-primary-light);
+}
+
+.aside-card__more:hover {
+  background-color: var(--color-surface-2);
+  border-radius: 0 0 16px 16px;
+}
+
+/* ----- بث مباشر ----- */
+.aside-live {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 16px;
+}
+
+.aside-live:hover {
+  background-color: var(--color-surface-2);
+}
+
+.aside-live__dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background-color: var(--color-danger);
+  animation: aside-live 2s ease-in-out infinite;
+}
+
+@keyframes aside-live {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.aside-live__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.aside-live__title {
+  font-size: 15px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  unicode-bidi: plaintext;
+}
+
+.aside-live__meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* ----- الوسوم الرائجة ----- */
+.aside-trend {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 16px;
+  animation: aside-trend-in 0.4s var(--ease-out) backwards;
+}
+
+.aside-trend:hover {
+  background-color: var(--color-surface-2);
+}
+
+/* الوسوم تظهر واحدًا بعد الآخر */
+.aside-card__list li:nth-child(2) .aside-trend {
+  animation-delay: 0.05s;
+}
+
+.aside-card__list li:nth-child(3) .aside-trend {
+  animation-delay: 0.1s;
+}
+
+.aside-card__list li:nth-child(4) .aside-trend {
+  animation-delay: 0.15s;
+}
+
+.aside-card__list li:nth-child(5) .aside-trend {
+  animation-delay: 0.2s;
+}
+
+@keyframes aside-trend-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.aside-trend__rank,
+.aside-trend__count {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.aside-trend__tag {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: start;
+}
+
+/* ----- اقتراحات للمتابعة ----- */
+.aside-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+}
+
+.aside-person:hover {
+  background-color: var(--color-surface-2);
+}
+
+/* الصورة والاسم رابط واحد لحساب الشخص */
+.aside-person__link {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aside-person__link:hover .aside-person__name {
+  text-decoration: underline;
+}
+
+.aside-person__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-soft);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.aside-person__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.aside-person__name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.aside-person__handle {
+  font-size: 13px;
+  text-align: start;
+  color: var(--color-text-muted);
+}
+
+.aside-person__follow {
+  padding: 6px 16px;
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-bg);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.aside-person__follow.is-following {
+  border-color: var(--color-border);
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.aside-person__follow.is-following:hover {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+/* ----- الروابط ----- */
+.study-aside__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  padding: 0 8px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.study-aside__links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1020px) {
+  .study-aside {
+    display: none;
+  }
+}

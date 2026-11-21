@@ -1,0 +1,143 @@
+/* =========================================
+   1. ألوان المنصة (شكل واحد لكل الموقع)
+   الوضع الفاتح هو الأساسي، والداكن بيتفعّل من زر القمر بالقائمة الجانبية
+   ========================================= */
+:root {
+  --color-bg: #F4F8F6;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EEF4F1;
+  --color-border: #DCE6E2;
+  --color-text: #10302C;
+  --color-text-muted: #5B6F6B;
+  --color-primary: #06665B;
+  --color-primary-light: #06665B;
+  --color-on-primary: #FFFFFF;
+  --color-primary-soft: #DDF1E9;
+  --color-success: #15803D;
+  --color-danger: #B42318;
+  --color-warning: #B45309;
+  /* القائمة الجانبية واللوحة الخضرا بصفحات الدخول */
+  --color-sidebar: #063B36;
+  --color-on-sidebar: #FFFFFF;
+  /* ظل البطاقات */
+  --shadow-card: 0 1px 2px rgba(16, 48, 44, 0.04), 0 8px 24px rgba(16, 48, 44, 0.06);
+
+  --font-family: "Cairo Variable", "Segoe UI", Tahoma, Arial, sans-serif;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: light;
+}
+
+/* الوضع الداكن: نفس الأخضر، بس غامق (useTheme بيكتب data-study-theme على body) */
+body[data-study-theme="dark"] {
+  --color-bg: #071917;
+  --color-surface: #0D2522;
+  --color-surface-2: #14312D;
+  --color-border: #1F433E;
+  --color-text: #EAF4F1;
+  --color-text-muted: #9DB5AF;
+  --color-primary: #2FB5A3;
+  --color-primary-light: #5FD0BF;
+  --color-on-primary: #04201D;
+  --color-primary-soft: #123B35;
+  --color-success: #4ADE80;
+  --color-danger: #F87171;
+  --color-warning: #FBBF24;
+  --color-sidebar: #04211E;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  color-scheme: dark;
+}
+
+/* =========================================
+   2. أساسيات الصفحة
+   ========================================= */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { min-height: 100vh; font-family: var(--font-family); line-height: 1.6; background-color: var(--color-bg); color: var(--color-text); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+img, video, svg { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+/* انتقال ناعم عند تبديل الوضع الفاتح والداكن */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+}
+
+/* =========================================
+   3. الأزرار المشتركة
+   ========================================= */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform 0.2s var(--ease-out), border-color 0.2s ease, background-color 0.2s ease, filter 0.2s ease;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.btn--primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* زر بإطار (بيشتغل كـ <a> وكـ <button>، مثل زر تسجيل الخروج) */
+.btn--outline {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.btn--outline:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.btn--ghost {
+  border-color: var(--color-border);
+  background-color: var(--color-surface-2);
+  font-weight: 600;
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-primary);
+}
+
+.btn--lg {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+/* =========================================
+   4. حركة تبديل اللغة
+   ========================================= */
+.navbar > *,
+main,
+.footer {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+body.is-switching .navbar > *,
+body.is-switching main,
+body.is-switching .footer {
+  opacity: 0;
+  filter: blur(6px);
+}

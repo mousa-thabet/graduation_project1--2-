@@ -1,0 +1,415 @@
+/* =========================================
+   الواجهة اليومية: الخط الزمني
+   ========================================= */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.slot {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 28px minmax(0, 1fr);
+  column-gap: 12px;
+  padding-bottom: 14px;
+}
+
+/* ----- الخط بين المهام ----- */
+.slot::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  bottom: -12px;
+  inset-inline-start: calc(56px + 12px + 13px);
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform-origin: top;
+  transition: background-color 0.4s ease;
+  animation: line-grow 0.6s var(--ease-out);
+}
+
+@keyframes line-grow {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+.slot.is-done::before {
+  background-color: var(--color-success);
+}
+
+.slot.is-missed::before {
+  background-color: rgba(248, 113, 113, 0.5);
+}
+
+.slot--rest::before {
+  background: repeating-linear-gradient(180deg, rgba(251, 191, 36, 0.5) 0 4px, transparent 4px 8px);
+}
+
+.slot__time {
+  padding-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+  color: rgba(230, 241, 255, 0.75);
+}
+
+/* ----- النقطة على الخط ----- */
+.slot__node {
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(34, 211, 238, 0.6);
+  border-radius: 50%;
+  background-color: #08112A;
+  color: var(--color-bg);
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s var(--ease-out);
+}
+
+.slot.is-done .slot__node,
+.slot.is-missed .slot__node {
+  animation: node-pop 0.4s var(--ease-out);
+}
+
+@keyframes node-pop {
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+.slot.is-done .slot__node {
+  border-color: var(--color-success);
+  background-color: var(--color-success);
+}
+
+.slot.is-missed .slot__node {
+  border-color: var(--color-danger);
+  background-color: var(--color-danger);
+}
+
+.slot--rest .slot__node {
+  width: 16px;
+  height: 16px;
+  margin: 18px auto 0;
+  border-color: var(--color-warning);
+}
+
+/* المهمة الحالية: نبض حول النقطة */
+.slot.is-now .slot__node {
+  animation: node-now 2s ease-out infinite;
+}
+
+@keyframes node-now {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(34, 211, 238, 0);
+  }
+}
+
+/* ----- صندوق المهمة ----- */
+.slot__body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.3s ease, background-color 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
+  animation: slot-in 0.45s var(--ease-out);
+}
+
+/* كل مهمة جديدة تظهر بحركة */
+@keyframes slot-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.slot__body:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.slot.is-done .slot__body {
+  border-color: rgba(52, 211, 153, 0.55);
+  background-color: rgba(52, 211, 153, 0.1);
+}
+
+.slot.is-missed .slot__body {
+  border-color: rgba(248, 113, 113, 0.55);
+  background-color: rgba(248, 113, 113, 0.1);
+}
+
+.slot--rest .slot__body {
+  padding-block: 10px;
+  border-style: dashed;
+  border-color: rgba(251, 191, 36, 0.35);
+  background-color: rgba(251, 191, 36, 0.05);
+}
+
+.slot.is-now .slot__body {
+  border-color: rgba(34, 211, 238, 0.6);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.12);
+}
+
+.slot.is-leaving .slot__body {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.slot__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slot__tags {
+  display: flex;
+  gap: 6px;
+}
+
+.slot__kind,
+.slot__now {
+  padding: 1px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+}
+
+.slot__kind {
+  background-color: rgba(34, 211, 238, 0.12);
+  color: var(--color-primary-light);
+}
+
+.slot--rest .slot__kind {
+  background-color: rgba(251, 191, 36, 0.14);
+  color: #FCD34D;
+}
+
+.slot__now {
+  background-color: var(--color-primary);
+  font-weight: 600;
+  color: var(--color-bg);
+}
+
+.slot__title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+
+.slot__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(230, 241, 255, 0.55);
+}
+
+.slot__note {
+  font-size: 12px;
+  color: rgba(252, 211, 77, 0.75);
+}
+
+/* ----- نجاح / فشل ----- */
+.slot__status {
+  display: flex;
+  gap: 8px;
+}
+
+.status-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  font-size: 14px;
+  color: rgba(230, 241, 255, 0.8);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.status-button:active {
+  transform: scale(0.95);
+}
+
+.status-button--done:hover,
+.status-button--done[aria-pressed="true"] {
+  border-color: var(--color-success);
+  background-color: rgba(52, 211, 153, 0.18);
+  color: #6EE7B7;
+}
+
+.status-button--missed:hover,
+.status-button--missed[aria-pressed="true"] {
+  border-color: var(--color-danger);
+  background-color: rgba(248, 113, 113, 0.18);
+  color: #FCA5A5;
+}
+
+/* ----- الترتيب والحذف ----- */
+.slot__tools {
+  display: flex;
+  gap: 2px;
+  padding-inline-start: 12px;
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tool-button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(230, 241, 255, 0.5);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.tool-button:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.07);
+  color: var(--color-text);
+}
+
+.tool-button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.tool-button--delete:hover:not(:disabled) {
+  background-color: rgba(248, 113, 113, 0.12);
+  color: #FCA5A5;
+}
+
+/* ----- نهاية الخطة ----- */
+.timeline__end {
+  display: grid;
+  grid-template-columns: 56px 28px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 12px;
+}
+
+.timeline__end .slot__time {
+  padding-top: 0;
+}
+
+.timeline__end-node {
+  width: 14px;
+  height: 14px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: rgba(230, 241, 255, 0.5);
+  transform: rotate(45deg);
+}
+
+.timeline__end-label {
+  font-size: 14px;
+  color: rgba(230, 241, 255, 0.55);
+}
+
+/* ----- عند عدم وجود مهام ----- */
+.plan-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 40px 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  text-align: center;
+  animation: slot-in 0.5s var(--ease-out);
+}
+
+.plan-empty__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+  border-radius: 18px;
+  background-color: rgba(34, 211, 238, 0.1);
+  color: var(--color-primary);
+  animation: empty-float 3s ease-in-out infinite;
+}
+
+@keyframes empty-float {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.plan-empty h3 {
+  font-size: 17px;
+}
+
+.plan-empty p {
+  max-width: 380px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(230, 241, 255, 0.55);
+}
+
+/* ----- الشاشات الأصغر ----- */
+@media (max-width: 900px) {
+  .slot__body {
+    flex-wrap: wrap;
+  }
+
+  .slot__main {
+    flex-basis: 100%;
+  }
+
+  .slot__tools {
+    margin-inline-start: auto;
+    padding-inline-start: 0;
+    border-inline-start: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .slot,
+  .timeline__end {
+    grid-template-columns: 44px 24px minmax(0, 1fr);
+    column-gap: 8px;
+  }
+
+  .slot::before {
+    inset-inline-start: calc(44px + 8px + 11px);
+  }
+
+  .slot__node {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slot__time {
+    font-size: 13px;
+  }
+
+  .slot__status {
+    flex: 1;
+  }
+
+  .status-button {
+    flex: 1;
+    justify-content: center;
+  }
+}

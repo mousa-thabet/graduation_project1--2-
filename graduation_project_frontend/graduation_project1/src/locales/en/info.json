@@ -1,0 +1,112 @@
+{
+  "whatsappMessage": "Hi Areatk team, I have a question about the platform:",
+  "about": {
+    "badge": "About",
+    "title": "Areatk,",
+    "highlight": "one place to learn, connect and organize your time",
+    "text": "Areatk is an education-focused social platform for IT fields. It brings students and experts together in specialized communities, offers a calm space to study, and simple tools to plan your time — with no ads and no distractions.",
+    "sectionsTitle": "Three independent sections",
+    "valuesTitle": "Why Areatk?",
+    "values": {
+      "free": {
+        "title": "Completely free",
+        "text": "Every section is free for students: communities, courses, exams, study sessions and the study plan."
+      },
+      "focus": {
+        "title": "Distraction-free",
+        "text": "Eye-friendly colors, focus sounds and videos, a study/break timer, and no ads."
+      },
+      "trust": {
+        "title": "Verified experience",
+        "text": "The team verifies experts before granting a badge, and anyone can see their experience by tapping the shield."
+      },
+      "languages": {
+        "title": "Arabic & English",
+        "text": "The whole platform works in both languages, with right-to-left support and search that tolerates small typos."
+      }
+    },
+    "badgesTitle": "Badges: how do you know who's an expert?",
+    "badgesText": "Anyone can apply for a badge with proof (a certificate or a letter from an employer), and the team reviews it. A badge means the team verified the experience — not that everything its holder writes is correct.",
+    "expert": "Blue shield: practical or academic experience in a specific track.",
+    "scholar": "Green shield: academic value (doctors, trainers and certificate holders); allows publishing courses, exams and educational live streams.",
+    "ctaTitle": "Ready to start?",
+    "ctaText": "Create your account in a minute. Got a question or suggestion? Our team answers on WhatsApp."
+  },
+  "privacy": {
+    "badge": "Platform",
+    "title": "Terms of use & privacy policy",
+    "intro": "Here we explain what data we handle, where it's stored, how we use it, and the rules we all agree on to keep the platform a useful and safe place to learn.",
+    "updated": "Last updated: {{date}}",
+    "toc": "Contents",
+    "sections": {
+      "data": {
+        "title": "Data we handle",
+        "points": [
+          "Account data: username, email and password (stored hashed).",
+          "Profile data you choose to add: name, photo, bio, headline and university.",
+          "Content you publish: posts, questions, comments, videos, courses and exams.",
+          "Your activity: communities you joined, exam results, course progress and your study plan."
+        ]
+      },
+      "use": {
+        "title": "How we use your data",
+        "points": [
+          "To run the platform: showing posts from your communities, saving your progress and sending notifications.",
+          "So the admin team can review badge requests, branch requests and reports.",
+          "We don't sell your data, show ads, or share it with any third party."
+        ]
+      },
+      "storage": {
+        "title": "Where data is stored",
+        "points": [
+          "Your account data and the content you post are stored on the platform's servers, and travel between you and the platform over an encrypted connection (HTTPS).",
+          "Your password is stored hashed, so no one can read it — not even the admin team.",
+          "We keep your data while your account is active. When you delete your account, your personal data is deleted with it.",
+          "Your browser only keeps a few simple settings, like your language, light or dark mode, and staying logged in."
+        ]
+      },
+      "badges": {
+        "title": "Badges and proof files",
+        "points": [
+          "The proof file you attach to a badge request is seen only by the admin team, never by other users.",
+          "Once approved, your experience page shows only: the badge type, your description, and the proof type (e.g. certificate).",
+          "You can delete your request while it's under review, and the proof file is deleted with it."
+        ]
+      },
+      "rules": {
+        "title": "Rules of use",
+        "points": [
+          "Respect others and don't post offensive or inappropriate content.",
+          "No ads or spam, and don't copy others' content (courses or exams) without permission.",
+          "Check information before publishing, especially in courses and exams.",
+          "Camera and microphone are used in live streams only with your permission, and stop as soon as the live ends."
+        ]
+      },
+      "moderation": {
+        "title": "Reports and moderation",
+        "points": [
+          "You can report any exam, course or live stream that breaks the rules.",
+          "The admin team reviews the report, decides to remove or keep the content, and notifies you of the decision.",
+          "Repeated violations may lead to losing a badge or suspending the account."
+        ]
+      },
+      "rights": {
+        "title": "Your rights",
+        "points": [
+          "You can edit your profile anytime and delete your posts, drafts, courses and exams.",
+          "You can request a copy of your data or full account deletion by contacting us.",
+          "Your content is yours; publishing it means you agree to show it to users inside the platform."
+        ]
+      },
+      "changes": {
+        "title": "Changes to this policy",
+        "points": [
+          "We may update this policy as the platform grows; the last-updated date appears at the top.",
+          "Continuing to use the platform after an update means you accept the new version."
+        ]
+      }
+    },
+    "contactTitle": "Questions about your privacy?",
+    "contactText": "Contact the support team on WhatsApp and we'll get back to you soon."
+  }
+}

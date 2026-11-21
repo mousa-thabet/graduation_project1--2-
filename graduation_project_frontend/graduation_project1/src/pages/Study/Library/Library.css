@@ -1,0 +1,453 @@
+/* المكتبة: أصوات وخلفيات الجلسة فقط. */
+
+.library-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+}
+
+.library-hint,
+.library-empty {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.library-group {
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.library-sounds {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.library-sound {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+}
+
+.library-sound.is-playing {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.library-sound__icon {
+  flex: 0 0 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-surface-2);
+  color: var(--color-primary-light);
+}
+
+.library-sound__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-wrap: anywhere;
+}
+
+.library-sound__text strong {
+  font-size: 14px;
+}
+
+.library-sound__text span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.library-sound__uploader {
+  color: var(--color-primary-light);
+}
+
+.library-sound__uploader:hover {
+  text-decoration: underline;
+}
+
+.library-sound__play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.library-sound__play:hover,
+.library-sound__play[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+/* رفع الأصوات */
+
+.library-upload {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  text-align: start;
+}
+
+.library-upload:hover {
+  border-color: var(--color-primary);
+}
+
+.library-upload__icon {
+  color: var(--color-primary-light);
+}
+
+.library-upload__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.library-upload__text strong {
+  font-size: 14px;
+}
+
+.library-upload__text span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+}
+
+.upload-form__file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 100px;
+  padding: 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface-2);
+  cursor: pointer;
+}
+
+.upload-form__file:hover,
+.upload-form__file:focus-within {
+  border-color: var(--color-primary);
+}
+
+.upload-form__file > span {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-wrap: anywhere;
+}
+
+.upload-form__file strong {
+  font-size: 14px;
+}
+
+.upload-form__file span span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.upload-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.upload-form__field > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.upload-form__count {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.upload-form__field input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.upload-form__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.upload-form__note svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.upload-form__error {
+  padding: 10px;
+  border-radius: 8px;
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 8%,
+    var(--color-surface)
+  );
+  color: var(--color-danger);
+  font-size: 13px;
+}
+
+.upload-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.upload-form__cancel,
+.upload-form__send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.upload-form__send {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.upload-form__send:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+[dir="rtl"] .upload-form__send svg {
+  transform: scaleX(-1);
+}
+
+/* الأصوات التي رفعها المستخدم */
+
+.my-sound__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.my-sound__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.my-sound__meta .my-sound__status.is-pending {
+  color: var(--color-warning);
+}
+
+.my-sound__meta .my-sound__status.is-approved {
+  color: var(--color-success);
+}
+
+.my-sound__meta .my-sound__status.is-rejected {
+  color: var(--color-danger);
+}
+
+.my-sound__hint {
+  font-size: 12px;
+}
+
+.my-sound__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.my-sound__delete {
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.my-sound__delete:hover,
+.my-sound__delete.is-confirming {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+/* خلفيات جلسة الدراسة */
+
+.scene-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 220px), 1fr)
+  );
+  gap: 14px;
+}
+
+.scene-card {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+}
+
+.scene-card.is-active {
+  border-color: var(--color-primary);
+}
+
+.scene-card__preview {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scene-card__preview .scene-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.scene-card__preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scene-card__badge {
+  position: absolute;
+  top: 8px;
+  inset-inline-start: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: rgb(0 0 0 / 55%);
+  color: #fff;
+  font-size: 11px;
+}
+
+.scene-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+
+.scene-card__info strong {
+  font-size: 14px;
+}
+
+/* اسم الكلاس مستخدم حاليًا لزر اختيار خلفية الجلسة. */
+
+.theme-option__apply {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.theme-option__apply:disabled {
+  border-color: var(--color-border);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+  cursor: default;
+}
+
+.library-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary-light);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.library-link:hover {
+  text-decoration: underline;
+}
+
+[dir="rtl"] .library-link__arrow {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 640px) {
+  .library-section {
+    padding: 14px 12px;
+  }
+
+  .library-sound {
+    flex-wrap: wrap;
+  }
+
+  .my-sound__actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

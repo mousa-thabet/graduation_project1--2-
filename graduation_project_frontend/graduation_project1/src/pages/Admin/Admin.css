@@ -1,0 +1,870 @@
+/* =========================================
+   صفحات لوحة الأدمن
+   ========================================= */
+
+/* ----- رأس الصفحة ----- */
+.admin-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.admin-header__title {
+  font-size: 28px;
+}
+
+.admin-header__text {
+  max-width: 680px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* ----- فلتر الحالة ----- */
+.admin-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.admin-filter__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.admin-filter__chip:hover {
+  color: var(--color-text);
+}
+
+.admin-filter__chip.is-active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+.admin-filter__count {
+  min-width: 22px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* ----- النظرة العامة ----- */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.admin-stat {
+  --tone: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  transition: transform 0.25s var(--ease-out), border-color 0.25s ease;
+}
+
+.admin-stat:hover {
+  transform: translateY(-3px);
+  border-color: var(--tone);
+}
+
+.admin-stat--badges {
+  --tone: #22c55e;
+}
+
+.admin-stat--branches {
+  --tone: #3b82f6;
+}
+
+.admin-stat--reports {
+  --tone: var(--color-warning);
+}
+
+.admin-stat--removed {
+  --tone: var(--color-danger);
+}
+
+.admin-stat__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background-color: color-mix(in srgb, var(--tone) 15%, transparent);
+  color: var(--tone);
+}
+
+.admin-stat__value {
+  font-size: 32px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-stat__label {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.admin-panel {
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+}
+
+.admin-panel__title {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.admin-panel__empty {
+  color: var(--color-text-muted);
+}
+
+.admin-recent {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-recent__item {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+.admin-recent__item:last-child {
+  border-bottom: none;
+}
+
+.admin-recent__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-text-muted);
+}
+
+.admin-recent__dot.is-approved {
+  background-color: var(--color-success);
+}
+
+.admin-recent__dot.is-rejected,
+.admin-recent__dot.is-removed {
+  background-color: var(--color-danger);
+}
+
+.admin-recent__kind {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.admin-recent__label {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-recent__status,
+.admin-recent__time {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.admin-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.admin-tip svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--color-primary);
+}
+
+/* ----- بطاقات الطلبات والبلاغات ----- */
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-inline-start: 4px solid var(--color-warning);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+}
+
+.admin-card.is-approved {
+  border-inline-start-color: var(--color-success);
+}
+
+.admin-card.is-rejected,
+.admin-card.is-removed {
+  border-inline-start-color: var(--color-danger);
+}
+
+.admin-card.is-dismissed {
+  border-inline-start-color: var(--color-text-muted);
+}
+
+.admin-card__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-card__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background-color: var(--color-surface-2);
+  color: var(--color-primary-light);
+}
+
+.admin-card__heading {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-card__heading h2 {
+  font-size: 17px;
+}
+
+.admin-card__heading p {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* "3 بلاغات على نفس المحتوى" */
+.admin-card__count {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(248, 113, 113, 0.12);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+.admin-card__label {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.admin-card__text {
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.admin-card__reason {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background-color: rgba(251, 191, 36, 0.1);
+  font-weight: 600;
+  color: var(--color-warning);
+}
+
+.admin-card__checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-card__done {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.admin-tags li {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  font-size: 13px;
+  color: var(--color-primary-light);
+}
+
+/* فحص سريع */
+.admin-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+}
+
+.admin-check.is-ok {
+  background-color: rgba(52, 211, 153, 0.1);
+  color: var(--color-success);
+}
+
+.admin-check.is-warn {
+  background-color: rgba(251, 191, 36, 0.1);
+  color: var(--color-warning);
+}
+
+/* ملف الإثبات */
+.admin-proof {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 12px;
+  max-width: 100%;
+  padding: 8px 14px 8px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.admin-proof:hover {
+  border-color: var(--color-primary);
+}
+
+.admin-proof.is-missing {
+  padding: 8px 14px;
+  border-style: dashed;
+  color: var(--color-text-muted);
+}
+
+.admin-proof__image,
+.admin-proof__pdf {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.admin-proof__pdf {
+  display: grid;
+  place-items: center;
+  background-color: rgba(248, 113, 113, 0.15);
+  font-weight: 800;
+  color: var(--color-danger);
+}
+
+.admin-proof__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.admin-proof__text bdi {
+  overflow: hidden;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+}
+
+/* ----- أزرار القرار ----- */
+.admin-decision {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+  padding-top: 14px;
+  border: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.admin-decision--reasons {
+  flex-direction: column;
+}
+
+.admin-decision legend {
+  float: inline-start;
+  width: 100%;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.admin-decision__reason {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.admin-decision__reason input {
+  accent-color: var(--color-danger);
+}
+
+.admin-decision__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.admin-button {
+  --tone: var(--color-success);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--tone);
+  border-radius: var(--radius-pill);
+  background-color: var(--tone);
+  font-weight: 700;
+  color: var(--color-on-primary);
+  transition: transform 0.2s var(--ease-out), opacity 0.2s ease;
+}
+
+.admin-button:hover {
+  transform: translateY(-2px);
+}
+
+.admin-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
+.admin-button--bad {
+  --tone: var(--color-danger);
+}
+
+.admin-button--ghost {
+  border-color: var(--color-border);
+  background: none;
+  color: var(--color-text);
+}
+
+/* الحالة بعد القرار */
+.admin-status {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+}
+
+.admin-status--good {
+  background-color: rgba(52, 211, 153, 0.1);
+  color: var(--color-success);
+}
+
+.admin-status--bad {
+  background-color: rgba(248, 113, 113, 0.1);
+  color: var(--color-danger);
+}
+
+.admin-status--neutral,
+.admin-status--wait {
+  background-color: var(--color-surface-2);
+  color: var(--color-text-muted);
+}
+
+.admin-link {
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.admin-link:hover {
+  color: var(--color-text);
+}
+
+/* ----- المجتمعات والفروع: نماذج الإضافة ----- */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-field small {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.admin-field input,
+.admin-field textarea,
+.admin-field select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface-2);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.admin-field textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.admin-field input:focus,
+.admin-field textarea:focus,
+.admin-field select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.admin-form__subtitle {
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--color-border);
+  font-size: 15px;
+}
+
+.admin-form__error {
+  font-size: 14px;
+  color: var(--color-danger);
+}
+
+.admin-form__success {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background-color: rgba(52, 211, 153, 0.1);
+  font-size: 14px;
+  color: var(--color-success);
+}
+
+.admin-form__success .admin-link {
+  margin-inline-start: auto;
+}
+
+.admin-form .admin-button {
+  align-self: flex-start;
+}
+
+/* ألوان المسار */
+.admin-colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: none;
+}
+
+.admin-colors legend {
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-colors__swatch {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--swatch);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-out);
+}
+
+.admin-colors__swatch:hover {
+  transform: scale(1.1);
+}
+
+.admin-colors__swatch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.admin-colors__swatch:has(input:checked) {
+  box-shadow: 0 0 0 3px var(--color-bg), 0 0 0 5px var(--swatch);
+}
+
+.admin-colors__swatch:has(input:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* ----- المجتمعات والفروع: القائمة ----- */
+.admin-section-title {
+  margin: 28px 0 14px;
+  font-size: 20px;
+}
+
+.admin-places {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.admin-place {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--track);
+  border-radius: 18px;
+  background-color: var(--color-surface);
+}
+
+.admin-place__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-place__icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--track) 18%, transparent);
+  color: var(--track);
+}
+
+.admin-place__new {
+  padding: 1px 8px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(52, 211, 153, 0.15);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+.admin-place__count {
+  margin-inline-start: auto;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.admin-place__branches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.admin-place__branches li {
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  font-size: 13px;
+}
+
+/* فرع جديد: إطار أخضر */
+.admin-place__branches li.is-new {
+  box-shadow: inset 0 0 0 1px var(--color-success);
+  color: var(--color-success);
+}
+
+/* ----- مكتبة الدراسة: اختيار الملف ----- */
+.admin-file {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.admin-file:hover,
+.admin-file:focus-within {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.admin-file.has-file {
+  border-style: solid;
+  border-color: var(--color-success);
+}
+
+.admin-file__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background-color: var(--color-surface-2);
+  color: var(--color-primary-light);
+}
+
+.admin-file.has-file .admin-file__icon {
+  color: var(--color-success);
+}
+
+.admin-file__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.admin-file__text strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-file__text span {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* ----- مكتبة الدراسة: اللي رفعته الإدارة ----- */
+.admin-medias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  align-items: start;
+  gap: 14px;
+}
+
+.admin-media {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background-color: var(--color-surface);
+}
+
+.admin-media__preview {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--color-surface-2), var(--color-primary-soft));
+  color: var(--color-primary-light);
+}
+
+.admin-media--sound .admin-media__preview {
+  aspect-ratio: auto;
+  height: 96px;
+}
+
+.admin-media__preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-media__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px 0;
+}
+
+.admin-media__meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.admin-media__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding: 14px 16px 16px;
+}
+
+.admin-media__actions .admin-button {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-recent__item {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .admin-recent__kind,
+  .admin-recent__time {
+    display: none;
+  }
+
+  .admin-form__row {
+    grid-template-columns: 1fr;
+  }
+}

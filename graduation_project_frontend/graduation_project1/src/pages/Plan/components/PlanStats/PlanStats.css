@@ -1,0 +1,154 @@
+/* =========================================
+   شريط الأرقام
+   ========================================= */
+.plan-stats {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-surface);
+}
+
+.plan-stats__item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 24px;
+}
+
+.plan-stats__item + .plan-stats__item {
+  border-inline-start: 1px solid var(--color-border);
+}
+
+.plan-stats__item--ring {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.plan-stats__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.plan-stats__label {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.plan-stats__value {
+  font-size: 26px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.plan-stats__sub {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.plan-stats__sub--missed {
+  color: var(--color-danger);
+}
+
+/* ----- شريط وقت الدراسة ----- */
+.plan-stats__progress {
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  overflow: hidden;
+}
+
+.plan-stats__progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--color-primary);
+  transition: width 0.8s var(--ease-out);
+  animation: grow-width 1s var(--ease-out);
+}
+
+@keyframes grow-width {
+  from {
+    width: 0;
+  }
+}
+
+/* ----- دائرة نسبة الالتزام ----- */
+@property --percent {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.plan-stats__ring {
+  position: relative;
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: conic-gradient(var(--color-primary) calc(var(--percent) * 1%), var(--color-surface-2) 0);
+  transition: --percent 0.9s var(--ease-out);
+  animation: ring-fill 1.2s var(--ease-out);
+}
+
+/* تمتلئ الدائرة من الصفر عند فتح الصفحة */
+@keyframes ring-fill {
+  from {
+    --percent: 0;
+  }
+}
+
+.plan-stats__ring::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+}
+
+.plan-stats__ring strong {
+  position: relative;
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----- الشاشات الأصغر ----- */
+@media (max-width: 900px) {
+  .plan-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .plan-stats__item:nth-child(3) {
+    border-inline-start: none;
+  }
+
+  .plan-stats__item:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 560px) {
+  .plan-stats__item {
+    padding: 16px;
+  }
+
+  .plan-stats__item--ring {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .plan-stats__value {
+    font-size: 22px;
+  }
+}
