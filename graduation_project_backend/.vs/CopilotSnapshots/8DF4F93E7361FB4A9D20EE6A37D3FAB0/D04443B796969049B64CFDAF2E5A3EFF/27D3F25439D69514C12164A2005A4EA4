@@ -1,0 +1,413 @@
+﻿# AreaTk — تصميم قاعدة البيانات والـ Entities
+
+## نطاق المرحلة
+
+هذه الوثيقة تلخص مرحلة تحليل وتصميم قاعدة البيانات اعتمادًا على `README.md` و`DATA.md` وملفات Frontend التالية:
+
+- `src/hooks/`
+- `src/data/`
+- `src/utils/`
+- الصفحات والمكونات التي تستهلك البيانات
+
+لم يتم في هذه المرحلة:
+
+- إنشاء Entities فعلية
+- تعديل `ApplicationDbContext`
+- إنشاء Migrations
+- تنفيذ Database Update
+- إضافة Packages
+- تعديل Frontend
+
+## قواعد التصميم العامة
+
+- قاعدة البيانات: SQL Server.
+- ORM: Entity Framework Core Code First.
+- المفاتيح الأساسية من النوع `Guid`.
+- قيم IDs القادمة من Frontend قد تكون Strings، وتحول إلى `Guid` داخل Backend.
+- التواريخ تخزن UTC.
+- JSON يستخدم camelCase.
+- الملفات لا تخزن داخل SQL Server؛ تخزن خارج القاعدة، ويخزن `MediaFile` بياناتها الوصفية و`mediaId`.
+- الحقول المشتقة لا تخزن على العنصر الرئيسي، ومنها:
+  - `isMine`
+  - `isLiked`
+  - `isSaved`
+  - `isReported`
+  - `myVote`
+  - `isRead`
+  - `isFollowing`
+  - `isEnrolled`
+- يجب منع التكرار في الإعجابات، الحفظ، المتابعة، التصويت، والعضويات.
+
+## الكيانات المقترحة
+
+### المستخدمون والملفات الشخصية
+
+- `ApplicationUser` — مستخدم Identity الحالي مع خصائص مثل `DisplayName`, `AvatarMediaId`, `CreatedAtUtc`, `IsActive` و`IsDeleted`.
+- `UserStudyProfile` — ملف قسم «ادرس معي»: النبذة، الجامعة، الموقع، الموقع الإلكتروني، الغلاف والمنشور المثبت.
+- `UserCommunityProfile` — ملف قسم «التواصل»: العنوان المهني، النبذة، الجامعة، الموقع الإلكتروني، الغلاف والمنشور المثبت.
+- `Follow` — علاقة المتابعة الموحدة بين القسمين.
+- `Block` — حظر مستخدم من مستخدم آخر.
+
+الاسم والصورة الشخصية مشتركان عبر `ApplicationUser`، بينما بيانات الملفين مستقلة. يفرض Unique Constraint على `Follow(FollowerId, FollowedUserId)` وعلى `Block(BlockerId, BlockedUserId)`.
+
+### الشارات والطلبات
+
+- `BadgeGrant` — الشارة الممنوحة فعليًا للمستخدم، من نوع `Expert` أو `Scholar`.
+- `BadgeRequest` — طلب الحصول على شارة مع ملف الإثبات وحالة الطلب.
+- `BadgeExperience` — تفاصيل الخبرة المرتبطة بالشارة.
+
+قواعد مهمة:
+
+- شارة `Expert` مرتبطة بـ `Community` محدد.
+- شارة `Scholar` تمنح صلاحيات نشر الامتحانات والدورات والبث التعليمي.
+- أي شارة تسمح بطلب فتح فرع.
+- منح الشارات وقرارات الطلبات من صلاحيات الإدارة فقط.
+- لا يسمح بطلب pending مكرر لنفس المستخدم ونوع الشارة والمجتمع.
+
+### المجتمعات والفروع والعضويات
+
+- `Community` — المجتمع مع الاسم العربي والإنجليزي والوصف واللون.
+- `Branch` — فرع تابع لمجتمع مع الاسم والوصف والوسوم.
+- `CommunityMembership` — عضوية المستخدم في المجتمع.
+- `BranchMembership` — عضوية المستخدم في الفرع.
+- `BranchRequest` — طلب فتح فرع جديد.
+
+قواعد العضوية المطابقة للواجهة:
+
+- الانضمام للمجتمع لا يضيف المستخدم تلقائيًا إلى فروعه.
+- الانضمام إلى فرع يضيف عضوية المجتمع إذا لم تكن موجودة.
+- مغادرة المجتمع تزيل عضويات فروعه منطقيًا.
+- مغادرة آخر فرع لا تزيل عضوية المجتمع.
+- Unique على عضوية المستخدم والمجتمع، وعلى المستخدم والفرع.
+
+### المنشورات والتفاعلات
+
+- `Post` — منشور الدراسة أو التواصل.
+- `PostMedia` — ربط المنشور بملفات الوسائط.
+- `PostTag` — وسوم المنشور.
+- `Comment` — تعليق أو رد باستخدام `ParentCommentId`.
+- `PostLike` — إعجاب بالمنشور.
+- `CommentLike` — إعجاب بالتعليق.
+- `PostSave` — حفظ المنشور.
+- `Poll` — استطلاع مرتبط بالمنشور.
+- `PollOption` — خيار استطلاع.
+- `PollVote` — تصويت المستخدم في الاستطلاع.
+
+قيود أساسية:
+
+- `PostLike(PostId, UserId)` فريد.
+- `CommentLike(CommentId, UserId)` فريد.
+- `PostSave(PostId, UserId)` فريد.
+- `PollVote(PollId, UserId)` فريد.
+- `BranchId` يجب أن ينتمي إلى `CommunityId` الموجود في المنشور.
+- `ParentCommentId` يجب أن يشير إلى تعليق في نفس المنشور.
+- الحقول `isLiked`, `isSaved`, `isReported` و`myVote` تحسب وقت الطلب.
+
+### الامتحانات
+
+- `Exam` — هوية الامتحان الأساسية.
+- `ExamVersion` — نسخة ثابتة من الامتحان.
+- `ExamQuestion` — سؤال داخل نسخة امتحان.
+- `ExamQuestionOption` — خيارات السؤال.
+- `ExamAttempt` — محاولة الطالب.
+- `ExamAnswer` — إجابة الطالب لكل سؤال.
+
+#### Versioning
+
+لا تعدل النسخة المنشورة مباشرة. عند تعديل الامتحان تنشأ `ExamVersion` جديدة:
+
+```text
+Exam
+ ├── Version 1
+ ├── Version 2
+ └── Version 3
+```
+
+كل `ExamAttempt` يرتبط بـ `ExamVersionId`، لذلك لا تتغير النتائج القديمة عند تعديل الامتحان.
+
+الإجابة الصحيحة والتفسير لا يرسلان في DTO بدء الامتحان، بل يظهران بعد التسليم والتصحيح فقط.
+
+### الدورات والدروس
+
+- `Course` — الدورة وحالتها ومسارها ومؤلفها.
+- `CourseLesson` — الدرس ومحتواه ووسيط الفيديو.
+- `CourseEnrollment` — تسجيل الطالب في الدورة.
+- `LessonProgress` — تقدم الطالب في درس محدد.
+
+قواعد مهمة:
+
+- نشر الدورة يتطلب صلاحية `Scholar`.
+- `CourseLesson` يحتفظ بمعرف مستقر `StableKey` أو `Id`.
+- تعديل عنوان أو محتوى الدرس لا يغير معرفه.
+- لا يحذف الدرس فعليًا إذا كان مرتبطًا بتقدم طلاب.
+- Unique على `CourseId + StableKey`.
+- Unique على `CourseEnrollment(CourseId, UserId)`.
+
+### جلسات الدراسة والبث
+
+- `StudySession` — جلسة دراسة للمستخدم.
+- `StudySessionSegment` — مرحلة دراسة أو استراحة.
+- `StudyDailyStat` — دقائق وجولات كل يوم.
+- `StudyRoom` — غرفة أو بث دراسة مباشر.
+- `StudyRoomParticipant` — مشاركو الغرفة.
+- `StudyRoomMessage` — رسائل الدردشة.
+- `StudyRecording` — التسجيل الناتج عن البث.
+- `StudyRecordingLike` — إعجاب بالتسجيل.
+
+WebRTC وstreams الحية لا تخزن كملفات Entity؛ تخزن بيانات الغرفة والتسجيل والرسائل فقط. البث التعليمي يتطلب صلاحية `Scholar`.
+
+### الخطط اليومية والأسبوعية
+
+- `StudyPlan` — خطة المستخدم وإعداداتها.
+- `PlanTask` — مهمة داخل الخطة.
+
+خصائص مهمة للمهمة:
+
+- العنوان.
+- عدد الدقائق.
+- النوع: `study` أو `rest`.
+- الحالة: `pending`, `done`, `missed`.
+- يوم الأسبوع، حيث السبت = 0 والجمعة = 6.
+- ترتيب المهمة.
+- تاريخ محلي اختياري.
+
+يجب حفظ `TimeZoneId`، لأن تحديد اليوم والإحصائيات يعتمد على المنطقة الزمنية للمستخدم وليس UTC فقط.
+
+### المكتبة
+
+- `LibraryItem` — صوت أو مشهد رسمي أو مرفوع من المستخدم.
+- `UserLibraryItem` — العناصر التي أضافها المستخدم إلى مكتبته.
+- `StudySessionLibraryItem` — العناصر التي نقلها المستخدم إلى جلسة الدراسة.
+
+العناصر الرسمية قد تكون صوتًا مولدًا عبر `recipe` ولا تحتاج ملفًا. حدود الرفع المقترحة من الواجهة:
+
+- الصوت: 15 MB.
+- فيديو الخلفية: 60 MB.
+
+### الإشعارات
+
+- `Notification` — إشعار موجه إلى مستخدم.
+
+خصائصه الأساسية:
+
+- `RecipientId`
+- `ActorId` اختياري
+- `Type`
+- `Section`
+- `Title`
+- `I18nKey`
+- `Link`
+- `PostId` أو `RoomId` أو `TaskId` اختياري
+- `CreatedAtUtc`
+- `ReadAtUtc`
+
+يحسب `isRead` من `ReadAtUtc != null`.
+
+### الوسائط
+
+- `MediaFile` — Metadata للملفات المخزنة خارج SQL Server.
+
+الخصائص الأساسية:
+
+- `Id`
+- `OwnerId`
+- `OriginalFileName`
+- `StorageKey`
+- `ContentType`
+- `SizeBytes`
+- `MediaKind`
+- `Checksum` اختياري
+- `CreatedAtUtc`
+- `IsReady`
+- `IsDeleted`
+
+`StorageKey` يجب أن يكون Unique، ولا يتم تخزين `byte[]` داخل SQL Server.
+
+### البلاغات والإشراف
+
+- `Report` — بلاغ المستخدم على منشور أو امتحان أو دورة أو بث.
+- `ModerationBlock` — حجب إداري لمحتوى.
+- `ModerationAppeal` — طلب مراجعة من صاحب المحتوى المحجوب.
+
+قواعد أساسية:
+
+- المستخدم يرفع بلاغًا واحدًا فقط على نفس المحتوى.
+- Unique على `ReporterId + TargetType + TargetId`.
+- القرار الإداري لا ينفذه إلا Admin.
+- الحجب لا يحذف المحتوى الأصلي، بل يغير ظهوره.
+- الموافقة على طلب المراجعة ورفع الحجب ينفذان داخل Transaction.
+- `TargetId` polymorphic، لذلك لا يستخدم Foreign Key مباشرًا إلى جدول واحد.
+
+## مخطط العلاقات المختصر
+
+```text
+ApplicationUser
+ ├── UserStudyProfile
+ ├── UserCommunityProfile
+ ├── Follow / Block
+ ├── BadgeGrant / BadgeRequest
+ ├── Post / Comment
+ ├── Exam / ExamAttempt
+ ├── Course / CourseEnrollment
+ ├── StudySession / StudyRoom
+ ├── Notification
+ ├── Report / ModerationAppeal
+ └── MediaFile
+
+Community
+ ├── Branch
+ ├── CommunityMembership
+ ├── Post
+ ├── Exam
+ └── Course
+
+Post
+ ├── PostMedia / PostTag
+ ├── Comment
+ ├── PostLike / PostSave
+ └── Poll
+	  ├── PollOption
+	  └── PollVote
+
+Exam
+ └── ExamVersion
+	  └── ExamQuestion
+		   ├── ExamQuestionOption
+		   └── ExamAnswer
+
+Course
+ ├── CourseLesson
+ └── CourseEnrollment
+	  └── LessonProgress
+
+StudyRoom
+ ├── StudyRoomParticipant
+ ├── StudyRoomMessage
+ └── StudyRecording
+```
+
+## DbSets المقترحة
+
+```text
+UserStudyProfile
+UserCommunityProfile
+Follow
+Block
+
+Community
+Branch
+CommunityMembership
+BranchMembership
+BranchRequest
+
+BadgeGrant
+BadgeRequest
+BadgeExperience
+
+Post
+PostMedia
+PostTag
+Comment
+PostLike
+CommentLike
+PostSave
+Poll
+PollOption
+PollVote
+
+Exam
+ExamVersion
+ExamQuestion
+ExamQuestionOption
+ExamAttempt
+ExamAnswer
+
+Course
+CourseLesson
+CourseEnrollment
+LessonProgress
+
+StudySession
+StudySessionSegment
+StudyDailyStat
+StudyRoom
+StudyRoomParticipant
+StudyRoomMessage
+StudyRecording
+StudyRecordingLike
+
+StudyPlan
+PlanTask
+
+LibraryItem
+UserLibraryItem
+StudySessionLibraryItem
+
+Notification
+MediaFile
+
+Report
+ModerationBlock
+ModerationAppeal
+```
+
+## Fluent API المطلوب لاحقًا
+
+- إنشاء Configuration مستقل لكل مجموعة Entities.
+- تحديد `MaxLength` لكل النصوص.
+- تخزين Enums كـ strings أو قيم محددة بوضوح.
+- إنشاء Unique Indexes المذكورة.
+- إضافة Check Constraints للأيام والدقائق والعلاقات المنطقية.
+- استخدام `DeleteBehavior.Restrict` أو `SetNull` للعلاقات الحساسة.
+- استخدام Soft Delete للمستخدمين والمحتوى المرتبط بتاريخ أو نتائج.
+- ضبط جميع التواريخ على UTC.
+- ضبط العلاقة بين `Community` و`Branch`، وبين `Exam` و`ExamVersion`، وبين `Course` و`CourseLesson`.
+
+## كيانات لا تحتاج جداول مستقلة حاليًا
+
+لا يوصى بإنشاء جداول مستقلة لـ:
+
+- `isMine`
+- `isLiked`
+- `isSaved`
+- `isReported`
+- `myVote`
+- `isRead`
+- البيانات التجريبية في Frontend
+- إعدادات الثيم واللغة
+- `confirmPassword`
+- `CURRENT_USER`
+- `HOME_SECTIONS`
+- نتائج البحث الأخيرة، إلا إذا تقرر مزامنتها مع الخادم لاحقًا
+
+## نقاط تحتاج قرارًا قبل التنفيذ
+
+1. هل يسمح بأكثر من محاولة للامتحان لكل نسخة؟
+2. هل تعديل الامتحان ينشئ Version جديدة دائمًا؟ التصميم المقترح: نعم.
+3. هل يمكن إرجاع الدورة المنشورة إلى Draft؟
+4. هل نحتاج Course Versioning مستقبلًا؟
+5. هل البث والدردشة سيعتمدان على SignalR/WebSocket؟
+6. أين ستخزن الملفات: Local Disk أم Azure Blob Storage أم تخزين آخر؟
+7. هل حذف المحتوى إداريًا Soft Delete دائمًا؟
+8. هل نحتاج Audit Log للإجراءات الإدارية؟
+9. هل يسمح بأكثر من شارة Scholar عبر الزمن؟
+10. هل المجتمعات والفروع الحالية ستدخل كـ Seed Data؟
+
+## تقسيم التنفيذ بعد اعتماد التصميم
+
+1. المستخدمون والملفات الشخصية والمتابعة والحظر.
+2. المجتمعات والفروع والعضويات.
+3. الشارات وطلبات الشارات وطلبات الفروع.
+4. المنشورات والتعليقات والإعجابات والحفظ والاستطلاعات.
+5. الامتحانات والإصدارات والمحاولات والإجابات.
+6. الدورات والدروس والتسجيل والتقدم.
+7. جلسات الدراسة والإحصائيات والخطط.
+8. غرف الدراسة والبث والرسائل والتسجيلات.
+9. المكتبة ورفع الوسائط والمراجعة.
+10. الإشعارات والبلاغات والحجب وطلبات المراجعة.
+11. Fluent API والاختبارات.
+12. إنشاء أول Migration بعد اعتماد التصميم النهائي فقط.
+
+## الحالة الحالية
+
+هذا الملف وثيقة تصميم فقط. لا يعتبر موافقة على بدء التنفيذ، ولا يحتوي على كود Entities أو تعديلات على `ApplicationDbContext`.

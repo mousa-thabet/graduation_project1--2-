@@ -1,0 +1,620 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\graduation_project1 (2)\\graduation_project_backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\.copilot\\plans\\plan-areatk-batch-1-user-and-social-entities.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\.copilot\\plans\\plan-areatk-database-and-entity-design-review.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\.copilot\\plans\\plan-final-read-only-review-of-areatk-batch-1.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\.copilot\\plans\\plan-areatk-authentication-module.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\.copilot\\plans\\plan-areatk-backend-foundation.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\graduation_project_backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:graduation_project_backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\docs\\areatk-batch1-final-readonly-review.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:docs\\areatk-batch1-final-readonly-review.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\data\\configurations\\followconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:data\\configurations\\followconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\data\\configurations\\userstudyprofileconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:data\\configurations\\userstudyprofileconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\data\\configurations\\applicationuserconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:data\\configurations\\applicationuserconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\data\\configurations\\usercommunityprofileconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:data\\configurations\\usercommunityprofileconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\data\\configurations\\blockconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:data\\configurations\\blockconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\models\\profile\\userstudyprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:models\\profile\\userstudyprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\models\\social\\follow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:models\\social\\follow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\models\\profile\\usercommunityprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:models\\profile\\usercommunityprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\models\\social\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:models\\social\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\docs\\areatk-database-design.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:docs\\areatk-database-design.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\services\\email\\unavailableemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:services\\email\\unavailableemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\models\\auth\\passwordresetcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:models\\auth\\passwordresetcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\dtos\\auth\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:dtos\\auth\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\dtos\\auth\\authresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:dtos\\auth\\authresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\dtos\\auth\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:dtos\\auth\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\dtos\\auth\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:dtos\\auth\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\services\\identityroleinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:services\\identityroleinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\services\\interfaces\\iemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:services\\interfaces\\iemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\dtos\\auth\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:dtos\\auth\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\dtos\\auth\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:dtos\\auth\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\graduation_project1 (2)\\graduation_project_backend\\.github\\copilot-instructions.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.github\\copilot-instructions.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\graduation_project_backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:graduation_project_backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|e:\\graduation_project1 (2)\\graduation_project_backend\\models\\user\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8967D6E1-1882-5E95-13AF-79B87595A834}|graduation_project_backend.csproj|solutionrelative:models\\user\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 384,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 31,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "graduation_project_backend.http",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\graduation_project_backend.http",
+              "RelativeDocumentMoniker": "graduation_project_backend.http",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\graduation_project_backend.http",
+              "RelativeToolTip": "graduation_project_backend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-11-21T18:58:24.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AreaTk-Batch1-Final-ReadOnly-Review.md",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\docs\\AreaTk-Batch1-Final-ReadOnly-Review.md",
+              "RelativeDocumentMoniker": "docs\\AreaTk-Batch1-Final-ReadOnly-Review.md",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\docs\\AreaTk-Batch1-Final-ReadOnly-Review.md",
+              "RelativeToolTip": "docs\\AreaTk-Batch1-Final-ReadOnly-Review.md",
+              "ViewState": "AgIAAN8BAAAAAAAAAAAowE0CAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-21T19:52:07.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "plan-final-read-only-review-of-areatk-batch-1.md [Preview]",
+              "DocumentMoniker": "C:\\Users\\USER\\.copilot\\plans\\plan-final-read-only-review-of-areatk-batch-1.md",
+              "ToolTip": "C:\\Users\\USER\\.copilot\\plans\\plan-final-read-only-review-of-areatk-batch-1.md [Preview]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-21T19:51:26.241Z",
+              "EditorCaption": " [Preview]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "plan-areatk-batch-1-user-and-social-entities.md [Preview]",
+              "DocumentMoniker": "C:\\Users\\USER\\.copilot\\plans\\plan-areatk-batch-1-user-and-social-entities.md",
+              "ToolTip": "C:\\Users\\USER\\.copilot\\plans\\plan-areatk-batch-1-user-and-social-entities.md [Preview]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-21T19:45:52.146Z",
+              "EditorCaption": " [Preview]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FollowConfiguration.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\FollowConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\Configurations\\FollowConfiguration.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\FollowConfiguration.cs",
+              "RelativeToolTip": "Data\\Configurations\\FollowConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:45:01.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserStudyProfileConfiguration.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\UserStudyProfileConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\Configurations\\UserStudyProfileConfiguration.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\UserStudyProfileConfiguration.cs",
+              "RelativeToolTip": "Data\\Configurations\\UserStudyProfileConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:45:01.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationUserConfiguration.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\ApplicationUserConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\Configurations\\ApplicationUserConfiguration.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\ApplicationUserConfiguration.cs",
+              "RelativeToolTip": "Data\\Configurations\\ApplicationUserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:45:01.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserCommunityProfileConfiguration.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\UserCommunityProfileConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\Configurations\\UserCommunityProfileConfiguration.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\UserCommunityProfileConfiguration.cs",
+              "RelativeToolTip": "Data\\Configurations\\UserCommunityProfileConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:45:01.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BlockConfiguration.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\BlockConfiguration.cs",
+              "RelativeDocumentMoniker": "Data\\Configurations\\BlockConfiguration.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\Configurations\\BlockConfiguration.cs",
+              "RelativeToolTip": "Data\\Configurations\\BlockConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:45:01.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserStudyProfile.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Profile\\UserStudyProfile.cs",
+              "RelativeDocumentMoniker": "Models\\Profile\\UserStudyProfile.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Profile\\UserStudyProfile.cs",
+              "RelativeToolTip": "Models\\Profile\\UserStudyProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:44:38.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Follow.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Social\\Follow.cs",
+              "RelativeDocumentMoniker": "Models\\Social\\Follow.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Social\\Follow.cs",
+              "RelativeToolTip": "Models\\Social\\Follow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:44:38.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserCommunityProfile.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Profile\\UserCommunityProfile.cs",
+              "RelativeDocumentMoniker": "Models\\Profile\\UserCommunityProfile.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Profile\\UserCommunityProfile.cs",
+              "RelativeToolTip": "Models\\Profile\\UserCommunityProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:44:38.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Block.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Social\\Block.cs",
+              "RelativeDocumentMoniker": "Models\\Social\\Block.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Social\\Block.cs",
+              "RelativeToolTip": "Models\\Social\\Block.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:44:38.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AreaTk-Database-Design.md",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\docs\\AreaTk-Database-Design.md",
+              "RelativeDocumentMoniker": "docs\\AreaTk-Database-Design.md",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\docs\\AreaTk-Database-Design.md",
+              "RelativeToolTip": "docs\\AreaTk-Database-Design.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-21T19:40:20.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "plan-areatk-database-and-entity-design-review.md [Preview]",
+              "DocumentMoniker": "C:\\Users\\USER\\.copilot\\plans\\plan-areatk-database-and-entity-design-review.md",
+              "ToolTip": "C:\\Users\\USER\\.copilot\\plans\\plan-areatk-database-and-entity-design-review.md [Preview]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-21T19:35:33.562Z",
+              "EditorCaption": " [Preview]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAEIBAAAAAAAAAAAQwBAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:58.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UnavailableEmailSender.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\Email\\UnavailableEmailSender.cs",
+              "RelativeDocumentMoniker": "Services\\Email\\UnavailableEmailSender.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\Email\\UnavailableEmailSender.cs",
+              "RelativeToolTip": "Services\\Email\\UnavailableEmailSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:39.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:13:21.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PasswordResetCode.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Auth\\PasswordResetCode.cs",
+              "RelativeDocumentMoniker": "Models\\Auth\\PasswordResetCode.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\Auth\\PasswordResetCode.cs",
+              "RelativeToolTip": "Models\\Auth\\PasswordResetCode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:17.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UserResponse.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\UserResponse.cs",
+              "RelativeDocumentMoniker": "DTOs\\Auth\\UserResponse.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\UserResponse.cs",
+              "RelativeToolTip": "DTOs\\Auth\\UserResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:11.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AuthResponse.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\AuthResponse.cs",
+              "RelativeDocumentMoniker": "DTOs\\Auth\\AuthResponse.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\AuthResponse.cs",
+              "RelativeToolTip": "DTOs\\Auth\\AuthResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:08.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ResetPasswordRequest.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\ResetPasswordRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\Auth\\ResetPasswordRequest.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\ResetPasswordRequest.cs",
+              "RelativeToolTip": "DTOs\\Auth\\ResetPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:06.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ForgotPasswordRequest.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\ForgotPasswordRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\Auth\\ForgotPasswordRequest.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\ForgotPasswordRequest.cs",
+              "RelativeToolTip": "DTOs\\Auth\\ForgotPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:03.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:43.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IdentityRoleInitializer.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\IdentityRoleInitializer.cs",
+              "RelativeDocumentMoniker": "Services\\IdentityRoleInitializer.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\IdentityRoleInitializer.cs",
+              "RelativeToolTip": "Services\\IdentityRoleInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:14:17.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IEmailSender.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\Interfaces\\IEmailSender.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IEmailSender.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Services\\Interfaces\\IEmailSender.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IEmailSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:37.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "plan-areatk-authentication-module.md [Preview]",
+              "DocumentMoniker": "C:\\Users\\USER\\.copilot\\plans\\plan-areatk-authentication-module.md",
+              "ToolTip": "C:\\Users\\USER\\.copilot\\plans\\plan-areatk-authentication-module.md [Preview]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-21T19:12:02.917Z",
+              "EditorCaption": " [Preview]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\Auth\\LoginRequest.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\LoginRequest.cs",
+              "RelativeToolTip": "DTOs\\Auth\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:12:00.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\Auth\\RegisterRequest.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\DTOs\\Auth\\RegisterRequest.cs",
+              "RelativeToolTip": "DTOs\\Auth\\RegisterRequest.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T19:11:58.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "copilot-instructions.md",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\.github\\copilot-instructions.md",
+              "RelativeDocumentMoniker": ".github\\copilot-instructions.md",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\.github\\copilot-instructions.md",
+              "RelativeToolTip": ".github\\copilot-instructions.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-21T18:53:43.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "graduation_project_backend.csproj",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\graduation_project_backend.csproj",
+              "RelativeDocumentMoniker": "graduation_project_backend.csproj",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\graduation_project_backend.csproj",
+              "RelativeToolTip": "graduation_project_backend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-21T18:38:42.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T18:35:25.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-21T18:37:58.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-21T18:37:56.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA0wAoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T18:37:48.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\User\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Models\\User\\ApplicationUser.cs",
+              "ToolTip": "E:\\graduation_project1 (2)\\graduation_project_backend\\Models\\User\\ApplicationUser.cs",
+              "RelativeToolTip": "Models\\User\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T18:37:45.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "plan-areatk-backend-foundation.md [Preview]",
+              "DocumentMoniker": "C:\\Users\\USER\\.copilot\\plans\\plan-areatk-backend-foundation.md",
+              "ToolTip": "C:\\Users\\USER\\.copilot\\plans\\plan-areatk-backend-foundation.md [Preview]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-11-21T18:37:28.31Z",
+              "EditorCaption": " [Preview]"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
