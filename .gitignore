@@ -1,0 +1,27 @@
+# Build output
+**/bin/
+**/obj/
+
+# IDE and local tooling
+**/.vs/
+.idea/
+*.user
+*.suo
+*.cache
+*.vsidx
+CopilotSnapshots/
+CopilotIndices/
+*DocumentLayout.json
+
+# Frontend dependencies and build output
+**/node_modules/
+**/dist/
+**/dist-ssr/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pfx
+*.pem
+*.key

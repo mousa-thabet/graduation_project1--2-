@@ -1,7 +1,0 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace graduation_project_backend.Models.User;
-
-public sealed class ApplicationUser : IdentityUser<Guid>
-{
-}
